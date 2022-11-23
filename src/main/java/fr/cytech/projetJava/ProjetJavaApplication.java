@@ -5,7 +5,6 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-// import org.springframework.stereotype.Component;
 
 @SpringBootApplication
 public class ProjetJavaApplication {
@@ -21,11 +20,13 @@ public class ProjetJavaApplication {
     public CommandLineRunner CommandLineRunnerBean() {
         return (args) -> {
             System.out.println("Démarrage en cours...");
-        	
-            User user = new User();
-            user.setUsername("Bob");
-            user.setPassword("0000");
-            userRepository.save(user);
+
+        	// creer un nouvel utilisateur
+
+            //User user = new User();
+            // user.setUsername("Bob");
+            // user.setPassword("0000");
+            // userRepository.save(user);
             
             for(User tmp : userRepository.findAll()) {
             	System.out.println(tmp);

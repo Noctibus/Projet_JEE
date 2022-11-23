@@ -25,7 +25,7 @@ public class ProjetJavaApplication {
             User user = new User();
             user.setUsername("Bob");
             user.setPassword("0000");
-            userRepository.save(user);
+            // userRepository.save(user);
             
             for(User tmp : userRepository.findAll()) {
             	System.out.println(tmp);

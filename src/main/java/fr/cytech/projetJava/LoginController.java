@@ -17,7 +17,7 @@ public class LoginController {
 	public User user = new User();
 
 	public String check(User user) {
-		String page = "notLogged2";
+		String page = "notLogged";
 		boolean res = false;
 		User usr = userRepository.findByUsername(user.getUsername());
 		System.out.println("User = " + user);

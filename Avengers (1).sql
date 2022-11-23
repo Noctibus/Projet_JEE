@@ -101,10 +101,10 @@ INSERT INTO `Personnages` (`Id`, `Identité`, `Nom de héro`, `Acteur`, `Origine
 -- Table structure for table `Utilisateurs`
 --
 
-CREATE TABLE `Utilisateurs` (
-  `Id` int(11) NOT NULL,
-  `Identifiant` text DEFAULT NULL,
-  `Mdp` text DEFAULT NULL,
+CREATE TABLE `user` (
+  `id` int(11) NOT NULL,
+  `username` text DEFAULT NULL,
+  `password` text DEFAULT NULL,
   `NoteAv1` int(5) DEFAULT NULL,
   `NoteAv2` int(5) DEFAULT NULL,
   `NoteAv3` int(5) DEFAULT NULL,
@@ -162,9 +162,9 @@ ALTER TABLE `Personnages`
 --
 -- Indexes for table `Utilisateurs`
 --
-ALTER TABLE `Utilisateurs`
-  ADD PRIMARY KEY (`Id`),
-  ADD UNIQUE KEY `Identifiant` (`Identifiant`) USING HASH;
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `username` (`username`) USING HASH;
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -185,8 +185,8 @@ ALTER TABLE `Personnages`
 --
 -- AUTO_INCREMENT for table `Utilisateurs`
 --
-ALTER TABLE `Utilisateurs`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+ALTER TABLE `user`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

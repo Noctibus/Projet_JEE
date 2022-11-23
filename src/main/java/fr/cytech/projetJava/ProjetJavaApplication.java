@@ -21,7 +21,7 @@ public class ProjetJavaApplication {
         return (args) -> {
             System.out.println("Démarrage en cours...");
 
-        	// creer un nouvel utilisateur
+        // creer un nouvel utilisateur
 
             //User user = new User();
             // user.setUsername("Bob");

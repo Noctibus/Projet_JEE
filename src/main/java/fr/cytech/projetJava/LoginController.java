@@ -33,8 +33,8 @@ public class LoginController {
 	}
 
 	@GetMapping("/")
-	public String index(Model model) {
-		return "index";
+	public String logs(Model model) {
+		return login(model);
 	}
 
 	@GetMapping("/login")

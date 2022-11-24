@@ -9,4 +9,8 @@ public class PageManagement{
 		return "index";
 	}
 
+    @GetMapping("/films")
+	public String films() {
+		return "films";
+	}
 }

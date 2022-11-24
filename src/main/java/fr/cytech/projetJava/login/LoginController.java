@@ -38,6 +38,7 @@ public class LoginController {
 		// model.addAttribute("user", user);
 		return "login"; // page (html, xml ou autre) à afficher
 	}
+	
 	@RequestMapping(value="/logged", method=RequestMethod.POST)
 	public String logging(@RequestParam("username") String username, @RequestParam("password") String password) {
 		System.out.println("+++++++++++++++++\nUsername = " + username);

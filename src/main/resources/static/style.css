@@ -20,6 +20,7 @@ body{
 }
 
 #page {
+	min-width: 100%;
     min-height: 100%;
     position: relative;
 }
@@ -37,8 +38,13 @@ a:hover {
 #logo{
 	width: 400px;
 	height: 150px;
-	margin-bottom: 35px;
 }
+
+#menu a{
+	margin: 50px;
+}
+
+
 
 /* partie principale */
 
@@ -47,6 +53,10 @@ main{
 	height: 600px;
 	font-size: 18px;
 	padding-bottom: 122px;
+}
+
+#mainfilm{
+	padding-bottom: 180px;
 }
 
 #pages{
@@ -60,6 +70,16 @@ main{
 
 #buttons div{
 	margin: 50px;
+}
+
+#intro{
+	margin-top: 55px;
+}
+
+#templine{
+	background-color: aliceblue;
+	height: 200px;
+	margin-top: 180px;
 }
 
 /* pied de page */

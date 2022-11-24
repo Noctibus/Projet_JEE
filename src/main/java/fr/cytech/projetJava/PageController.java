@@ -1,15 +1,17 @@
 package fr.cytech.projetJava;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
-public class PageManagement{
+@Controller
+public class PageController{
 
     @GetMapping("/")
 	public String index() {
 		return "index";
 	}
 
-    @GetMapping("/films")
+    @GetMapping("/Films")
 	public String films() {
 		return "films";
 	}

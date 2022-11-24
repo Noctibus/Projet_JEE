@@ -32,11 +32,6 @@ public class LoginController {
 		return page;
 	}
 
-	@GetMapping("/")
-	public String index() {
-		return "index";
-	}
-
 	@GetMapping("/login")
 	public String login(Model model) {
 		System.out.println(user);

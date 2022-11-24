@@ -1,4 +1,4 @@
-package fr.cytech.projetJava;
+package fr.cytech.projetJava.rate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -16,5 +16,4 @@ public abstract class Rate {
     public static double rateAvg(Rate[] tab){
         return 0;
     }
-
 }

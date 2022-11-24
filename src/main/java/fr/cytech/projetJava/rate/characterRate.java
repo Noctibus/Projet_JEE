@@ -7,4 +7,8 @@ import javax.validation.constraints.NotNull;
 @Entity
 public class characterRate extends Rate {
     
+    @Override
+    public static double rateAvg(Rate[] tab){
+        return 0;
+    }
 }

@@ -1,4 +1,4 @@
-package fr.cytech.projetJava;
+package fr.cytech.projetJava.login;
 
 import java.util.Objects;
 

@@ -3,7 +3,7 @@ package fr.cytech.projetJava.rate;
 import javax.persistence.Column;
 import javax.validation.constraints.NotNull;
 
-public class characterRate extends Rate {
+public class CharacterRate extends Rate {
     
     @Column @NotNull
 	private int characterID;

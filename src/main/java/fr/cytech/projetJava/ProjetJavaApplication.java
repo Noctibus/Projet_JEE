@@ -22,7 +22,7 @@ public class ProjetJavaApplication {
             System.out.println("Démarrage en cours...");
 
         	// créé le nouvel utilisateur Bob
-
+          
             //User user = new User();
             // user.setUsername("Bob");
             // user.setPassword("0000");

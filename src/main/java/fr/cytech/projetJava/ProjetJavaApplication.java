@@ -6,6 +6,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
+import fr.cytech.projetJava.login.User;
+import fr.cytech.projetJava.login.UserRepository;
+
 @SpringBootApplication
 public class ProjetJavaApplication {
 

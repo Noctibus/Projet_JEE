@@ -4,14 +4,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class PageController{
+public class FrontController{
 
-    @GetMapping("/")
+    @GetMapping(value="/")
 	public String index() {
 		return "index";
 	}
 
-    @GetMapping("/Films")
+    @GetMapping(value="/films")
 	public String films() {
 		return "films";
 	}

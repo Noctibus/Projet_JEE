@@ -3,14 +3,14 @@
 <head>
 	<meta charset="UTF-8">
 	<title> The Avengers </title>
-	<link rel="icon" href="ironman.png">
-	<link rel="stylesheet" type="text/css" href="style.css" />
+	<link rel="icon" href="static/ironman.png">
+	<link rel="stylesheet" type="text/css" href="static/style.css" />
 </head>
 <body>
 <div id="page">
 	 <header>
 	 	<div>
-	 	 <img id="logo" src="titre.png" />
+	 	 <img id="logo" src="static/titre.png" />
 	 	</div>
 	 </header>
 	 
@@ -29,7 +29,7 @@
 			 	 <div><a>Personnages</a></div>
 			 	 <div><a>Connexion</a></div>
 			 	 <audio controls>
-			 	 	<source src="avengers.mp3" type="audio/mp3">
+			 	 	<source src="static/avengers.mp3" type="audio/mp3">
 			 	 </audio>
 			 	 
 		</div>
@@ -39,7 +39,7 @@
      
       <footer>
 			<div>
-	 	 		<img id="marvel" src="marvel.png" />
+	 	 		<img id="marvel" src="static/marvel.png" />
 	 		</div>
 			<div id="names">
 				Concepteurs: Debet Stanislas, Coyla Timoteï, Morales Raphaël & Godet Mélissa
@@ -50,4 +50,4 @@
 	   </footer>
 </div>
 </body>
-</html>
+</html> 

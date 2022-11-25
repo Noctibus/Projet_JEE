@@ -104,7 +104,7 @@ CREATE TABLE `MovieRates` (
 
 CREATE TABLE `Movies` (
   `title` text DEFAULT NULL,
-  `realisator` text DEFAULT NULL,
+  `director` text DEFAULT NULL,
   `date` date DEFAULT NULL,
   `rate` float(5,0) DEFAULT NULL,
   `synopsis` text DEFAULT NULL,

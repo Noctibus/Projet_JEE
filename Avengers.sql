@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: mariadb:3306
--- Generation Time: Nov 25, 2022 at 07:26 AM
+-- Generation Time: Nov 25, 2022 at 07:52 AM
 -- Server version: 10.6.10-MariaDB-1:10.6.10+maria~ubu2004
 -- PHP Version: 8.0.24
 
@@ -84,7 +84,6 @@ INSERT INTO `Characters` (`Id`, `identity`, `hero's name`, `actor`, `origins`, `
 
 -- --------------------------------------------------------
 
-
 --
 -- Table structure for table `MovieRates`
 --
@@ -104,7 +103,7 @@ CREATE TABLE `MovieRates` (
 
 CREATE TABLE `Movies` (
   `title` text DEFAULT NULL,
-  `realisator` text DEFAULT NULL,
+  `director` text DEFAULT NULL,
   `date` date DEFAULT NULL,
   `rate` float(5,0) DEFAULT NULL,
   `synopsis` text DEFAULT NULL,
@@ -115,7 +114,7 @@ CREATE TABLE `Movies` (
 -- Dumping data for table `Movies`
 --
 
-INSERT INTO `Movies` (`title`, `realisator`, `date`, `rate`, `synopsis`, `id`) VALUES
+INSERT INTO `Movies` (`title`, `director`, `date`, `rate`, `synopsis`, `id`) VALUES
 ('Avengers', 'Joss Whedon', '2012-04-20', 3, 'Lorsque Nick Fury, le directeur du S.H.I.E.L.D., l\'organisation qui préserve la paix au plan mondial, cherche à former une équipe de choc pour empêcher la destruction du monde, Iron Man, Hulk, Thor, Captain America, Hawkeye et Black Widow répondent présents.\r\nLes Avengers ont beau constituer la plus fantastique des équipes, il leur reste encore à apprendre à travailler ensemble, et non les uns contre les autres, d\'autant que le redoutable Loki a réussi à accéder au Cube Cosmique et à son pouvoir illimité... ', 1),
 ('Avengers : L’Ère d’Ultron ', 'Joss Whedon', '2015-04-22', 2, 'Alors que Tony Stark tente de relancer un programme de maintien de la paix jusque-là suspendu, les choses tournent mal et les super-héros Iron Man, Captain America, Thor, Hulk, Black Widow et Hawkeye vont devoir à nouveau unir leurs forces pour combattre le plus puissant de leurs adversaires : le terrible Ultron, un être technologique terrifiant qui s’est juré d’éradiquer l’espèce humaine.\r\nAfin d’empêcher celui-ci d’accomplir ses sombres desseins, des alliances inattendues se scellent, les entraînant dans une incroyable aventure et une haletante course contre le temps… ', 2),
 ('Avengers : Infinity War', 'Joe Russo, Anthony Russo', '2018-04-25', 5, 'Les Avengers et leurs alliés devront être prêts à tout sacrifier pour neutraliser le redoutable Thanos avant que son attaque éclair ne conduise à la destruction complète de l’univers. ', 3),

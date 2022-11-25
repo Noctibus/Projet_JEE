@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: mariadb:3306
--- Generation Time: Nov 25, 2022 at 07:19 AM
+-- Generation Time: Nov 25, 2022 at 07:23 AM
 -- Server version: 10.6.10-MariaDB-1:10.6.10+maria~ubu2004
 -- PHP Version: 8.0.24
 
@@ -145,20 +145,20 @@ INSERT INTO `Movies` (`title`, `realisator`, `date`, `rate`, `synopsis`, `id`) V
 -- --------------------------------------------------------
 
 --
--- Table structure for table `User`
+-- Table structure for table `Users`
 --
 
-CREATE TABLE `User` (
+CREATE TABLE `Users` (
   `id` int(11) NOT NULL,
   `username` text DEFAULT NULL,
   `password` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `User`
+-- Dumping data for table `Users`
 --
 
-INSERT INTO `User` (`id`, `username`, `password`) VALUES
+INSERT INTO `Users` (`id`, `username`, `password`) VALUES
 (2001, 'Bob', '0000'),
 (3001, 'Bob', '0000');
 COMMIT;

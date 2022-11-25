@@ -127,7 +127,7 @@ INSERT INTO `Movies` (`title`, `director`, `date`, `rate`, `synopsis`, `id`) VAL
 --
 
 CREATE TABLE `Users` (
-  `id` int(11) NOT NULL,
+  `id` int(11) DEFAULT NULL,
   `username` text DEFAULT NULL,
   `password` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -137,7 +137,6 @@ CREATE TABLE `Users` (
 --
 
 INSERT INTO `Users` (`id`, `username`, `password`) VALUES
-(2001, 'Bob', '0000'),
 (3001, 'Bob', '0000');
 COMMIT;
 

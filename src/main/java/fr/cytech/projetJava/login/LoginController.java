@@ -15,32 +15,21 @@ public class LoginController {
  	UserRepository userRepository;
 	public User user = new User();
 
-	public String check(User user) {
-		String page = "notLogged";
-		boolean res = false;
-		User usr = userRepository.findByUsername(user.getUsername());
-		System.out.println("User = " + user);
-		System.out.println("Usr  = " + usr);
+	@PostMapping("/checkUser")
+	public String checkUser(@RequestParam("username") String username, @RequestParam("password") String password) {
+		String page = "register";
+		// boolean res = false;
+		User usr = userRepository.findByUsername(username);
+		// System.out.println("User = " + user);
+		// System.out.println("Usr  = " + usr);
 		if (!Objects.isNull(usr)) {
-			if (usr.getPassword().equals(user.getPassword())) {
+			if (usr.getPassword().equals(password)) {
 				page = "logged";
 			}
 		}
-		System.out.println("Page ====== " + page);
-		System.out.println("Exists = " + res);
+		// System.out.println("Page ====== " + page);
+		// System.out.println("Exists = " + res);
 		return page;
-	}
-
-	public boolean checkNewUser(String username, String password1, String password2) {
-		boolean res = true;
-		User usr = userRepository.findByUsername(user.getUsername());
-		if (!Objects.isNull(usr)) {
-			res = false;
-		}
-		if (!password1.equals(password2)) {
-			res = false;
-		}
-		return res;
 	}
 
 	@GetMapping("/login")
@@ -51,21 +40,31 @@ public class LoginController {
 	}
 	
 	@PostMapping("/logged")
-	public String logging(@RequestParam("username") String username, @RequestParam("password") String password) {
-		System.out.println("+++++++++++++++++\nUsername = " + username);
-		user.setUsername(username);
-		user.setPassword(password);
-		return check(user);
+	public String logged() {
+		// System.out.println("+++++++++++++++++\nUsername = " + username);
+		return "/logged";
 	}
 	
 	@GetMapping("/register")
 	public String register(Model model) {
-		String page = "notLogged";
-		if (checkNewUser(user.getUsername(), user.getPassword(), user.getPassword())) {
+		return "register";
+	}
+
+	@PostMapping("/registerNewUser")
+	public String registerNewUser(Model model,@RequestParam("username") String username,@RequestParam("password1") String password1,@RequestParam("password2") String password2) {
+		boolean res = true;
+		String page = "register";
+		User usr = userRepository.findByUsername(user.getUsername());
+		if (!Objects.isNull(usr) || !password1.equals(password2)) {
+			res = false;
+		}
+		if (res) {
+			user.setUsername(username);
+			user.setPassword(password1);
 			userRepository.save(user);
-		} else {
-			page = "register";
+			page = "logged";
 		}
 		return page;
 	}
+	
 }

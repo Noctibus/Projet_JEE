@@ -26,7 +26,8 @@ public class ProjetJavaApplication {
 
         	// creer le nouvel utilisateur Bob
 
-            //User user = new User();
+            // User user = new User();
+            // user.setId(1L);
             // user.setUsername("Bob");
             // user.setPassword("0000");
             // userRepository.save(user);

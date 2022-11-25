@@ -6,8 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
@@ -23,11 +22,7 @@ public class LoginController {
 		System.out.println("User = " + user);
 		System.out.println("Usr  = " + usr);
 		if (!Objects.isNull(usr)) {
-<<<<<<< HEAD
 			if (usr.getPassword().equals(user.getPassword())) {
-=======
-			if (usr.getPassword().equals(password)) {
->>>>>>> parent of 117ae80 (Register)
 				page = "logged";
 			}
 		}
@@ -43,15 +38,6 @@ public class LoginController {
 		return "login"; // page (html, xml ou autre) à afficher
 	}
 	
-<<<<<<< HEAD
-	@RequestMapping(value="/logged", method=RequestMethod.POST)
-	public String logging(@RequestParam("username") String username, @RequestParam("password") String password) {
-		System.out.println("+++++++++++++++++\nUsername = " + username);
-		user.setUsername(username);
-		user.setPassword(password);
-		return check(user);
-	}
-=======
 	@PostMapping("/logged")
 	public String logged() {
 		// System.out.println("+++++++++++++++++\nUsername = " + username);
@@ -80,5 +66,4 @@ public class LoginController {
 		return page;
 	}
 	
->>>>>>> parent of 117ae80 (Register)
 }

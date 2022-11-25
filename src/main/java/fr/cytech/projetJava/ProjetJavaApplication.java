@@ -3,7 +3,6 @@ package fr.cytech.projetJava;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
@@ -11,7 +10,6 @@ import fr.cytech.projetJava.login.User;
 import fr.cytech.projetJava.login.UserRepository;
 
 @SpringBootApplication
-@EnableAutoConfiguration
 public class ProjetJavaApplication {
 
 	public static void main(String[] args) {

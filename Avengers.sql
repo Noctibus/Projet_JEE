@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: mariadb:3306
--- Generation Time: Nov 25, 2022 at 07:23 AM
+-- Generation Time: Nov 25, 2022 at 07:26 AM
 -- Server version: 10.6.10-MariaDB-1:10.6.10+maria~ubu2004
 -- PHP Version: 8.0.24
 
@@ -28,6 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `CharacterRates` (
+  `characterRateID` int(11) NOT NULL,
   `userID` int(11) NOT NULL,
   `value` int(11) NOT NULL,
   `characterID` int(11) NOT NULL
@@ -112,6 +113,7 @@ INSERT INTO `hibernate_sequence` (`next_not_cached_value`, `minimum_value`, `max
 --
 
 CREATE TABLE `MovieRates` (
+  `movieRateID` int(11) NOT NULL,
   `userID` int(11) NOT NULL,
   `value` int(11) NOT NULL,
   `movieID` int(11) NOT NULL

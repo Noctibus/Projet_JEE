@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: mariadb:3306
--- Generation Time: Nov 25, 2022 at 07:52 AM
+-- Generation Time: Nov 25, 2022 at 08:18 AM
 -- Server version: 10.6.10-MariaDB-1:10.6.10+maria~ubu2004
 -- PHP Version: 8.0.24
 
@@ -133,7 +133,29 @@ CREATE TABLE `Users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `Users`
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `CharacterRates`
+--
+ALTER TABLE `CharacterRates`
+  ADD PRIMARY KEY (`characterRateID`);
+
+--
+-- Indexes for table `MovieRates`
+--
+ALTER TABLE `MovieRates`
+  ADD PRIMARY KEY (`movieRateID`);
+
+--
+-- Indexes for table `Users`
+--
+ALTER TABLE `Users`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
 --
 
 INSERT INTO `Users` (`id`, `username`, `password`) VALUES

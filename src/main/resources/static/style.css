@@ -1,0 +1,98 @@
+@charset "UTF-8";
+
+
+/* boby */
+
+body{
+	height: 100%;
+	background-color: rgb(78, 90, 150);
+	font-family: Avengers;
+	background-image: url("stars.png");
+	background-repeat:no-repeat;
+	background-position:center center;
+	color: white;
+	margin: 0;
+}
+
+@font-face{
+		font-family: Avengers;
+		src: url("avengers.ttf")
+}
+
+#page {
+	min-width: 100%;
+    min-height: 100%;
+    position: relative;
+}
+
+div{
+ 	text-align: center;
+}
+
+a:hover {
+    color: rgb(238, 34, 34);
+  }
+
+/* entête */
+
+#logo{
+	width: 400px;
+	height: 150px;
+}
+
+#menu a{
+	margin: 50px;
+}
+
+
+
+/* partie principale */
+
+main{
+	font-weight: bold;
+	height: 600px;
+	font-size: 18px;
+	padding-bottom: 122px;
+}
+
+#mainfilm{
+	padding-bottom: 180px;
+}
+
+#pages{
+	margin-top: 50px;
+}
+
+#buttons {
+	font-size: 70px;
+	margin: 10px;
+}
+
+#buttons div{
+	margin: 50px;
+}
+
+#intro{
+	margin-top: 55px;
+}
+
+#templine{
+	background-color: aliceblue;
+	height: 200px;
+	margin-top: 180px;
+}
+
+/* pied de page */
+
+footer{
+	font-family: Arial, Helvetica, sans-serif;
+	height: 140px;
+    position: absolute;
+    bottom: 0;
+	width:100%;
+	background-color: rgb(35, 40, 66);
+}
+
+#marvel{
+	height: 70px;
+}

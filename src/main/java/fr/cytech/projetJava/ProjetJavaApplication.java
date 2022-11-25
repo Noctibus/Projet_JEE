@@ -18,24 +18,24 @@ public class ProjetJavaApplication {
 		SpringApplication.run(ProjetJavaApplication.class, args);
 	}
 
-	// @Autowired
- 	// UserRepository userRepository;
+	@Autowired
+ 	UserRepository userRepository;
 	 
-	// @Bean
-    // public CommandLineRunner CommandLineRunnerBean() {
-    //     return (args) -> {
-    //         System.out.println("Démarrage en cours...");
+	@Bean
+    public CommandLineRunner CommandLineRunnerBean() {
+        return (args) -> {
+            System.out.println("Démarrage en cours...");
 
-    //     	// creer le nouvel utilisateur Bob
+        	// creer le nouvel utilisateur Bob
 
-    //         //User user = new User();
-    //         // user.setUsername("Bob");
-    //         // user.setPassword("0000");
-    //         // userRepository.save(user);
+            //User user = new User();
+            // user.setUsername("Bob");
+            // user.setPassword("0000");
+            // userRepository.save(user);
             
-    //         for(User tmp : userRepository.findAll()) {
-    //         	System.out.println(tmp);
-    //         }
-    //     };
-    // }
+            for(User tmp : userRepository.findAll()) {
+            	System.out.println(tmp);
+            }
+        };
+    }
 }

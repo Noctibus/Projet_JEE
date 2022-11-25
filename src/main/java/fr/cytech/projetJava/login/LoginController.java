@@ -24,7 +24,7 @@ public class LoginController {
 		// System.out.println("Usr  = " + usr);
 		if (!Objects.isNull(usr)) {
 			if (usr.getPassword().equals(password)) {
-				page = "logged";
+				page = "redirect:logged";
 			}
 		}
 		// System.out.println("Page ====== " + page);
@@ -39,8 +39,9 @@ public class LoginController {
 		return "login"; // page (html, xml ou autre) à afficher
 	}
 	
-	@PostMapping("/logged")
+	@GetMapping("/logged")
 	public String logged() {
+
 		// System.out.println("+++++++++++++++++\nUsername = " + username);
 		return "/logged";
 	}
@@ -50,10 +51,10 @@ public class LoginController {
 		return "register";
 	}
 
-	@PostMapping("/registerNewUser")
+	@PostMapping("/register")
 	public String registerNewUser(Model model,@RequestParam("username") String username,@RequestParam("password1") String password1,@RequestParam("password2") String password2) {
 		boolean res = true;
-		String page = "register";
+		String page = "redirect:register";
 		User usr = userRepository.findByUsername(user.getUsername());
 		if (!Objects.isNull(usr) || !password1.equals(password2)) {
 			res = false;
@@ -62,7 +63,7 @@ public class LoginController {
 			user.setUsername(username);
 			user.setPassword(password1);
 			userRepository.save(user);
-			page = "logged";
+			page = "redirect:logged";
 		}
 		return page;
 	}

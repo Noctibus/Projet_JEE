@@ -11,8 +11,8 @@ public class FrontController {
 		return "index";
 	}
 
-    @GetMapping("/films")
-	public String films() {
-		return "films";
+    @GetMapping("/movies")
+	public String movies() {
+		return "movies";
 	}
 }

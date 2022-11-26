@@ -16,9 +16,9 @@
 	 
      <main id="mainfilm"> 	
       <section id="menu" >
-			 	 <a>Films</a>
-			 	 <a>Personnages</a>
-			 	 <a>Connexion</a>
+			 	 <a href="films">Films</a>
+			 	 <a href="character">Personnages</a>
+			 	 <a href="login">Connexion</a>
 	  </section>
 
 	  <div id="templine">
@@ -33,7 +33,7 @@
 				Concepteurs: Debet Stanislas, Coyla Timoteï, Morales Raphaël & Godet Mélissa
 			</div>
 			<div>
-				<p><a>Nous contacter</a></p>
+				<p><a href="contact">Nous contacter</a></p>
 			</div>
 	   </footer>
 </div>

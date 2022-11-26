@@ -28,7 +28,10 @@ body{
 div{
  	text-align: center;
 }
-
+a{
+	color: white;
+	text-decoration: none;
+}
 a:hover {
     color: rgb(238, 34, 34);
   }

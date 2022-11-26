@@ -25,9 +25,9 @@
       
       <section id="pages" >
      	<div id = "buttons"> 
-			 	 <div><a>Films</a></div>
-			 	 <div><a>Personnages</a></div>
-			 	 <div><a>Connexion</a></div>
+			 	 <div><a href="films">Films</a></div>
+			 	 <div><a href="characters">Personnages</a></div>
+			 	 <div><a href="login" id="white">Connexion</a></div>
 			 	 <audio controls>
 			 	 	<source src="avengers.mp3" type="audio/mp3">
 			 	 </audio>
@@ -45,7 +45,7 @@
 				Concepteurs: Debet Stanislas, Coyla Timoteï, Morales Raphaël & Godet Mélissa
 			</div>
 			<div>
-				<p><a>Nous contacter</a></p>
+				<p><a href="contact">Nous contacter</a></p>
 			</div>
 	   </footer>
 </div>

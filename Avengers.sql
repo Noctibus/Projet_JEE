@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: mariadb:3306
--- Generation Time: Nov 27, 2022 at 03:03 AM
+-- Generation Time: Nov 27, 2022 at 01:30 PM
 -- Server version: 10.6.11-MariaDB-1:10.6.11+maria~ubu2004
 -- PHP Version: 8.0.25
 
@@ -55,7 +55,7 @@ CREATE TABLE `CharacterRates` (
 --
 
 CREATE TABLE `Characters` (
-  `Id` int(11) NOT NULL,
+  `id` int(11) NOT NULL,
   `identity` text DEFAULT NULL,
   `hero's name` text DEFAULT NULL,
   `actor` text NOT NULL,
@@ -71,7 +71,7 @@ CREATE TABLE `Characters` (
 -- Dumping data for table `Characters`
 --
 
-INSERT INTO `Characters` (`Id`, `identity`, `hero's name`, `actor`, `origins`, `avengers1`, `avengers2`, `avengers3`, `avengers4`, `status`) VALUES
+INSERT INTO `Characters` (`id`, `identity`, `hero's name`, `actor`, `origins`, `avengers1`, `avengers2`, `avengers3`, `avengers4`, `status`) VALUES
 (1, 'Anthony Stark', 'Iron Man', 'Robert Downey Jr.', 'Anthony Edward « Tony » Stark est un industriel américain, née à Long Island dans l\'État de New York fils de Howard Stark un scientifique avec un goût prononcé pour l\'alcool à la tête de Stark Industries et de Maria Collins-Carbonell Stark. Avec l\'entreprise de son père, il fabrique notamment des armes pour le gouvernement américain. Cela l\'amène à se rendre au Viet Nâm alors en guerre contre les États-Unis pour démontrer la puissance des «transistors» qui permettent de décupler la puissance de n\'importe quelle arme. Mais il saute malencontreusement sur une mine qui projette des éclats près de son cœur.', 1, 1, 1, 1, 0),
 (2, 'Thor', NULL, 'Chris Hemsworth\r\n', 'Dans la mythologie scandinave, Thor (en vieux norrois : Þórr, littéralement « foudre ») est le dieu du tonnerre, de la guerre et de la forge. C\'est un dieu guerrier très puissant qui représente le combat, la force et le courage. Il est grand et fort. C\'est un gros mangeur et buveur.', 1, 1, 1, 1, 1),
 (3, 'Bruce Banner', 'Hulk', 'Mark Ruffalo, Eric Bana', 'Quand Bruce Banner reçut des rayons gamma de plein fouet, il fut condamné à se transformer en colosse vert, dès qu\'il se met en colère.', 1, 1, 1, 1, 1),
@@ -130,23 +130,23 @@ CREATE TABLE `MovieRates` (
 --
 
 CREATE TABLE `Movies` (
-  `title` text DEFAULT NULL,
-  `director` text DEFAULT NULL,
-  `date` date DEFAULT NULL,
-  `rate` float(5,0) DEFAULT NULL,
-  `synopsis` text DEFAULT NULL,
-  `id` int(11) NOT NULL
+  `id` int(11) NOT NULL,
+  `title` text NOT NULL,
+  `director` text NOT NULL,
+  `date` date NOT NULL,
+  `rate` float(5,0) NOT NULL DEFAULT 3,
+  `synopsis` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `Movies`
 --
 
-INSERT INTO `Movies` (`title`, `director`, `date`, `rate`, `synopsis`, `id`) VALUES
-('Avengers', 'Joss Whedon', '2012-04-20', 3, 'Lorsque Nick Fury, le directeur du S.H.I.E.L.D., l\'organisation qui préserve la paix au plan mondial, cherche à former une équipe de choc pour empêcher la destruction du monde, Iron Man, Hulk, Thor, Captain America, Hawkeye et Black Widow répondent présents.\r\nLes Avengers ont beau constituer la plus fantastique des équipes, il leur reste encore à apprendre à travailler ensemble, et non les uns contre les autres, d\'autant que le redoutable Loki a réussi à accéder au Cube Cosmique et à son pouvoir illimité... ', 1),
-('Avengers : L’Ère d’Ultron ', 'Joss Whedon', '2015-04-22', 2, 'Alors que Tony Stark tente de relancer un programme de maintien de la paix jusque-là suspendu, les choses tournent mal et les super-héros Iron Man, Captain America, Thor, Hulk, Black Widow et Hawkeye vont devoir à nouveau unir leurs forces pour combattre le plus puissant de leurs adversaires : le terrible Ultron, un être technologique terrifiant qui s’est juré d’éradiquer l’espèce humaine.\r\nAfin d’empêcher celui-ci d’accomplir ses sombres desseins, des alliances inattendues se scellent, les entraînant dans une incroyable aventure et une haletante course contre le temps… ', 2),
-('Avengers : Infinity War', 'Joe Russo, Anthony Russo', '2018-04-25', 5, 'Les Avengers et leurs alliés devront être prêts à tout sacrifier pour neutraliser le redoutable Thanos avant que son attaque éclair ne conduise à la destruction complète de l’univers. ', 3),
-('Avengers: Endgame', 'Joe Russo, Anthony Russo', '2019-04-24', 4, 'Thanos ayant anéanti la moitié de l’univers, les Avengers restants resserrent les rangs dans ce vingt-deuxième film des Studios Marvel, grande conclusion d’un des chapitres de l’Univers Cinématographique Marvel.', 4);
+INSERT INTO `Movies` (`id`, `title`, `director`, `date`, `rate`, `synopsis`) VALUES
+(1, 'Avengers', 'Joss Whedon', '2012-04-20', 3, 'Lorsque Nick Fury, le directeur du S.H.I.E.L.D., l\'organisation qui préserve la paix au plan mondial, cherche à former une équipe de choc pour empêcher la destruction du monde, Iron Man, Hulk, Thor, Captain America, Hawkeye et Black Widow répondent présents.\r\nLes Avengers ont beau constituer la plus fantastique des équipes, il leur reste encore à apprendre à travailler ensemble, et non les uns contre les autres, d\'autant que le redoutable Loki a réussi à accéder au Cube Cosmique et à son pouvoir illimité... '),
+(2, 'Avengers : L’Ère d’Ultron ', 'Joss Whedon', '2015-04-22', 2, 'Alors que Tony Stark tente de relancer un programme de maintien de la paix jusque-là suspendu, les choses tournent mal et les super-héros Iron Man, Captain America, Thor, Hulk, Black Widow et Hawkeye vont devoir à nouveau unir leurs forces pour combattre le plus puissant de leurs adversaires : le terrible Ultron, un être technologique terrifiant qui s’est juré d’éradiquer l’espèce humaine.\r\nAfin d’empêcher celui-ci d’accomplir ses sombres desseins, des alliances inattendues se scellent, les entraînant dans une incroyable aventure et une haletante course contre le temps… '),
+(3, 'Avengers : Infinity War', 'Joe Russo, Anthony Russo', '2018-04-25', 5, 'Les Avengers et leurs alliés devront être prêts à tout sacrifier pour neutraliser le redoutable Thanos avant que son attaque éclair ne conduise à la destruction complète de l’univers. '),
+(4, 'Avengers: Endgame', 'Joe Russo, Anthony Russo', '2019-04-24', 4, 'Thanos ayant anéanti la moitié de l’univers, les Avengers restants resserrent les rangs dans ce vingt-deuxième film des Studios Marvel, grande conclusion d’un des chapitres de l’Univers Cinématographique Marvel.');
 
 -- --------------------------------------------------------
 
@@ -156,8 +156,8 @@ INSERT INTO `Movies` (`title`, `director`, `date`, `rate`, `synopsis`, `id`) VAL
 
 CREATE TABLE `Users` (
   `id` int(11) NOT NULL,
-  `username` text DEFAULT NULL,
-  `password` text DEFAULT NULL
+  `username` text NOT NULL,
+  `password` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -176,12 +176,34 @@ INSERT INTO `Users` (`id`, `username`, `password`) VALUES
 -- Indexes for table `CharacterComments`
 --
 ALTER TABLE `CharacterComments`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_CharacterComments_characterId` (`characterId`),
+  ADD KEY `fk_CharacterComments_userId` (`userId`);
+
+--
+-- Indexes for table `Characters`
+--
+ALTER TABLE `Characters`
   ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `MovieComments`
 --
 ALTER TABLE `MovieComments`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_MovieComments_movieId` (`movieId`),
+  ADD KEY `fk_MovieComments_userId` (`userId`);
+
+--
+-- Indexes for table `Movies`
+--
+ALTER TABLE `Movies`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `Users`
+--
+ALTER TABLE `Users`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -198,7 +220,25 @@ ALTER TABLE `CharacterComments`
 -- AUTO_INCREMENT for table `MovieComments`
 --
 ALTER TABLE `MovieComments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `CharacterComments`
+--
+ALTER TABLE `CharacterComments`
+  ADD CONSTRAINT `fk_CharacterComments_characterId` FOREIGN KEY (`characterId`) REFERENCES `Characters` (`id`),
+  ADD CONSTRAINT `fk_CharacterComments_userId` FOREIGN KEY (`userId`) REFERENCES `Users` (`id`);
+
+--
+-- Constraints for table `MovieComments`
+--
+ALTER TABLE `MovieComments`
+  ADD CONSTRAINT `fk_MovieComments_movieId` FOREIGN KEY (`movieId`) REFERENCES `Movies` (`id`),
+  ADD CONSTRAINT `fk_MovieComments_userId` FOREIGN KEY (`userId`) REFERENCES `Users` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

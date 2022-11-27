@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 	<%@ include file="header.jsp" %>
-	<main id="mainLogin">
+	<main class="mainPage">
 	<%@ include file="menu.jsp" %>	
-		<a class="space" id="register" href = "register.jsp">Nouveau sur la page ?</a>
-		<form action="/logged" methode="post">
+		<a class="space" id="register" href="register">Nouveau sur la page ?</a>
+		<form id="formLogin" action="/logged" methode="post">
 			<div class="space">
 				<label for="username">Identifiant:</label><br>
 				<input type="text" id="username" name="username"><br>

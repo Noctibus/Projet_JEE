@@ -11,6 +11,11 @@ public class FrontController {
 		return "index";
 	}
 
+	@GetMapping("/index")
+	public String indexBis() {
+		return "index";
+	}
+
     @GetMapping("/movies")
 	public String movies() {
 		return "movies";

@@ -87,12 +87,11 @@ main{
 	margin-top: 180px;
 }
 
-#mainLogin{
+.mainPage{
     padding-bottom: 180px;
-    height: 600px;
 }
 
-form{
+#formLogin{
     padding-top: 30px;
 }
 
@@ -111,7 +110,7 @@ form{
 /* pied de page */
 
 footer{
-	font-family: Arial;
+	font-family: Comic;
 	height: 140px;
     position: absolute;
     bottom: 0;

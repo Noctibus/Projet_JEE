@@ -23,7 +23,7 @@ public class MovieCommentService {
         movieComment.setUser(user);
         movieComment.setMovie(movie);
         movieComment.setDate(date);
-        movieComment.setContent(content);
+        movieComment.setContent(content.substring(0, 499));
         movieCommentRepository.save(movieComment);
     }
 
@@ -59,7 +59,7 @@ public class MovieCommentService {
     //UPDATE
     public void editMovieComment(MovieComment movieComment,String newContent) {
         movieComment.setDate(new Date());
-        movieComment.setContent(newContent);
+        movieComment.setContent(newContent.substring(0, 499));
         movieCommentRepository.save(movieComment);
     }
 

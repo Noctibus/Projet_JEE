@@ -30,4 +30,9 @@ public class FrontController {
 	public String character() {
 		return "character";
 	}
+
+	@GetMapping("/movie")
+	public String movie() {
+		return "movie";
+	}
 }

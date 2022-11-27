@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<%@ include file="header.jsp" %>
-    <main class = "BigMain"> 	
+    <main> 	
 		<%@ include file="menu.jsp" %>
         <div><a href="character"> Nom du Hero</a></div>
     </main>

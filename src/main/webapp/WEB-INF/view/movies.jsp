@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<%@ include file="header.jsp" %>
-    <main> 	
+    <main class="bigMain"> 	
 		<%@ include file="menu.jsp" %>
 
 	  	<section id="templine">

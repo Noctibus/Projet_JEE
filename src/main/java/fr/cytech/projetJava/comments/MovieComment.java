@@ -7,11 +7,17 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+
+import fr.cytech.projetJava.login.User;
+import fr.cytech.projetJava.movie.Movie;
 
 
 @Entity
-@Table(name = "MovieComments")
+@Table(name="MovieComments")
 public class MovieComment {
 
 
@@ -20,45 +26,49 @@ public class MovieComment {
     @Column(name="id")
     private int id;
     
-    @Column(name="userId")
-    private int userID;
+    @ManyToOne
+    @JoinColumn(name="userId")
+    private User user;
 
-    @Column(name="movieId")
-    private int movieID;
+    @ManyToOne
+    @JoinColumn(name="movieId")
+    private Movie movie;
 
     @Column(name="date")
+    @NotNull
     private Date date;
 
     @Column(name="content")
+    @NotNull
     private String content;
 
 
     public int getId() {
-        return id;
+        return this.id;
     }
 
     public void setId(int id) {
         this.id = id;
     }
 
-    public int getMovieID() {
-        return movieID;
+    public User getUser() {
+        return this.user;
     }
 
-    public void setMovieID(int movieID) {
-        this.movieID = movieID;
+    public void setUser(User user) {
+        this.user = user;
     }
 
-    public int getUserID() {
-        return userID;
+    public Movie getMovie() {
+        return this.movie;
     }
 
-    public void setUserID(int userID) {
-        this.userID = userID;
+    public void setMovie(Movie movie) {
+        this.movie = movie;
     }
 
     public Date getDate() {
-        return date;
+        return this.date;
     }
 
     public void setDate(Date date) {
@@ -66,7 +76,7 @@ public class MovieComment {
     }
 
     public String getContent() {
-        return content;
+        return this.content;
     }
 
     public void setContent(String content) {
@@ -75,7 +85,7 @@ public class MovieComment {
 
     @Override
     public String toString() {
-        return "MovieComment [id=" + id + ", userID=" + userID + ", movieID=" + movieID + ", date=" + date+ ", content=" + content + "]";
+        return "MovieComment [id=" + id + ", user=" + user.getId() + ", movieID=" + movie.getId() + ", date=" + date+ ", content=" + content + "]";
     }
     
 

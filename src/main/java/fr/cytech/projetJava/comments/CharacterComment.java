@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 
 @Entity
@@ -21,15 +22,19 @@ public class CharacterComment {
     private int id;
 
     @Column(name="userId")
+    @NotNull
     private int userID;
     
     @Column(name="characterId")
+    @NotNull
     private int characterID;
 
     @Column(name="date")
+    @NotNull
     private Date date;
 
     @Column(name="content")
+    @NotNull
     private String content;
 
 

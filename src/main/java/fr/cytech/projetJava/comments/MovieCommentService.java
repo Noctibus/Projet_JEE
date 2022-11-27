@@ -6,6 +6,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import fr.cytech.projetJava.login.User;
+import fr.cytech.projetJava.movie.Movie;
+
 @Service
 public class MovieCommentService {
 
@@ -15,10 +18,10 @@ public class MovieCommentService {
 
 
     //CREATE
-    public void writeMovieComment(int userID,int movieID,Date date,String content) {
+    public void writeMovieComment(User user,Movie movie,Date date,String content) {
         MovieComment movieComment=new MovieComment();
-        movieComment.setUserID(userID);
-        movieComment.setMovieID(movieID);
+        movieComment.setUser(user);
+        movieComment.setMovie(movie);
         movieComment.setDate(date);
         movieComment.setContent(content);
         movieCommentRepository.save(movieComment);
@@ -29,25 +32,23 @@ public class MovieCommentService {
         return movieCommentRepository.findAll();
     }
 
-    public List<MovieComment> getMovieCommentsByMovieID(int movieID) {
-        return movieCommentRepository.findByMovieID(movieID);
+    public List<MovieComment> getMovieCommentsByMovie(Movie movie) {
+        return movieCommentRepository.findByMovie(movie);
     }
 
-    public List<MovieComment> getMovieCommentsByUserID(int userID) {
-        return movieCommentRepository.findByUserID(userID);
+    public List<MovieComment> getMovieCommentsByUser(User user) {
+        return movieCommentRepository.findByUser(user);
     }
 
     //UPDATE
-    public void editMovieComment(int id,String newContent) {
-        MovieComment movieComment=movieCommentRepository.findById(id);
+    public void editMovieComment(MovieComment movieComment,String newContent) {
         movieComment.setDate(new Date());
         movieComment.setContent(newContent);
         movieCommentRepository.save(movieComment);
     }
 
     //REMOVE
-    public void removeMovieComment(int id) {
-        MovieComment movieComment=movieCommentRepository.findById(id);
+    public void removeMovieComment(MovieComment movieComment) {
         movieCommentRepository.delete(movieComment);
     }
 

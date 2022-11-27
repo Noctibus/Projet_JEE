@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html>
 	<%@ include file="header.jsp" %>
-    <main> 	
+    <main class = "BigMain"> 	
 		<%@ include file="menu.jsp" %>
 
-	  	<section id="templine">
+	  	<div class="characterBox">
 			
-		</section>
+        </div>
 
 		<div class="comments">
 			<h2>Espace Commentaire</h2>
 			<div class="publiedComments">
 				<p style="color: black">blabla</p>
 			</div>
-			<form id="commentform" methode="post">
+			<form class="commentform" methode="post">
 				<div class="space">
 					<textarea name="comment" rows="6" cols="213" placeholder="Laisser un commentaire."></textarea>
 				</div>

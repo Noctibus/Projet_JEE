@@ -7,8 +7,13 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
+
+import fr.cytech.projetJava.login.User;
+import fr.cytech.projetJava.character.Character;
 
 
 @Entity
@@ -21,13 +26,13 @@ public class CharacterComment {
     @Column(name="id")
     private int id;
 
-    @Column(name="userId")
-    @NotNull
-    private int userID;
+    @ManyToOne
+    @JoinColumn(name="userId")
+    private User user;
     
-    @Column(name="characterId")
-    @NotNull
-    private int characterID;
+    @ManyToOne
+    @JoinColumn(name="characterId")
+    private Character character;
 
     @Column(name="date")
     @NotNull
@@ -39,27 +44,27 @@ public class CharacterComment {
 
 
     public int getId() {
-        return id;
+        return this.id;
     }
 
     public void setId(int id) {
         this.id = id;
     }
     
-    public int getUserID() {
-        return userID;
+    public User getUser() {
+        return this.user;
     }
 
-    public void setUserID(int userID) {
-        this.userID = userID;
+    public void setUser(User user) {
+        this.user = user;
     }
 
-    public int getCharacterID() {
-        return this.characterID;
+    public Character getCharacter() {
+        return this.character;
     }
 
-    public void setCharacterID(int characterID) {
-        this.characterID = characterID;
+    public void setCharacter(Character character) {
+        this.character = character;
     }
     
     public Date getDate() {
@@ -71,7 +76,7 @@ public class CharacterComment {
     }
 
     public String getContent() {
-        return content;
+        return this.content;
     }
 
     public void setContent(String content) {
@@ -80,7 +85,7 @@ public class CharacterComment {
 
     @Override
     public String toString() {
-        return "CharacterComment [id=" + id + ", userID=" + userID + ", characterID=" + characterID + ", date=" + date+ ", content=" + content + "]";
+        return "CharacterComment [id=" + id + ", user=" + user.getId() + ", character=" + character.getId() + ", date=" + date+ ", content=" + content + "]";
     }
 
 

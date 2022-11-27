@@ -12,7 +12,12 @@ import fr.cytech.projetJava.movie.Movie;
 public interface MovieCommentRepository extends JpaRepository<MovieComment,Integer>{
 
     public MovieComment findById(int ID);
+    public List<MovieComment> findAll();
     public List<MovieComment> findByMovie(Movie movie);
+    public List<MovieComment> findByMovieOrderByDateDesc(Movie movie);
+    public List<MovieComment> findByMovieOrderByDateAsc(Movie movie);
     public List<MovieComment> findByUser(User user);
+    public List<MovieComment> findByMovieOrderByDateDesc(User user);
+    public List<MovieComment> findByMovieOrderByDateAsc(User user);
     
 }

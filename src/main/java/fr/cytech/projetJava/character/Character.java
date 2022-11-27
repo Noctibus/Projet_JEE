@@ -23,7 +23,7 @@ public class Character {
     @NotNull
     private String identity;
 
-    @Column(name = "hero's name")
+    @Column(name = "herosName")
     @NotNull
     private String herosName;
 

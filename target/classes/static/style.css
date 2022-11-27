@@ -5,13 +5,16 @@
 
 body{
 	height: 100%;
-	background-color: rgb(45, 53, 90);
+	background-color: rgb(64, 74, 121);
 	font-family: Avengers;
-	background-image: url("stars.png");
 	background-repeat:no-repeat;
 	background-position:center center;
 	color: white;
 	margin: 0;
+}
+
+.stars{
+	background-image: url("stars.png");
 }
 
 @font-face{
@@ -44,22 +47,27 @@ a:hover {
 }
 
 #menu a{
-	margin: 50px;
+	margin: 100px;
 }
 
-
+#menu{
+    margin-bottom: 100px;
+}
 
 /* partie principale */
 
 main{
 	font-weight: bold;
-	height: 600px;
+	height: 640px;
 	font-size: 18px;
-	padding-bottom: 122px;
 }
 
-#mainfilm{
-	padding-bottom: 180px;
+#mainIndex{
+	height: 585px;
+}
+
+#mainMovies{
+	margin-bottom: 800px;
 }
 
 #pages{
@@ -83,14 +91,51 @@ main{
 	background-color: aliceblue;
 	height: 200px;
 	margin-top: 180px;
+	margin-bottom: 180px;
 }
+
+#formLogin{
+    padding-top: 30px;
+}
+
+.space{
+    margin: 30px;
+}
+
+#register{
+    color: blueviolet;
+}
+
+#register:hover{
+    color: rgb(238, 34, 34);
+}
+
+.comments{
+	height: 700px;
+	background-color: rgb(35, 40, 66);
+	border: 1px;
+	border-style: solid;
+	border-color: black;
+	margin: 50px;
+}
+
+.publiedComments{
+	height: 400px;
+	border: 1px;
+	border-style: solid;
+	border-color: black;
+	background-color: aliceblue;
+	margin-left: 100px;
+	margin-right: 100px;
+}
+
 
 /* pied de page */
 
 footer{
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: Comic;
 	height: 140px;
-    position: absolute;
+    position: relative;
     bottom: 0;
 	width:100%;
 	background-color: rgb(35, 40, 66);

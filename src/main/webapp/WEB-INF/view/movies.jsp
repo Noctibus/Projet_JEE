@@ -1,14 +1,26 @@
 <!DOCTYPE html>
 <html>
 	<%@ include file="header.jsp" %>
-    <main id="mainMovie"> 	
+    <main id = "mainMovies"> 	
 		<%@ include file="menu.jsp" %>
 
-	  	<div id="templine">
-			<p>Bonjour, il est <%=new java.util.Date()%></p>
-			<%=new MovieComment()%>
-	  	</div>
+	  	<section id="templine">
+			
+		</section>
+
+		<div class="comments">
+			<h2>Espace Commentaire</h2>
+			<div class="publiedComments">
+				<p style="color: black">blabla</p>
+			</div>
+			<form id="commentform" methode="post">
+				<div class="space">
+					<textarea name="comment" rows="6" cols="213" placeholder="Laisser un commentaire."></textarea>
+				</div>
+				<input type="submit" value="Publier">
+			</form>
+			
+		</div>
     </main>
 	<%@ include file="footer.jsp" %>
-
 </html>

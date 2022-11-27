@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
-	<%@ include file="header.jsp" %>
-    <main>
+	<%@ include file="headerStars.jsp" %>
+    <main id="mainIndex">
      
 		<section id="intro" >
 		<div>        
@@ -15,13 +15,13 @@
 					<div><a href="movies">Films</a></div>
 					<div><a href="characters">Personnages</a></div>
 					<div><a href="login" id="white">Connexion</a></div>
-					<object>
+					<object id="music">
 						<param name="autostart" value="true">
 						<param name="src" value="avengers.mp3">
 						<param name="autoplay" value="true"> 
 						<param name="controller" value="true">
-						<embed src="avengers.mp3" controller="true" autoplay="true" autostart="true" type="audio/mp3" />
-						</object>
+						<audio src="avengers.mp3" controller="true" autoplay="true" autostart="true" type="audio/mp3" />
+					</object>
 					
 			</div>
 		</section>

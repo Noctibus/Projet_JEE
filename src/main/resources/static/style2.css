@@ -107,6 +107,11 @@ main{
     color: rgb(238, 34, 34);
 }
 
+#commentForm{
+	min-height: 500px;
+	background-color: aliceblue;
+}
+
 /* pied de page */
 
 footer{

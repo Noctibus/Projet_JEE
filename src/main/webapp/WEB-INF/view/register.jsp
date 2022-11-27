@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-    <%@ include file="header.jsp" %>
+    <%@ include file="headerStars.jsp" %>
     <main class="mainPage">
         <%@ include file="menu.jsp" %>
         <form action="/registerNewUser" method="post">

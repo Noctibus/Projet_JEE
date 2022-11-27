@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-	<%@ include file="header.jsp" %>
+	<%@ include file="headerStars.jsp" %>
 	<main class="mainPage">
 	<%@ include file="menu.jsp" %>	
 		<a class="space" id="register" href="register">Nouveau sur la page ?</a>

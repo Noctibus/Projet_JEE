@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: mariadb:3306
--- Generation Time: Nov 25, 2022 at 07:26 AM
--- Server version: 10.6.10-MariaDB-1:10.6.10+maria~ubu2004
--- PHP Version: 8.0.24
+-- Generation Time: Nov 27, 2022 at 03:03 AM
+-- Server version: 10.6.11-MariaDB-1:10.6.11+maria~ubu2004
+-- PHP Version: 8.0.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,6 +24,20 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `CharacterComments`
+--
+
+CREATE TABLE `CharacterComments` (
+  `id` int(11) NOT NULL,
+  `userId` int(11) NOT NULL,
+  `characterId` int(11) NOT NULL,
+  `date` datetime NOT NULL,
+  `content` varchar(500) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `CharacterRates`
 --
 
@@ -32,7 +46,7 @@ CREATE TABLE `CharacterRates` (
   `userID` int(11) NOT NULL,
   `value` int(11) NOT NULL,
   `characterID` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -51,7 +65,7 @@ CREATE TABLE `Characters` (
   `avengers3` tinyint(4) NOT NULL DEFAULT 1,
   `avengers4` tinyint(4) NOT NULL DEFAULT 1,
   `status` tinyint(1) NOT NULL DEFAULT 1
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `Characters`
@@ -84,6 +98,19 @@ INSERT INTO `Characters` (`Id`, `identity`, `hero's name`, `actor`, `origins`, `
 
 -- --------------------------------------------------------
 
+--
+-- Table structure for table `MovieComments`
+--
+
+CREATE TABLE `MovieComments` (
+  `id` int(11) NOT NULL,
+  `userId` int(11) NOT NULL,
+  `movieId` int(11) NOT NULL,
+  `date` datetime NOT NULL,
+  `content` varchar(500) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `MovieRates`
@@ -94,7 +121,7 @@ CREATE TABLE `MovieRates` (
   `userID` int(11) NOT NULL,
   `value` int(11) NOT NULL,
   `movieID` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -109,7 +136,7 @@ CREATE TABLE `Movies` (
   `rate` float(5,0) DEFAULT NULL,
   `synopsis` text DEFAULT NULL,
   `id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `Movies`
@@ -131,7 +158,7 @@ CREATE TABLE `Users` (
   `id` int(11) NOT NULL,
   `username` text DEFAULT NULL,
   `password` text DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `Users`
@@ -140,6 +167,38 @@ CREATE TABLE `Users` (
 INSERT INTO `Users` (`id`, `username`, `password`) VALUES
 (2001, 'Bob', '0000'),
 (3001, 'Bob', '0000');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `CharacterComments`
+--
+ALTER TABLE `CharacterComments`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `MovieComments`
+--
+ALTER TABLE `MovieComments`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `CharacterComments`
+--
+ALTER TABLE `CharacterComments`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `MovieComments`
+--
+ALTER TABLE `MovieComments`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

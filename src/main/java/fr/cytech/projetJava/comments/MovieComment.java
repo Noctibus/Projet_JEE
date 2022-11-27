@@ -11,7 +11,7 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table(name = "MovieComment")
+@Table(name = "MovieComments")
 public class MovieComment {
 
 
@@ -19,12 +19,12 @@ public class MovieComment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
     private int id;
-
-    @Column(name="idMovie")
-    private int movieID;
     
-    @Column(name="idUser")
+    @Column(name="userId")
     private int userID;
+
+    @Column(name="movieId")
+    private int movieID;
 
     @Column(name="date")
     private Date date;

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: mariadb:3306
--- Generation Time: Nov 27, 2022 at 01:30 PM
+-- Generation Time: Nov 27, 2022 at 05:07 PM
 -- Server version: 10.6.11-MariaDB-1:10.6.11+maria~ubu2004
 -- PHP Version: 8.0.25
 
@@ -60,10 +60,10 @@ CREATE TABLE `Characters` (
   `hero's name` text DEFAULT NULL,
   `actor` text NOT NULL,
   `origins` text NOT NULL,
-  `avengers1` tinyint(4) NOT NULL DEFAULT 1,
-  `avengers2` tinyint(4) NOT NULL DEFAULT 1,
-  `avengers3` tinyint(4) NOT NULL DEFAULT 1,
-  `avengers4` tinyint(4) NOT NULL DEFAULT 1,
+  `avengers1` tinyint(1) NOT NULL DEFAULT 1,
+  `avengers2` tinyint(1) NOT NULL DEFAULT 1,
+  `avengers3` tinyint(1) NOT NULL DEFAULT 1,
+  `avengers4` tinyint(1) NOT NULL DEFAULT 1,
   `status` tinyint(1) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -109,6 +109,15 @@ CREATE TABLE `MovieComments` (
   `date` datetime NOT NULL,
   `content` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `MovieComments`
+--
+
+INSERT INTO `MovieComments` (`id`, `userId`, `movieId`, `date`, `content`) VALUES
+(5, 3001, 1, '2022-11-27 15:17:47', 'comment1'),
+(6, 3001, 4, '2022-11-27 14:20:31', 'comment2'),
+(7, 3001, 1, '2022-11-27 15:19:01', 'comment3');
 
 -- --------------------------------------------------------
 
@@ -220,7 +229,7 @@ ALTER TABLE `CharacterComments`
 -- AUTO_INCREMENT for table `MovieComments`
 --
 ALTER TABLE `MovieComments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Constraints for dumped tables

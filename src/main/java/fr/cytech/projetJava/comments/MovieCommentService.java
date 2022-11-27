@@ -36,8 +36,24 @@ public class MovieCommentService {
         return movieCommentRepository.findByMovie(movie);
     }
 
+    public List<MovieComment> getMovieCommentsByMovieNewestFirst(Movie movie) {
+        return movieCommentRepository.findByMovieOrderByDateDesc(movie);
+    }
+
+    public List<MovieComment> getMovieCommentsByMovieOldestFirst(Movie movie) {
+        return movieCommentRepository.findByMovieOrderByDateAsc(movie);
+    }
+
     public List<MovieComment> getMovieCommentsByUser(User user) {
         return movieCommentRepository.findByUser(user);
+    }
+
+    public List<MovieComment> getMovieCommentsByUserNewestFirst(User user) {
+        return movieCommentRepository.findByMovieOrderByDateDesc(user);
+    }
+
+    public List<MovieComment> getMovieCommentsByUserOldestFirst(User user) {
+        return movieCommentRepository.findByMovieOrderByDateAsc(user);
     }
 
     //UPDATE

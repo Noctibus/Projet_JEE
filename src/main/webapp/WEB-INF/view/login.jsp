@@ -1,16 +1,21 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-	<head>
-		<meta charset="UTF-8">
-		<!-- <title>Insert title here</title> -->
-	</head>
-	<body>
+<html>
+	<%@ include file="header.jsp" %>
+	<main id="mainLogin">
+	<%@ include file="menu.jsp" %>	
+		<a class="space" id="register" href = "register.jsp">Nouveau sur la page ?</a>
 		<form action="/logged" methode="post">
-			<label for="username">Username:</label><br>
-			<input type="text" id="username" name="username"><br>
-			<label for="password">Password:</label><br>
-			<input type="text" id="password" name="password"><br><br>
-			<input type="submit" value="Submit">
+			<div class="space">
+				<label for="username">Identifiant:</label><br>
+				<input type="text" id="username" name="username"><br>
+			</div>
+			<div class="space">
+				<label for="password">Mot de passe:</label><br>
+				<input type="text" id="password" name="password"><br><br>
+			</div>
+			<input type="submit" value="Connexion">
 		</form>
-	</body>
+
+	</main>
+	<%@ include file="footer.jsp" %>
 </html>

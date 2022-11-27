@@ -5,7 +5,7 @@
 
 body{
 	height: 100%;
-	background-color: rgb(45, 53, 90);
+	background-color: rgb(64, 74, 121);
 	font-family: Avengers;
 	background-image: url("stars.png");
 	background-repeat:no-repeat;
@@ -47,7 +47,9 @@ a:hover {
 	margin: 50px;
 }
 
-
+#menu{
+    margin-bottom: 100px;
+}
 
 /* partie principale */
 
@@ -58,7 +60,7 @@ main{
 	padding-bottom: 122px;
 }
 
-#mainfilm{
+#mainMovie{
 	padding-bottom: 180px;
 }
 
@@ -85,10 +87,31 @@ main{
 	margin-top: 180px;
 }
 
+#mainLogin{
+    padding-bottom: 180px;
+    height: 600px;
+}
+
+form{
+    padding-top: 30px;
+}
+
+.space{
+    margin: 30px;
+}
+
+#register{
+    color: blueviolet;
+}
+
+#register:hover{
+    color: rgb(238, 34, 34);
+}
+
 /* pied de page */
 
 footer{
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: Arial;
 	height: 140px;
     position: absolute;
     bottom: 0;

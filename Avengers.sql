@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: mariadb:3306
--- Generation Time: Nov 28, 2022 at 09:49 AM
--- Server version: 10.6.10-MariaDB-1:10.6.10+maria~ubu2004
--- PHP Version: 8.0.24
+-- Generation Time: Nov 28, 2022 at 04:20 PM
+-- Server version: 10.6.11-MariaDB-1:10.6.11+maria~ubu2004
+-- PHP Version: 8.0.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -33,7 +33,7 @@ CREATE TABLE `CharacterComments` (
   `characterId` int(11) NOT NULL,
   `date` datetime NOT NULL,
   `content` varchar(500) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -46,7 +46,7 @@ CREATE TABLE `CharacterRates` (
   `userID` int(11) NOT NULL,
   `value` int(11) NOT NULL,
   `characterID` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -57,7 +57,7 @@ CREATE TABLE `CharacterRates` (
 CREATE TABLE `Characters` (
   `id` int(11) NOT NULL,
   `identity` text DEFAULT NULL,
-  `hero's name` text DEFAULT NULL,
+  `herosName` text DEFAULT NULL,
   `actor` text NOT NULL,
   `origins` text NOT NULL,
   `avengers1` tinyint(1) NOT NULL DEFAULT 1,
@@ -65,13 +65,13 @@ CREATE TABLE `Characters` (
   `avengers3` tinyint(1) NOT NULL DEFAULT 1,
   `avengers4` tinyint(1) NOT NULL DEFAULT 1,
   `status` tinyint(1) NOT NULL DEFAULT 1
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `Characters`
 --
 
-INSERT INTO `Characters` (`id`, `identity`, `hero's name`, `actor`, `origins`, `avengers1`, `avengers2`, `avengers3`, `avengers4`, `status`) VALUES
+INSERT INTO `Characters` (`id`, `identity`, `herosName`, `actor`, `origins`, `avengers1`, `avengers2`, `avengers3`, `avengers4`, `status`) VALUES
 (1, 'Anthony Stark', 'Iron Man', 'Robert Downey Jr.', 'Anthony Edward « Tony » Stark est un industriel américain, née à Long Island dans l\'État de New York fils de Howard Stark un scientifique avec un goût prononcé pour l\'alcool à la tête de Stark Industries et de Maria Collins-Carbonell Stark. Avec l\'entreprise de son père, il fabrique notamment des armes pour le gouvernement américain. Cela l\'amène à se rendre au Viet Nâm alors en guerre contre les États-Unis pour démontrer la puissance des «transistors» qui permettent de décupler la puissance de n\'importe quelle arme. Mais il saute malencontreusement sur une mine qui projette des éclats près de son cœur.', 1, 1, 1, 1, 0),
 (2, 'Thor', NULL, 'Chris Hemsworth\r\n', 'Dans la mythologie scandinave, Thor (en vieux norrois : Þórr, littéralement « foudre ») est le dieu du tonnerre, de la guerre et de la forge. C\'est un dieu guerrier très puissant qui représente le combat, la force et le courage. Il est grand et fort. C\'est un gros mangeur et buveur.', 1, 1, 1, 1, 1),
 (3, 'Bruce Banner', 'Hulk', 'Mark Ruffalo, Eric Bana', 'Quand Bruce Banner reçut des rayons gamma de plein fouet, il fut condamné à se transformer en colosse vert, dès qu\'il se met en colère.', 1, 1, 1, 1, 1),
@@ -108,7 +108,7 @@ CREATE TABLE `MovieComments` (
   `movieId` int(11) NOT NULL,
   `date` datetime NOT NULL,
   `content` varchar(500) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -121,7 +121,7 @@ CREATE TABLE `MovieRates` (
   `userID` int(11) NOT NULL,
   `value` int(11) NOT NULL,
   `movieID` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -136,7 +136,7 @@ CREATE TABLE `Movies` (
   `date` date NOT NULL,
   `rate` float(5,0) NOT NULL DEFAULT 3,
   `synopsis` text DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `Movies`
@@ -158,7 +158,7 @@ CREATE TABLE `Users` (
   `id` int(11) NOT NULL,
   `username` text NOT NULL,
   `password` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Indexes for dumped tables
@@ -222,7 +222,7 @@ ALTER TABLE `Users`
 -- AUTO_INCREMENT for table `CharacterComments`
 --
 ALTER TABLE `CharacterComments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `CharacterRates`
@@ -234,19 +234,19 @@ ALTER TABLE `CharacterRates`
 -- AUTO_INCREMENT for table `MovieComments`
 --
 ALTER TABLE `MovieComments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `MovieRates`
 --
 ALTER TABLE `MovieRates`
-  MODIFY `movieRateID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `movieRateID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `Users`
 --
 ALTER TABLE `Users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3006;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Constraints for dumped tables
@@ -256,29 +256,29 @@ ALTER TABLE `Users`
 -- Constraints for table `CharacterComments`
 --
 ALTER TABLE `CharacterComments`
-  ADD CONSTRAINT `fk_CharacterComments_characterId` FOREIGN KEY (`characterId`) REFERENCES `Characters` (`id`),
-  ADD CONSTRAINT `fk_CharacterComments_userId` FOREIGN KEY (`userId`) REFERENCES `Users` (`id`);
+  ADD CONSTRAINT `fk_CharacterComments_characterId` FOREIGN KEY (`characterId`) REFERENCES `Characters` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_CharacterComments_userId` FOREIGN KEY (`userId`) REFERENCES `Users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `CharacterRates`
 --
 ALTER TABLE `CharacterRates`
-  ADD CONSTRAINT `fk_CharacterRates_characterId` FOREIGN KEY (`characterID`) REFERENCES `Characters` (`id`),
-  ADD CONSTRAINT `fk_CharacterRates_userId` FOREIGN KEY (`userID`) REFERENCES `Users` (`id`);
+  ADD CONSTRAINT `fk_CharacterRates_characterId` FOREIGN KEY (`characterID`) REFERENCES `Characters` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_CharacterRates_userId` FOREIGN KEY (`userID`) REFERENCES `Users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `MovieComments`
 --
 ALTER TABLE `MovieComments`
-  ADD CONSTRAINT `fk_MovieComments_movieId` FOREIGN KEY (`movieId`) REFERENCES `Movies` (`id`),
-  ADD CONSTRAINT `fk_MovieComments_userId` FOREIGN KEY (`userId`) REFERENCES `Users` (`id`);
+  ADD CONSTRAINT `fk_MovieComments_movieId` FOREIGN KEY (`movieId`) REFERENCES `Movies` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_MovieComments_userId` FOREIGN KEY (`userId`) REFERENCES `Users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `MovieRates`
 --
 ALTER TABLE `MovieRates`
-  ADD CONSTRAINT `fk_MovieRates_movieId` FOREIGN KEY (`movieID`) REFERENCES `Movies` (`id`),
-  ADD CONSTRAINT `fk_MovieRates_userId` FOREIGN KEY (`userID`) REFERENCES `Users` (`id`);
+  ADD CONSTRAINT `fk_MovieRates_movieId` FOREIGN KEY (`movieID`) REFERENCES `Movies` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_MovieRates_userId` FOREIGN KEY (`userID`) REFERENCES `Users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

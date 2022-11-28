@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: mariadb:3306
--- Generation Time: Nov 28, 2022 at 07:26 AM
+-- Generation Time: Nov 28, 2022 at 09:49 AM
 -- Server version: 10.6.10-MariaDB-1:10.6.10+maria~ubu2004
 -- PHP Version: 8.0.24
 
@@ -110,15 +110,6 @@ CREATE TABLE `MovieComments` (
   `content` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `MovieComments`
---
-
-INSERT INTO `MovieComments` (`id`, `userId`, `movieId`, `date`, `content`) VALUES
-(5, 3001, 1, '2022-11-27 15:17:47', 'comment1'),
-(6, 3001, 4, '2022-11-27 14:20:31', 'comment2'),
-(7, 3001, 1, '2022-11-27 15:19:01', 'comment3');
-
 -- --------------------------------------------------------
 
 --
@@ -170,14 +161,6 @@ CREATE TABLE `Users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `Users`
---
-
-INSERT INTO `Users` (`id`, `username`, `password`) VALUES
-(2001, 'Bob', '0000'),
-(3001, 'Bob', '0000');
-
---
 -- Indexes for dumped tables
 --
 
@@ -193,7 +176,9 @@ ALTER TABLE `CharacterComments`
 -- Indexes for table `CharacterRates`
 --
 ALTER TABLE `CharacterRates`
-  ADD PRIMARY KEY (`characterRateID`);
+  ADD PRIMARY KEY (`characterRateID`),
+  ADD KEY `fk_CharacterRates_userId` (`userID`),
+  ADD KEY `fk_CharacterRates_characterId` (`characterID`);
 
 --
 -- Indexes for table `Characters`
@@ -213,7 +198,9 @@ ALTER TABLE `MovieComments`
 -- Indexes for table `MovieRates`
 --
 ALTER TABLE `MovieRates`
-  ADD PRIMARY KEY (`movieRateID`);
+  ADD PRIMARY KEY (`movieRateID`),
+  ADD KEY `fk_MovieRates_userId` (`userID`),
+  ADD KEY `fk_MovieRates_movieId` (`movieID`);
 
 --
 -- Indexes for table `Movies`
@@ -253,7 +240,13 @@ ALTER TABLE `MovieComments`
 -- AUTO_INCREMENT for table `MovieRates`
 --
 ALTER TABLE `MovieRates`
-  MODIFY `movieRateID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `movieRateID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `Users`
+--
+ALTER TABLE `Users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3006;
 
 --
 -- Constraints for dumped tables
@@ -267,11 +260,25 @@ ALTER TABLE `CharacterComments`
   ADD CONSTRAINT `fk_CharacterComments_userId` FOREIGN KEY (`userId`) REFERENCES `Users` (`id`);
 
 --
+-- Constraints for table `CharacterRates`
+--
+ALTER TABLE `CharacterRates`
+  ADD CONSTRAINT `fk_CharacterRates_characterId` FOREIGN KEY (`characterID`) REFERENCES `Characters` (`id`),
+  ADD CONSTRAINT `fk_CharacterRates_userId` FOREIGN KEY (`userID`) REFERENCES `Users` (`id`);
+
+--
 -- Constraints for table `MovieComments`
 --
 ALTER TABLE `MovieComments`
   ADD CONSTRAINT `fk_MovieComments_movieId` FOREIGN KEY (`movieId`) REFERENCES `Movies` (`id`),
   ADD CONSTRAINT `fk_MovieComments_userId` FOREIGN KEY (`userId`) REFERENCES `Users` (`id`);
+
+--
+-- Constraints for table `MovieRates`
+--
+ALTER TABLE `MovieRates`
+  ADD CONSTRAINT `fk_MovieRates_movieId` FOREIGN KEY (`movieID`) REFERENCES `Movies` (`id`),
+  ADD CONSTRAINT `fk_MovieRates_userId` FOREIGN KEY (`userID`) REFERENCES `Users` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

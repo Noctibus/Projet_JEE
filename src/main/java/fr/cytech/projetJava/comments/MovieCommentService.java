@@ -63,7 +63,7 @@ public class MovieCommentService {
         movieCommentRepository.save(movieComment);
     }
 
-    //REMOVE
+    //DELETE
     public void removeMovieComment(MovieComment movieComment) {
         movieCommentRepository.delete(movieComment);
     }

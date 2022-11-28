@@ -63,7 +63,7 @@ public class CharacterCommentService {
         characterCommentRepository.save(characterComment);
     }
 
-    //REMOVE
+    //DELETE
     public void removeCharacterComment(CharacterComment characterComment) {
         characterCommentRepository.delete(characterComment);
     }

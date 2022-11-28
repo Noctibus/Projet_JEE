@@ -14,21 +14,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class LoginController {
 	@Autowired
- 	UserRepository userRepository;
+	UserService userService;
 	public User user;
-
-	public String checkSessionUser(String goodPage, HttpSession session) {
-		User user = (User)session.getAttribute("user");
-		if(user != null) {
-			return goodPage;
-		}
-		return "/login";
-	}
 
 	@PostMapping("/checkUser")
 	public String checkUser(HttpSession session, @RequestParam("username") String username, @RequestParam("password") String password) {
 		String page = "redirect:register";
-		User usr = userRepository.findByUsername(username);
+		User usr = userService.getUserByUsername(username);
 		if (!Objects.isNull(usr)) {
 			if (usr.getPassword().equals(password)) {
 				page = "redirect:logged";
@@ -48,22 +40,22 @@ public class LoginController {
 	
 	@GetMapping("/logged")
 	public String logged(HttpSession session) {
-		return checkSessionUser("logged", session);
+		return userService.checkSessionUser("logged", session);
 	}
 	
 	@GetMapping("/register")
 	public String register(Model model, HttpSession session) {
-		return checkSessionUser("register", session);
+		return userService.checkSessionUser("register", session);
 	}
 
 	@PostMapping("/registerNewUser")
 	public String registerNewUser(Model model,@RequestParam("username") String username,@RequestParam("password1") String password1,@RequestParam("password2") String password2) {
 		String page = "redirect:register";
-		User usr = userRepository.findByUsername(user.getUsername());
+		User usr = userService.getUserByUsername(user.getUsername());
 		if (Objects.isNull(usr) && password1.equals(password2)) {
 			user.setUsername(username);
 			user.setPassword(password1);
-			userRepository.save(user);
+			userService.saveUser(user);
 
 			page = "redirect:logged";
 		}

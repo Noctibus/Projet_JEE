@@ -8,8 +8,10 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserService {
 
+
     @Autowired
  	private UserRepository userRepository;
+
 
     public User getByUsername(String username) {
         return userRepository.findByUsername(username);
@@ -19,17 +21,19 @@ public class UserService {
         return userRepository.findById(id);
     }
     
-    public void createUser(String username, String password) {
-        User user = new User();
-        user.setUsername(username);
-        user.setPassword(password);
+    public boolean createUser(String username, String password) {
+        User alreadyExists = userRepository.findByUsername(username);
+        if(alreadyExists==null) {
+            User user=new User();
+            user.setUsername(username);
+            user.setPassword(password);
+            userRepository.save(user);
+        }
+        return(alreadyExists==null);
     }
 
-    public String checkSessionUser(String goodPage, HttpSession session) {
+    public boolean isConnected(HttpSession session) {
 		User user = (User)session.getAttribute("user");
-		if(user != null) {
-			return goodPage;
-		}
-		return "/login";
+		return(user != null);
 	}
 }

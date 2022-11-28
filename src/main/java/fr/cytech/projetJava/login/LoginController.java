@@ -20,7 +20,7 @@ public class LoginController {
 	@PostMapping("/checkUser")
 	public String checkUser(HttpSession session, @RequestParam("username") String username, @RequestParam("password") String password) {
 		String page = "redirect:register";
-		User usr = userService.getUserByUsername(username);
+		User usr = userService.getByUsername(username);
 		if (!Objects.isNull(usr)) {
 			if (usr.getPassword().equals(password)) {
 				page = "redirect:logged";
@@ -51,11 +51,11 @@ public class LoginController {
 	@PostMapping("/registerNewUser")
 	public String registerNewUser(Model model,@RequestParam("username") String username,@RequestParam("password1") String password1,@RequestParam("password2") String password2) {
 		String page = "redirect:register";
-		User usr = userService.getUserByUsername(user.getUsername());
+		User usr = userService.getByUsername(user.getUsername());
 		if (Objects.isNull(usr) && password1.equals(password2)) {
 			user.setUsername(username);
 			user.setPassword(password1);
-			userService.saveUser(user);
+			userService.createUser(username, password1);
 
 			page = "redirect:logged";
 		}

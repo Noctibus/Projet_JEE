@@ -4,7 +4,7 @@
 	<main class="mainPage">
 	<%@ include file="menu.jsp" %>	
 		<a class="space" id="register" href="register">Nouveau sur la page ?</a>
-		<form id="formLogin" action="/logged" methode="post">
+		<form id="formLogin" action="/checkUser" method="post">
 			<div class="space">
 				<label for="username">Identifiant:</label><br>
 				<input type="text" id="username" name="username"><br>
@@ -15,7 +15,7 @@
 			</div>
 			<input type="submit" value="Connexion">
 		</form>
-
+		<a href="logout"><button>Logout</button></a>
 	</main>
 	<%@ include file="footer.jsp" %>
 </html>

@@ -5,7 +5,7 @@
      
 		<section id="intro" >
 		<div>        
-			<h1>Bienvenue dans l'univers des Avengers!</h1>         
+			<h1>Bienvenue dans l'univers des Avengers !</h1>         
 			<p>Vous pouvez retrouver sur ce site tous les films Avengers ainsi que les personnages les plus iconics de l'univers Marvel. </p>
 		</div>
 		</section>

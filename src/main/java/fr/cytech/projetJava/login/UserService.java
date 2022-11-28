@@ -23,7 +23,6 @@ public class UserService {
         User user = new User();
         user.setUsername(username);
         user.setPassword(password);
-        userRepository.save(user);
     }
 
     public String checkSessionUser(String goodPage, HttpSession session) {

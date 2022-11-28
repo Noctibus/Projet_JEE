@@ -83,6 +83,6 @@ public class Movie {
 
     @Override
     public String toString() {
-        return "avengers" + this.getId() + ".jpg";
+     return "<img style='width: 300px; height: 400px; margin-top: -90px;' src= 'avengers" + this.getId() + ".jpg'/>";
     }
 }

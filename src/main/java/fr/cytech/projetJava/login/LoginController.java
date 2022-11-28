@@ -40,23 +40,22 @@ public class LoginController {
 	
 	@GetMapping("/logged")
 	public String logged(HttpSession session) {
-		return userService.checkSessionUser("logged", session);
+		if(userService.isConnected(session)) {
+			return "logged";
+		} 
+		return "login";
 	}
 	
 	@GetMapping("/register")
-	public String register(Model model, HttpSession session) {
-		return userService.checkSessionUser("register", session);
+	public boolean register(Model model, HttpSession session) {
+		return userService.isConnected(session);
 	}
 
 	@PostMapping("/registerNewUser")
 	public String registerNewUser(Model model,@RequestParam("username") String username,@RequestParam("password1") String password1,@RequestParam("password2") String password2) {
 		String page = "redirect:register";
-		User usr = userService.getByUsername(user.getUsername());
-		if (Objects.isNull(usr) && password1.equals(password2)) {
-			user.setUsername(username);
-			user.setPassword(password1);
+		if (password1.equals(password2)) {
 			userService.createUser(username, password1);
-
 			page = "redirect:logged";
 		}
 		return page;

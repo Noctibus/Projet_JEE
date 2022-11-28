@@ -4,7 +4,7 @@
           <img id="marvel" src="marvel.png" />
      </div>
     <div id="names">
-        Concepteurs: Debet Stanislas, Coyla Timoteï;, Morales Rapha&euml;l & Godet M&eacute;lissa
+        Concepteurs: Debet Stanislas, Coyla Timoteï;, Morales Raphaë;l & Godet Mélissa
     </div>
     <div>
         <p><a href="contact">Nous contacter</a></p>

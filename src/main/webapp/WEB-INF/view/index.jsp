@@ -20,7 +20,7 @@
 						<param name="src" value="avengers.mp3">
 						<param name="autoplay" value="true"> 
 						<param name="controller" value="true">
-						<audio src="avengers.mp3" controller="true" autoplay="true" autostart="true" type="audio/mp3" />
+						<embed src="avengers.mp3" controller="true" autoplay="true" autostart="true" type="audio/mp3" />
 					</object>
 					
 			</div>

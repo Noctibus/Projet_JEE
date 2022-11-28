@@ -83,6 +83,6 @@ public class Movie {
 
     @Override
     public String toString() {
-        return "avengers" + this.id + ".jpg";
+        return "avengers" + this.getId() + ".jpg";
     }
 }

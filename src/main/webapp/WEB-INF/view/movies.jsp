@@ -1,3 +1,4 @@
+<%@ taglib uri='http://java.sun.com/jsp/jstl/core' prefix='c'%>
 <!DOCTYPE html>
 <html>
 	<%@ include file="header.jsp" %>
@@ -5,6 +6,10 @@
 		<%@ include file="menu.jsp" %>
 
 	  	<section id="templine">
+			<c:forEach var="i" begin="0" end="3">
+				<c:set var="poster" value="${movies[i].toString()}"/>
+				<a href="movie" class="space" id="poster">${poster}</span>
+			</c:forEach>
 			
 		</section>
 

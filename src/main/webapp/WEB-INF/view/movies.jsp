@@ -15,7 +15,7 @@
 		</section>
 
 		<div class="comments">
-			<h2>Espace Commentaire</h2>
+			<h2 class="avengersFont">Espace Commentaire</h2>
 			<div class="publiedComments">
 				<p style="color: black">blabla</p>
 			</div>

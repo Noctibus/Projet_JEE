@@ -23,7 +23,7 @@
         </div>
 
 		<div class="comments">
-			<h2>Espace Commentaire</h2>
+			<h2 class="avengersFont">Espace Commentaire</h2>
 			<div class="publiedComments">
 				<p style="color: black">blabla</p>
 			</div>
@@ -31,7 +31,6 @@
 				<div class="space">
 					<textarea id="commentSpace" rows="6" cols="213" placeholder="Laisser un commentaire."></textarea>
 				</div>
-				<input type="submit" value="Publier">
 			</form>
 			
 		</div>

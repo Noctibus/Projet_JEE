@@ -13,16 +13,25 @@ body{
 	margin: 0;
 }
 
+h1{
+	display: inline;
+}
+
+.avengersFont{
+	font-family: Avengers;
+}
+
 .stars{
 	background-image: url("stars.png");
 }
 
 @font-face{
-		font-family: Avengers;
-		src: url("avengers.ttf");
+	font-family: Avengers;
+	src: url("avengers.ttf");
 }
 
 #page {
+	overflow-y: scroll;
 	min-width: 100%;
     min-height: 100%;
     position: relative;
@@ -41,6 +50,10 @@ a:hover {
 
 /* entête */
 
+#welcome{
+	padding-top: 10px;
+}
+
 #logo{
 	width: 400px;
 	height: 150px;
@@ -51,6 +64,7 @@ a:hover {
 }
 
 #menu{
+	font-family: Avengers;
     margin-bottom: 100px;
 }
 
@@ -127,6 +141,10 @@ main{
 	background-color: aliceblue;
 	margin-left: 100px;
 	margin-right: 100px;
+}
+
+textarea{
+	resize: none;
 }
 
 .box{

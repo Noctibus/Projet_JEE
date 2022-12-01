@@ -1,3 +1,4 @@
+<%@ page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8" %>
 <%@ taglib uri='http://java.sun.com/jsp/jstl/core' prefix='c'%>
 <!DOCTYPE html>
 <html>
@@ -8,7 +9,7 @@
 	  	<section id="templine">
 			<c:forEach var="i" begin="0" end="3">
 				<c:set var="poster" value="${movies[i].toString()}"/>
-				<a href="movie" class="space" id="poster">${poster}</span>
+				<a href="movie?nb=${i}" class="space" id="poster">${poster}</a>
 			</c:forEach>
 			
 		</section>

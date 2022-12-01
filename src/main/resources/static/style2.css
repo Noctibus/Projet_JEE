@@ -6,12 +6,15 @@
 body{
 	height: 100%;
 	background-color: rgb(64, 74, 121);
-	font-family: Avengers;
-	background-image: url("stars.png");
+	font-family: Arial;
 	background-repeat:no-repeat;
 	background-position:center center;
 	color: white;
 	margin: 0;
+}
+
+.stars{
+	background-image: url("stars.png");
 }
 
 @font-face{
@@ -44,7 +47,7 @@ a:hover {
 }
 
 #menu a{
-	margin: 50px;
+	margin: 100px;
 }
 
 #menu{
@@ -55,13 +58,16 @@ a:hover {
 
 main{
 	font-weight: bold;
-	height: 600px;
+	height: 640px;
 	font-size: 18px;
-	padding-bottom: 122px;
 }
 
-#mainMovie{
-	padding-bottom: 180px;
+#mainIndex{
+	height: 585px;
+}
+
+.bigMain{
+	margin-bottom: 800px;
 }
 
 #pages{
@@ -85,10 +91,7 @@ main{
 	background-color: aliceblue;
 	height: 200px;
 	margin-top: 180px;
-}
-
-.mainPage{
-    padding-bottom: 180px;
+	margin-bottom: 180px;
 }
 
 #formLogin{
@@ -107,9 +110,49 @@ main{
     color: rgb(238, 34, 34);
 }
 
-#commentForm{
-	min-height: 500px;
+.comments{
+	height: 700px;
+	background-color: rgb(35, 40, 66);
+	border: 1px;
+	border-style: solid;
+	border-color: black;
+	margin: 50px;
+}
+
+.publiedComments{
+	height: 400px;
+	border: 1px;
+	border-style: solid;
+	border-color: black;
 	background-color: aliceblue;
+	margin-left: 100px;
+	margin-right: 100px;
+}
+
+.box{
+	height: 500px;
+	background-color: rgb(35, 40, 66);
+	border: 1px;
+	border-style: solid;
+	border-color: black;
+	margin: 50px;
+	text-align: left;
+	align-items: left;
+}
+
+.moviePoster{
+	float: left;
+	margin: 20px;
+	padding-top: 122px;
+}
+
+.desc{
+	text-align: left;
+	margin-bottom: 20px;
+}
+
+.descBox{
+	padding-top: 50px;
 }
 
 /* pied de page */
@@ -117,7 +160,7 @@ main{
 footer{
 	font-family: Comic;
 	height: 140px;
-    position: absolute;
+    position: relative;
     bottom: 0;
 	width:100%;
 	background-color: rgb(35, 40, 66);

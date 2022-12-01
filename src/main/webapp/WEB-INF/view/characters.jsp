@@ -1,6 +1,7 @@
+<%@ page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8" %>
 <!DOCTYPE html>
 <html>
-	<%@ include file="header.jsp" %>
+	<%@ include file="headerStars.jsp" %>
     <main> 	
 		<%@ include file="menu.jsp" %>
         <div><a href="character"> Nom du Hero</a></div>

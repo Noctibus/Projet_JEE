@@ -16,10 +16,10 @@ public class FrontController {
 		return "index";
 	}
 
-	@GetMapping("/movie")
+	/*@GetMapping("/movie")
 	public String movie() {
 		return "movie";
-	}
+	}*/
 
 	@GetMapping("/characters")
 	public String characters() {

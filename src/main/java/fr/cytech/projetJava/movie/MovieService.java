@@ -12,9 +12,15 @@ public class MovieService {
     @Autowired
     MovieRepository movieRepository;
 
-
+    //READ
     public List<Movie> getAllMovies() {
         return movieRepository.findAll();
+    }
+
+    //UPDATE
+    public void editMovieRate(Movie movie,double newRate) {
+        movie.setRate(newRate);
+        movieRepository.save(movie);
     }
 
     

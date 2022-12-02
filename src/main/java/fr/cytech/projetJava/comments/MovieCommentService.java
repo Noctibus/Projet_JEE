@@ -19,11 +19,12 @@ public class MovieCommentService {
 
     //CREATE
     public void writeMovieComment(User user,Movie movie,Date date,String content) {
+        int minLength=Math.min(499,content.length());
         MovieComment movieComment=new MovieComment();
         movieComment.setUser(user);
         movieComment.setMovie(movie);
         movieComment.setDate(date);
-        movieComment.setContent(content.substring(0, 499));
+        movieComment.setContent(content.substring(0,minLength));
         movieCommentRepository.save(movieComment);
     }
 
@@ -58,8 +59,9 @@ public class MovieCommentService {
 
     //UPDATE
     public void editMovieComment(MovieComment movieComment,String newContent) {
+        int minLength=Math.min(499,newContent.length());
         movieComment.setDate(new Date());
-        movieComment.setContent(newContent.substring(0, 499));
+        movieComment.setContent(newContent.substring(0,minLength));
         movieCommentRepository.save(movieComment);
     }
 

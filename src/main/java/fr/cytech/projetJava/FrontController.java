@@ -15,21 +15,5 @@ public class FrontController {
 	public String indexBis() {
 		return "index";
 	}
-
-	/*@GetMapping("/movie")
-	public String movie() {
-		return "movie";
-	}*/
-
-	@GetMapping("/characters")
-	public String characters() {
-		return "characters";
-	}
-
-	@GetMapping("/character")
-	public String character() {
-		return "character";
-	}
-
 	
 }

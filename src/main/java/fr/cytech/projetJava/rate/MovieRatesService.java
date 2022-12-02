@@ -10,6 +10,7 @@ import fr.cytech.projetJava.movie.MovieService;
 
 @Service
 public class MovieRatesService {
+
     @Autowired
     MovieService movieService;
 

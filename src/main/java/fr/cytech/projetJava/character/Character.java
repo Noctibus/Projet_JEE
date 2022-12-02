@@ -55,6 +55,10 @@ public class Character {
     @NotNull
     private boolean isAlive;
 
+    @Column(name = "rate")
+    @NotNull
+	private double rate;
+
 
     public int getId() {
         return this.id;
@@ -136,9 +140,17 @@ public class Character {
         this.isAlive = isAlive;
     }
 
+    public void setRate( double rate) {
+        this.rate = rate;
+    }
+
+    public double getRate() {
+        return this.rate;
+    }
+
     @Override
     public String toString() {
-        return "Character [id=" + id + ", identity=" + identity + ", herosName=" + herosName + ", actor=" + actor + ", origins=" + origins + ", isInAvengers1=" + isInAvengers1 + ", isInAvengers2=" + isInAvengers2 + ", isInAvengers3=" + isInAvengers3 + ", isInAvengers4=" + isInAvengers4 + ", isAlive=" + isAlive + "]";
+        return "Character [id=" + id + ", identity=" + identity + ", herosName=" + herosName + ", actor=" + actor + ", origins=" + origins + ", isInAvengers1=" + isInAvengers1 + ", isInAvengers2=" + isInAvengers2 + ", isInAvengers3=" + isInAvengers3 + ", isInAvengers4=" + isInAvengers4 + ", isAlive=" + isAlive + ", rate=" + rate + "]";
     }
     
 

@@ -7,26 +7,32 @@ import org.springframework.stereotype.Service;
 
 import fr.cytech.projetJava.login.User;
 import fr.cytech.projetJava.character.Character;
+import fr.cytech.projetJava.character.CharacterService;
 
 @Service
 public class CharacterRatesService {
 
     @Autowired
+    CharacterService characterService;
+
+    @Autowired
     CharacterRatesRepository characterRatesRepository;
 
     // Calculates average of a character
-    public double getRateAvg(Character character){
+    public void setCharacterRateAvg(Character character){
         CharacterRates[] tab = characterRatesRepository.findByCharacter(character);
         int n = tab.length;
+        double characterAvg = 0;
         // si il n'y a pas de notes on retourne 3 (la moyenne entre 1 et 5)
         if(n == 0){
-            return 3;
+            characterAvg = 3;
+        } else {
+            for (CharacterRates r: tab){
+                characterAvg += r.getValue();
+            }
+            characterAvg = characterAvg/n;
         }
-        double avg = 0;
-        for (CharacterRates r: tab){
-            avg += r.getValue();
-        }
-        return avg/n;
+        characterService.editMovieRate(character, characterAvg);
     }
 
     // Create or Update
@@ -43,7 +49,8 @@ public class CharacterRatesService {
         } else {
             cr.setValue(value);
             characterRatesRepository.save(cr);  
-        } 
+        }
+        setCharacterRateAvg(character);
     }
 
     // Read

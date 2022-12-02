@@ -6,7 +6,6 @@ import org.springframework.stereotype.Service;
 
 import fr.cytech.projetJava.login.User;
 import fr.cytech.projetJava.movie.Movie;
-import fr.cytech.projetJava.movie.MovieRepository;
 import fr.cytech.projetJava.movie.MovieService;
 
 @Service
@@ -18,7 +17,7 @@ public class MovieRatesService {
     MovieRatesRepository movieRatesRepository;
 
     // Calculates rate average of a movie
-    public void setRateAvg(Movie movie){
+    public void setMovieRateAvg(Movie movie){
         MovieRates tab [] = movieRatesRepository.findByMovie(movie);
         int n = tab.length;
         double movieAvg = 0;
@@ -49,7 +48,7 @@ public class MovieRatesService {
             mr.setValue(value);
             movieRatesRepository.save(mr);  
         }
-        setRateAvg(movie);
+        setMovieRateAvg(movie);
     }
 
     // Read

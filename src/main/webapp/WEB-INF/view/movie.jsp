@@ -23,9 +23,11 @@
 			<div class="publiedComments">
 				<c:forEach items="${comments}" var="comment">
 					<c:if test="${comment.movie.id==param.nb+1}">	
-						<p style="color: black;">Utilisateur : ${comment.user.username}</p>
-						<p style="color: black;">Date : ${comment.date}</p>
-						<p style="color: black;">${comment.content}</p>
+						<div class="post">
+							<span>${comment.user.username} </span>
+							<span class="date">${comment.date}</span>
+							<p>${comment.content}</p>
+						</div>
 					</c:if>
 				</c:forEach>
 			</div>

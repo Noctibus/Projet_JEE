@@ -11,7 +11,6 @@ body{
 	background-position:center center;
 	color: white;
 	margin: 0;
-
 	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black
 }
 
@@ -141,9 +140,28 @@ main{
 	border: 1px;
 	border-style: solid;
 	border-color: black;
-	background-color: aliceblue;
+	background-color: white;
 	margin-left: 100px;
 	margin-right: 100px;
+}
+
+.post{
+	margin-top: 20px;
+	min-height:fit-content;
+	border: 1px;
+	border-style: solid;
+	border-color: black;
+	background-color:aliceblue;
+	margin-left: 20px;
+	margin-right: 20px;
+	color: rgb(0, 0, 0);
+	text-shadow: none;
+	text-align: left;
+	font-size: small;
+}
+
+.date{
+	color:rgb(119, 125, 153);
 }
 
 textarea{

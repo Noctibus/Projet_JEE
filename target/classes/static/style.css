@@ -6,7 +6,7 @@
 body{
 	height: 100%;
 	background-color: rgb(64, 74, 121);
-	font-family: Avengers;
+	font-family: Arial;
 	background-repeat:no-repeat;
 	background-position:center center;
 	color: white;
@@ -125,6 +125,11 @@ main{
 	border-style: solid;
 	border-color: black;
 	background-color: aliceblue;
+	margin-left: 100px;
+	margin-right: 100px;
+}
+
+#commentSpace{
 	margin-left: 100px;
 	margin-right: 100px;
 }

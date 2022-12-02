@@ -7,6 +7,9 @@
 
 		<div class="box">
 			<div class="descBox"></div>
+			<div class="moviePoster">
+				<img class="characterPicture" src='character${param.charId}.png'/>
+			</div>
 			<div class="desc">Nom de Héros : ${characters[param.charId-1].getHerosName()}</div>
 			<div class="desc">Identité : ${characters[param.charId-1].getIdentity()}</div>
 			<div class="desc">Acteur : ${characters[param.charId-1].getActor()}</div>

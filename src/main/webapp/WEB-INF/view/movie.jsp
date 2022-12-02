@@ -8,7 +8,7 @@
 
 	  	<div class="box">
 				<div class="moviePoster">
-					<img style='width: 300px; height: 400px; margin-top: -90px;' src='avengers${param.nb+1}.jpg'/>
+					<img class="poster" src='avengers${param.nb+1}.jpg'/>
 				</div>
 				<div class="descBox"></div>
 				<div class="desc">Titre : ${movies[param.nb].getTitle()}</div>

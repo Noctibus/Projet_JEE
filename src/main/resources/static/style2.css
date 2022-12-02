@@ -162,6 +162,11 @@ textarea{
 	margin: 20px;
 	padding-top: 122px;
 }
+.poster{
+	width: 300px; 
+	height: 400px; 
+	margin-top: -90px;
+}
 
 .desc{
 	text-align: left;
@@ -180,6 +185,10 @@ textarea{
 	font-size: 25px;
 }
 
+.characterPicture{
+	height: 400px;
+	margin-top: -145px;
+}
 /* pied de page */
 
 footer{

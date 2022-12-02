@@ -19,11 +19,12 @@ public class CharacterCommentService {
 
     //CREATE
     public void writeCharacterComment(User user,Character character,Date date,String content) {
+        int minLength=Math.min(499,content.length());
         CharacterComment characterComment=new CharacterComment();
         characterComment.setUser(user);
         characterComment.setCharacter(character);
         characterComment.setDate(date);
-        characterComment.setContent(content.substring(0, 499));
+        characterComment.setContent(content.substring(0, minLength));
         characterCommentRepository.save(characterComment);
     }
 
@@ -58,8 +59,9 @@ public class CharacterCommentService {
 
     //UPDATE
     public void editCharacterComment(CharacterComment characterComment,String newContent) {
+        int minLength=Math.min(499,newContent.length());
         characterComment.setDate(new Date());
-        characterComment.setContent(newContent.substring(0, 499));
+        characterComment.setContent(newContent.substring(0, minLength));
         characterCommentRepository.save(characterComment);
     }
 

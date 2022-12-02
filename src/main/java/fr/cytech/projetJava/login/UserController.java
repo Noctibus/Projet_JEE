@@ -1,6 +1,5 @@
 package fr.cytech.projetJava.login;
 
-import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Objects;
 
@@ -55,7 +54,7 @@ public class UserController {
 		String page = "redirect:register";
 		User alreadyExists = userService.getByUsername(username);
         if(alreadyExists==null) {
-			if (password1.equals(password2)) {
+			if (pswd1.equals(pswd2)) {
 				userService.createUser(username, password1);
 				page = "redirect:index";
 			}

@@ -2,9 +2,10 @@
 <%@ page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8" %>
 <html>
 	<%@ include file="headerStars.jsp" %>
-	<main class="mainPage">
+	<main class="main" id="loginMain">
 	<%@ include file="menu.jsp" %>	
-		<a class="space" id="register" href="register">Nouveau sur la page ? Inscrivez-Vous.</a>
+	<a class="space" id="register" href="register">Nouveau sur la page ? Inscrivez-Vous.</a>
+	<div id="loginBox">
 		<form id="formLogin" action="/checkUser" method="post">
 			<div class="space">
 				<label for="username">Identifiant:</label><br>
@@ -16,7 +17,8 @@
 			</div>
 			<input type="submit" value="Connexion">
 		</form>
-		<a href="logout"><button>Logout</button></a>
+		<!--<a href="logout"><button>Logout</button></a>-->
+	</div>
 	</main>
 	<%@ include file="footer.jsp" %>
 </html>

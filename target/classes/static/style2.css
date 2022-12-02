@@ -119,6 +119,10 @@ main{
     margin: 30px;
 }
 
+#register{
+    color: rgb(230, 114, 114);
+}
+
 #register:hover{
     color: rgb(238, 34, 34);
 }
@@ -189,6 +193,11 @@ textarea{
 	height: 400px;
 	margin-top: -145px;
 }
+
+#loginBox{
+	margin-top: 100px;
+}
+
 /* pied de page */
 
 footer{

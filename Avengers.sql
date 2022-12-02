@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: mariadb:3306
--- Generation Time: Dec 02, 2022 at 08:22 AM
--- Server version: 10.6.11-MariaDB-1:10.6.11+maria~ubu2004
--- PHP Version: 8.0.25
+-- Generation Time: Dec 02, 2022 at 12:17 PM
+-- Server version: 10.6.10-MariaDB-1:10.6.10+maria~ubu2004
+-- PHP Version: 8.0.24
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -33,7 +33,7 @@ CREATE TABLE `CharacterComments` (
   `characterId` int(11) NOT NULL,
   `date` datetime NOT NULL,
   `content` varchar(500) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -46,7 +46,7 @@ CREATE TABLE `CharacterRates` (
   `userID` int(11) NOT NULL,
   `value` int(11) NOT NULL,
   `characterID` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -65,8 +65,8 @@ CREATE TABLE `Characters` (
   `avengers3` tinyint(1) NOT NULL DEFAULT 1,
   `avengers4` tinyint(1) NOT NULL DEFAULT 1,
   `status` tinyint(1) NOT NULL DEFAULT 1,
-  `rate` float NOT NULL DEFAULT 3
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `rate` double NOT NULL DEFAULT 3
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `Characters`
@@ -109,7 +109,7 @@ CREATE TABLE `MovieComments` (
   `movieId` int(11) NOT NULL,
   `date` datetime NOT NULL,
   `content` varchar(500) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -122,7 +122,7 @@ CREATE TABLE `MovieRates` (
   `userID` int(11) NOT NULL,
   `value` int(11) NOT NULL,
   `movieID` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -135,9 +135,9 @@ CREATE TABLE `Movies` (
   `title` text NOT NULL,
   `director` text NOT NULL,
   `date` date NOT NULL,
-  `rate` float(5,0) NOT NULL DEFAULT 3,
+  `rate` double NOT NULL DEFAULT 3,
   `synopsis` text DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `Movies`
@@ -145,7 +145,7 @@ CREATE TABLE `Movies` (
 
 INSERT INTO `Movies` (`id`, `title`, `director`, `date`, `rate`, `synopsis`) VALUES
 (1, 'Avengers', 'Joss Whedon', '2012-04-20', 3, 'Lorsque Nick Fury, le directeur du S.H.I.E.L.D., l\'organisation qui préserve la paix au plan mondial, cherche à former une équipe de choc pour empêcher la destruction du monde, Iron Man, Hulk, Thor, Captain America, Hawkeye et Black Widow répondent présents.\r\nLes Avengers ont beau constituer la plus fantastique des équipes, il leur reste encore à apprendre à travailler ensemble, et non les uns contre les autres, d\'autant que le redoutable Loki a réussi à accéder au Cube Cosmique et à son pouvoir illimité... '),
-(2, 'Avengers : L’Ère d’Ultron ', 'Joss Whedon', '2015-04-22', 2, 'Alors que Tony Stark tente de relancer un programme de maintien de la paix jusque-là suspendu, les choses tournent mal et les super-héros Iron Man, Captain America, Thor, Hulk, Black Widow et Hawkeye vont devoir à nouveau unir leurs forces pour combattre le plus puissant de leurs adversaires : le terrible Ultron, un être technologique terrifiant qui s’est juré d’éradiquer l’espèce humaine.\r\nAfin d’empêcher celui-ci d’accomplir ses sombres desseins, des alliances inattendues se scellent, les entraînant dans une incroyable aventure et une haletante course contre le temps… '),
+(2, 'Avengers : L’Ère d’Ultron ', 'Joss Whedon', '2015-04-22', 3.5, 'Alors que Tony Stark tente de relancer un programme de maintien de la paix jusque-là suspendu, les choses tournent mal et les super-héros Iron Man, Captain America, Thor, Hulk, Black Widow et Hawkeye vont devoir à nouveau unir leurs forces pour combattre le plus puissant de leurs adversaires : le terrible Ultron, un être technologique terrifiant qui s’est juré d’éradiquer l’espèce humaine.\r\nAfin d’empêcher celui-ci d’accomplir ses sombres desseins, des alliances inattendues se scellent, les entraînant dans une incroyable aventure et une haletante course contre le temps… '),
 (3, 'Avengers : Infinity War', 'Joe Russo, Anthony Russo', '2018-04-25', 5, 'Les Avengers et leurs alliés devront être prêts à tout sacrifier pour neutraliser le redoutable Thanos avant que son attaque éclair ne conduise à la destruction complète de l’univers. '),
 (4, 'Avengers: Endgame', 'Joe Russo, Anthony Russo', '2019-04-24', 4, 'Thanos ayant anéanti la moitié de l’univers, les Avengers restants resserrent les rangs dans ce vingt-deuxième film des Studios Marvel, grande conclusion d’un des chapitres de l’Univers Cinématographique Marvel.');
 
@@ -159,7 +159,7 @@ CREATE TABLE `Users` (
   `id` int(11) NOT NULL,
   `username` text NOT NULL,
   `password` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Indexes for dumped tables
@@ -241,13 +241,13 @@ ALTER TABLE `MovieComments`
 -- AUTO_INCREMENT for table `MovieRates`
 --
 ALTER TABLE `MovieRates`
-  MODIFY `movieRateID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `movieRateID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `Users`
 --
 ALTER TABLE `Users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Constraints for dumped tables

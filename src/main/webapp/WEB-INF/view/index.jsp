@@ -7,7 +7,7 @@
 		<section id="intro" >   
 			<h1>Bienvenue dans l'univers des </h1> <h1 class="avengersFont">Avengers !</h1>         
 		<div id="welcome">     
-			<span>Vous pouvez retrouver sur ce site tous les films Avengers ainsi que les personnages les plus iconics de l'univers </span><span id="welcome" class="avengersFont"> Marvel.</span> 
+			<span>Vous pouvez retrouver sur ce site tous les films Avengers ainsi que les personnages les plus iconiques de l'univers </span><span id="welcome" class="avengersFont"> Marvel.</span> 
 		</div>
 		</section>
 		

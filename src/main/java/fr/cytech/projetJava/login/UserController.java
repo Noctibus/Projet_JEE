@@ -20,11 +20,11 @@ public class UserController {
 
 	@PostMapping("/checkUser")
 	public String checkUser(HttpSession session, @RequestParam("username") String username, @RequestParam("password") String password) {
-		String page = "redirect:register";
+		String page = "redirect:login";
 		User usr = userService.getByUsername(username);
 		if (!Objects.isNull(usr)) {
 			if (usr.getPassword().equals(password)) {
-				page = "redirect:logged";
+				page = "redirect:index";
 				session.setAttribute("user", usr);
 			}
 		}
@@ -39,17 +39,9 @@ public class UserController {
 		return "login";
 	}
 	
-	@GetMapping("/logged")
-	public String logged(HttpSession session) {
-		if(userService.isConnected(session)) {
-			return "logged";
-		} 
-		return "login";
-	}
-	
 	@GetMapping("/register")
-	public boolean register(Model model, HttpSession session) {
-		return userService.isConnected(session);
+	public String register(Model model, HttpSession session) {
+		return "register";
 	}
 
 	@PostMapping("/registerNewUser")
@@ -57,7 +49,7 @@ public class UserController {
 		String page = "redirect:register";
 		if (password1.equals(password2)) {
 			userService.createUser(username, password1);
-			page = "redirect:logged";
+			page = "redirect:index";
 		}
 		return page;
 	}

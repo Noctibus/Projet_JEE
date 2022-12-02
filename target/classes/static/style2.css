@@ -119,10 +119,6 @@ main{
     margin: 30px;
 }
 
-#register{
-    color: blueviolet;
-}
-
 #register:hover{
     color: rgb(238, 34, 34);
 }

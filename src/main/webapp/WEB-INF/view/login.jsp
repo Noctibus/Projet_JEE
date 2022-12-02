@@ -4,7 +4,7 @@
 	<%@ include file="headerStars.jsp" %>
 	<main class="mainPage">
 	<%@ include file="menu.jsp" %>	
-		<a class="space" id="register" href="register">Nouveau sur la page ?</a>
+		<a class="space" id="register" href="register">Nouveau sur la page ? Inscrivez-Vous.</a>
 		<form id="formLogin" action="/checkUser" method="post">
 			<div class="space">
 				<label for="username">Identifiant:</label><br>

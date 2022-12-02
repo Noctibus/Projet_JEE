@@ -81,8 +81,5 @@ public class Movie {
         this.synopsis = synopsis;
     }
 
-    @Override
-    public String toString() {
-     return "<img style='width: 300px; height: 400px; margin-top: -90px;' src= 'avengers" + this.getId() + ".jpg'/>";
-    }
+    
 }

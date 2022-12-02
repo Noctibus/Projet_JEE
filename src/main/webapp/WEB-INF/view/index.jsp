@@ -16,13 +16,8 @@
 					<div><a href="movies">Films</a></div>
 					<div><a href="characters">Personnages</a></div>
 					<div><a href="login" id="white">Connexion</a></div>
-					<object id="music">
-						<param name="autostart" value="true">
-						<param name="src" value="avengers.mp3">
-						<param name="autoplay" value="true"> 
-						<param name="controller" value="true">
-						<embed src="avengers.mp3" controller="true" autoplay="true" autostart="true" type="audio/mp3" />
-					</object>
+
+					<audio src="avengers.mp3" controller="true" autoplay autostart="true" type="audio/mp3" ></audio>
 					
 			</div>
 		</section>

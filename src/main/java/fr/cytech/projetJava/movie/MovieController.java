@@ -11,18 +11,18 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class MovieController {
     
     @Autowired
-    private MovieRepository movieRepository;
+    private MovieService movieService;
 
     @GetMapping("/movies")
     public String showPostersMovies(Model model) {
-        List<Movie> movies = this.movieRepository.findAll();
+        List<Movie> movies = this.movieService.getAllMovies();
         model.addAttribute("movies", movies);
         return "movies";
     }
 
     @GetMapping("/movie")
     public String showPostersMovie(Model model) {
-        List<Movie> movies = this.movieRepository.findAll();
+        List<Movie> movies = this.movieService.getAllMovies();
         model.addAttribute("movies", movies);
         return "movie";
     }

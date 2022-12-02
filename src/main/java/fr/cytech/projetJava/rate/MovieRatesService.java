@@ -6,11 +6,11 @@ import org.springframework.stereotype.Service;
 
 import fr.cytech.projetJava.login.User;
 import fr.cytech.projetJava.movie.Movie;
-import fr.cytech.projetJava.movie.MovieRepository;
 import fr.cytech.projetJava.movie.MovieService;
 
 @Service
 public class MovieRatesService {
+
     @Autowired
     MovieService movieService;
 

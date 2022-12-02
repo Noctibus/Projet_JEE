@@ -31,7 +31,7 @@
 			</div>
 			<form class="commentform" methode="post">
 				<div class="space">
-					<textarea id="commentSpace" rows="6" cols="213" placeholder="Laisser un commentaire."></textarea>
+					<textarea id="commentSpace" rows="6" cols="188" placeholder="Laisser un commentaire."></textarea>
 				</div>
 				<input type="submit" value="Publier">
 			</form>

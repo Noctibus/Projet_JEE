@@ -172,6 +172,14 @@ textarea{
 	padding-top: 50px;
 }
 
+#herosList{
+	margin-top: -50px;
+}
+
+.heros{
+	font-size: 25px;
+}
+
 /* pied de page */
 
 footer{

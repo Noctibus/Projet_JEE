@@ -14,14 +14,14 @@ public class CharacterController {
     private CharacterService characterService;
 
     @GetMapping("/characters")
-	public String showPostersCharacters(Model model) {
+	public String characters(Model model) {
         List<Character> characters = this.characterService.getAllCharacters();
         model.addAttribute("characters", characters);
 		return "characters";
 	}
 
 	@GetMapping("/character")
-	public String showPostersCharacter(Model model) {
+	public String character(Model model) {
         List<Character> characters = this.characterService.getAllCharacters();
         model.addAttribute("characters", characters);
 		return "character";

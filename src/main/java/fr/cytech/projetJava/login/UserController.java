@@ -53,9 +53,12 @@ public class UserController {
 		String pswd2 = userService.hashPassword(password2);
 
 		String page = "redirect:register";
-		if (pswd1.equals(pswd2)) {
-			userService.createUser(username, pswd1);
-			page = "redirect:index";
+		User alreadyExists = userService.getByUsername(username);
+        if(alreadyExists==null) {
+			if (password1.equals(password2)) {
+				userService.createUser(username, password1);
+				page = "redirect:index";
+			}
 		}
 		return page;
 	}

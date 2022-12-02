@@ -7,19 +7,15 @@
 		<%@ include file="menu.jsp" %>
 
 	  	<div class="box">
-			<c:set var="poster" value="${movies[param.nb].toString()}"/>
-			<c:set var="title" value="${movies[param.nb].getTitle()}"/>
-			<c:set var="date" value="${movies[param.nb].getDate()}"/>
-			<c:set var="director" value="${movies[param.nb].getDirector()}"/>
-			<c:set var="synopsis" value="${movies[param.nb].getSynopsis()}"/>
-			<c:set var="rate" value="${movies[param.nb].getRate()}"/>
-				<div class="moviePoster">${poster}</div>
+				<div class="moviePoster">
+					<img style='width: 300px; height: 400px; margin-top: -90px;' src='avengers${param.nb+1}.jpg'/>
+				</div>
 				<div class="descBox"></div>
-				<div class="desc">Titre : ${title}</div>
-				<div class="desc">Date de sortie : ${date}</div>
-				<div class="desc">Réalisateur : ${director}</div>
-				<div class="desc">Synopsis : ${synopsis}</div>
-				<div class="desc">Note : ${rate} &#9733</div>
+				<div class="desc">Titre : ${movies[param.nb].getTitle()}</div>
+				<div class="desc">Date de sortie : ${movies[param.nb].getDate()}</div>
+				<div class="desc">Réalisateur : ${movies[param.nb].getDirector()}</div>
+				<div class="desc">Synopsis : ${movies[param.nb].getSynopsis()}</div>
+				<div class="desc">Note : ${movies[param.nb].getRate()} &#9733</div>
         </div>
 
 		<div class="comments">

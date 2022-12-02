@@ -11,7 +11,6 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserService {
 
-
     @Autowired
  	private UserRepository userRepository;
 
@@ -24,15 +23,11 @@ public class UserService {
         return userRepository.findById(id);
     }
     
-    public boolean createUser(String username, String password) {
-        User alreadyExists = userRepository.findByUsername(username);
-        if(alreadyExists==null) {
-            User user=new User();
-            user.setUsername(username);
-            user.setPassword(password);
-            userRepository.save(user);
-        }
-        return(alreadyExists==null);
+    public void createUser(String username, String password) {
+        User user = new User();
+        user.setUsername(username);
+        user.setPassword(password);
+        userRepository.save(user);
     }
 
     public boolean isConnected(HttpSession session) {

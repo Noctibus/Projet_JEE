@@ -32,7 +32,7 @@ public class CharacterRatesService {
             }
             characterAvg = characterAvg/n;
         }
-        characterService.editMovieRate(character, characterAvg);
+        characterService.editCharacterRate(character, characterAvg);
     }
 
     // Create or Update

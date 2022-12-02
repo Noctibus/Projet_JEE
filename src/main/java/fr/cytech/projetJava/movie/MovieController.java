@@ -7,11 +7,18 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import fr.cytech.projetJava.comments.MovieCommentService;
+
 @Controller
 public class MovieController {
+
     
     @Autowired
     private MovieService movieService;
+
+    @Autowired
+    private MovieCommentService movieCommentService;
+
 
     @GetMapping("/movies")
     public String showPostersMovies(Model model) {
@@ -24,6 +31,7 @@ public class MovieController {
     public String showPostersMovie(Model model) {
         List<Movie> movies = this.movieService.getAllMovies();
         model.addAttribute("movies", movies);
+        model.addAttribute("comments",this.movieCommentService.getAllMovieComments());
         return "movie";
     }
 

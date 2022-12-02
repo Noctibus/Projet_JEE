@@ -21,12 +21,19 @@
 		<div class="comments">
 			<h2 class="avengersFont">Espace Commentaire</h2>
 			<div class="publiedComments">
-				<p style="color: black">blabla</p>
+				<c:forEach items="${comments}" var="comment">
+					<c:if test="${comment.movie.id==param.nb+1}">	
+						<p style="color: black;">Utilisateur : ${comment.user.username}</p>
+						<p style="color: black;">Date : ${comment.date}</p>
+						<p style="color: black;">${comment.content}</p>
+					</c:if>
+				</c:forEach>
 			</div>
 			<form class="commentform" methode="post">
 				<div class="space">
 					<textarea id="commentSpace" rows="6" cols="213" placeholder="Laisser un commentaire."></textarea>
 				</div>
+				<input type="submit" value="Publier">
 			</form>
 			
 		</div>

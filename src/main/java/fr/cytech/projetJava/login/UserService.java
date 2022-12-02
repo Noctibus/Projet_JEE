@@ -1,5 +1,8 @@
 package fr.cytech.projetJava.login;
 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,4 +39,12 @@ public class UserService {
 		User user = (User)session.getAttribute("user");
 		return(user != null);
 	}
+
+    public String hashPassword(String password) throws NoSuchAlgorithmException {
+        String hashedPassword = "";
+        MessageDigest messageDigest = MessageDigest.getInstance("SHA-256");
+		messageDigest.update(password.getBytes());
+		hashedPassword = new String(messageDigest.digest());
+        return hashedPassword;
+    }
 }

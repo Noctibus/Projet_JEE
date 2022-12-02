@@ -47,9 +47,12 @@ public class UserController {
 	@PostMapping("/registerNewUser")
 	public String registerNewUser(Model model,@RequestParam("username") String username,@RequestParam("password1") String password1,@RequestParam("password2") String password2) {
 		String page = "redirect:register";
-		if (password1.equals(password2)) {
-			userService.createUser(username, password1);
-			page = "redirect:index";
+		User alreadyExists = userService.getByUsername(username);
+        if(alreadyExists==null) {
+			if (password1.equals(password2)) {
+				userService.createUser(username, password1);
+				page = "redirect:index";
+			}
 		}
 		return page;
 	}

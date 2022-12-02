@@ -12,6 +12,9 @@ public class MovieService {
     @Autowired
     MovieRepository movieRepository;
 
+
+    //NO NEED TO CREATE
+
     //READ
     public List<Movie> getAllMovies() {
         return movieRepository.findAll();
@@ -22,6 +25,8 @@ public class MovieService {
         movie.setRate(newRate);
         movieRepository.save(movie);
     }
+
+    //NO NEED TO DELETE
 
     
 }

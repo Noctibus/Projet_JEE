@@ -42,13 +42,13 @@ public class MovieController {
     }
 
     @PostMapping("/saveMovieComment")
-    public String saveMovieComment(@RequestParam("text") String text,@RequestParam("nb") String nb,HttpSession session) {
+    public String saveMovieComment(@RequestParam("movieCommentContent") String content,@RequestParam("movieId") String movieId,HttpSession session) {
         User connectedUser=(User)session.getAttribute("user");
-        String page="redirect:/movie?nb="+nb;
+        String page="redirect:/movie?movieId="+movieId;
         if(connectedUser==null) {
             page="redirect:/login";
-        } else if(!(text.isBlank())) {
-            movieCommentService.writeMovieComment(connectedUser,movieService.getById(Integer.valueOf(nb)+1),new Date(),text);
+        } else if(!(content.isBlank())) {
+            movieCommentService.writeMovieComment(connectedUser,movieService.getById(Integer.valueOf(movieId)),new Date(),content);
         }
         return page;
     }

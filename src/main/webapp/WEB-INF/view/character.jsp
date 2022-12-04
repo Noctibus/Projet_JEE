@@ -25,20 +25,26 @@
 				<span class="star" id="star4">&#9733</span>
 				<span class="star" id="star5">&#9733</span>
 		   </div>
-	</div>
-
+		</div>
 		<div class="comments">
 			<h2 class="avengersFont">Espace Commentaire</h2>
 			<div class="publiedComments">
-				<p style="color: black">blabla</p>
+				<c:forEach items="${comments}" var="comment">
+					<c:if test="${comment.character.id==param.charId}">	
+						<div class="post">
+							<span>${comment.user.username} </span>
+							<span class="date">${comment.date}</span>
+							<p>${comment.content}</p>
+						</div>
+					</c:if>
+				</c:forEach>
 			</div>
-			<form class="commentform" methode="post">
+			<form class="commentform" method="post" action="saveCharacterComment?charId=${param.charId}">
 				<div class="space">
-					<textarea name="comment" rows="6" cols="188" placeholder="Laisser un commentaire."></textarea>
+					<textarea name="characterCommentContent" id="commentSpace" rows="6" cols="188" placeholder="Laisser un commentaire."></textarea>
 				</div>
 				<input type="submit" value="Publier">
-			</form>
-			
+			</form>	
 		</div>
     </main>
 	<%@ include file="footer.jsp" %>

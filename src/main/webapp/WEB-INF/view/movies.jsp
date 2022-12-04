@@ -7,11 +7,11 @@
 		<%@ include file="menu.jsp" %>
 
 	  	<section id="templine">
-			<c:forEach var="i" begin="1" end="4">
-				<a href="movie?nb=${i-1}" class="space" id="poster">
-					<img style='width: 300px; height: 400px; margin-top: -90px;' src='avengers${i}.jpg'/>
+			<c:forEach items="${movies}" var="movie">
+				<a href="movie?movieId=${movie.getId()}" class="space" id="poster">
+					<img style='width: 300px; height: 400px; margin-top: -90px;' src='avengers${movie.getId()}.jpg'/>
 				</a>
-			</c:forEach>
+        	</c:forEach>
 		</section>
     </main>
 	<%@ include file="footer.jsp" %>

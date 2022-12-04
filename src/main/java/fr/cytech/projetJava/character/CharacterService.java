@@ -16,6 +16,10 @@ public class CharacterService {
     //NO NEED TO CREATE
 
     //READ
+    public Character getById(int i) {
+        return characterRepository.findById(i);
+    }
+
     public List<Character> getAllCharacters() {
         return characterRepository.findAll();
     }
@@ -25,4 +29,8 @@ public class CharacterService {
         character.setRate(newRate);
         characterRepository.save(character);
     }
+
+    //NO NEED TO DELETE
+
+
 }

@@ -5,7 +5,6 @@ On a jusqu'au 4 décembre alors maniez-vous le train !
 
 Good Luck everyone
 
-### TODO ###
+### TODO
 
-Arranger BDD (clés primaires/étrangères) pour augmenter la cohérence  
 Revoir arbo des .java : séparer les couches (Controller, Service, Repository et Model)

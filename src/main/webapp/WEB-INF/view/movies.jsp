@@ -11,7 +11,6 @@
 				<a href="movie?nb=${i-1}" class="space" id="poster">
 					<img style='width: 300px; height: 400px; margin-top: -90px;' src='avengers${i}.jpg'/>
 				</a>
-
 			</c:forEach>
 		</section>
     </main>

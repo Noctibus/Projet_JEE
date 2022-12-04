@@ -16,6 +16,10 @@ public class MovieService {
     //NO NEED TO CREATE
 
     //READ
+    public Movie getById(int id) {
+        return movieRepository.findById(id);
+    }
+
     public List<Movie> getAllMovies() {
         return movieRepository.findAll();
     }

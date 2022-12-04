@@ -38,13 +38,12 @@
 					</c:if>
 				</c:forEach>
 			</div>
-			<form class="commentform" methode="post">
+			<form class="commentform" method="post" action="saveMovieComment?nb=${param.nb}" modelAttribute="ma">
 				<div class="space">
-					<textarea id="commentSpace" rows="6" cols="188" placeholder="Laisser un commentaire."></textarea>
+					<textarea name="text" id="commentSpace" rows="6" cols="188" placeholder="Laisser un commentaire."></textarea>
 				</div>
 				<input type="submit" value="Publier">
-			</form>
-			
+			</form>			
 		</div>
     </main>
 	<%@ include file="footer.jsp" %>

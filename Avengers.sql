@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: mariadb:3306
--- Generation Time: Dec 02, 2022 at 12:17 PM
--- Server version: 10.6.10-MariaDB-1:10.6.10+maria~ubu2004
--- PHP Version: 8.0.24
+-- Generation Time: Dec 04, 2022 at 12:40 PM
+-- Server version: 10.6.11-MariaDB-1:10.6.11+maria~ubu2004
+-- PHP Version: 8.0.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -33,7 +33,7 @@ CREATE TABLE `CharacterComments` (
   `characterId` int(11) NOT NULL,
   `date` datetime NOT NULL,
   `content` varchar(500) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -46,7 +46,7 @@ CREATE TABLE `CharacterRates` (
   `userID` int(11) NOT NULL,
   `value` int(11) NOT NULL,
   `characterID` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -66,7 +66,7 @@ CREATE TABLE `Characters` (
   `avengers4` tinyint(1) NOT NULL DEFAULT 1,
   `status` tinyint(1) NOT NULL DEFAULT 1,
   `rate` double NOT NULL DEFAULT 3
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `Characters`
@@ -74,9 +74,9 @@ CREATE TABLE `Characters` (
 
 INSERT INTO `Characters` (`id`, `identity`, `herosName`, `actor`, `origins`, `avengers1`, `avengers2`, `avengers3`, `avengers4`, `status`, `rate`) VALUES
 (1, 'Anthony Stark', 'Iron Man', 'Robert Downey Jr.', 'Anthony Edward « Tony » Stark est un industriel américain, née à Long Island dans l\'État de New York fils de Howard Stark un scientifique avec un goût prononcé pour l\'alcool à la tête de Stark Industries et de Maria Collins-Carbonell Stark. Avec l\'entreprise de son père, il fabrique notamment des armes pour le gouvernement américain. Cela l\'amène à se rendre au Viet Nâm alors en guerre contre les États-Unis pour démontrer la puissance des «transistors» qui permettent de décupler la puissance de n\'importe quelle arme. Mais il saute malencontreusement sur une mine qui projette des éclats près de son cœur.', 1, 1, 1, 1, 0, 3),
-(2, 'Thor', NULL, 'Chris Hemsworth\r\n', 'Dans la mythologie scandinave, Thor (en vieux norrois : Þórr, littéralement « foudre ») est le dieu du tonnerre, de la guerre et de la forge. C\'est un dieu guerrier très puissant qui représente le combat, la force et le courage. Il est grand et fort. C\'est un gros mangeur et buveur.', 1, 1, 1, 1, 1, 3),
+(2, 'Steven Rogers', 'Captain America', 'Chris Evans', 'Après avoir avalé le sérum du super-soldat durant la Seconde Guerre mondiale, Steven Rogers est devenu un super-héros sous le nom de Captain America.', 0, 0, 1, 1, 0, 3),
 (3, 'Bruce Banner', 'Hulk', 'Mark Ruffalo, Eric Bana', 'Quand Bruce Banner reçut des rayons gamma de plein fouet, il fut condamné à se transformer en colosse vert, dès qu\'il se met en colère.', 1, 1, 1, 1, 1, 3),
-(4, 'Steven Rogers', 'Captain America', 'Chris Evans', 'Après avoir avalé le sérum du super-soldat durant la Seconde Guerre mondiale, Steven Rogers est devenu un super-héros sous le nom de Captain America.', 0, 0, 1, 1, 0, 3),
+(4, 'Thor', NULL, 'Chris Hemsworth\r\n', 'Dans la mythologie scandinave, Thor (en vieux norrois : Þórr, littéralement « foudre ») est le dieu du tonnerre, de la guerre et de la forge. C\'est un dieu guerrier très puissant qui représente le combat, la force et le courage. Il est grand et fort. C\'est un gros mangeur et buveur.', 1, 1, 1, 1, 1, 3),
 (5, 'Natasha Romanoff', 'Black Widow ', 'Scarlett Johansson', 'Abandonnée à sa naissance, Natasha a été formée dans la chambre Rouge, un centre d’entraînement pour espions top secret. C’est là qu’elle a été formée aux arts martiaux et aux techniques d’espionnage. Elle est en sortie en tant que la Veuve Noire, une espionne de haut niveau. La Veuve Noire est entraînée à la perfection. Cela lui donne un niveau extrème de force, d’agilité et d’endurance.', 1, 1, 1, 1, 0, 3),
 (6, 'Clinton Barton', 'Hawkeye', 'Jeremy Renner', 'Enfant, Clint Francis Barton s\'échappe d\'un orphelinat pour rejoindre un cirque. Entrainé par Trickshot et Swordsman, il rejette ce dernier quand il découvre qu\'il est un criminel.', 1, 1, 1, 1, 1, 3),
 (7, 'Peter Parker', 'Spider-Man', 'Tom Holland', 'Orphelin depuis l’âge de 6 ans, Peter Parker a été confié à son oncle et à sa tante, Benjamin et May Parker. Fragile émotionnellement et physiquement, Peter développe très tôt un intérêt pour les sciences et c’est au cours d’une expérience à laquelle il assiste qu’il est mordu par une araignée radioactive. Cette morsure lui octroie des super-pouvoirs : il peut s’accrocher à n’importe quelle surface et escalader un bâtiment ou toute autre construction à la manière d’une araignée, son agilité et ses réflexes étant exacerbés. L’ensemble de ses capacités (force, endurance, résistance, sens et capacités de régénération) sont de loin supérieures à celles d’un être humain ordinaire et il possède un sixième sens : un « sens d’araignée » qui l’avertit de tout danger imminent. Last but not least, Spider-Man peut également projeter de ses mains une toile extrêment solide et collante, qui lui permet d’immobiliser ses ennemis ou de se déplacer plus rapidement.', 0, 0, 1, 1, 1, 3),
@@ -109,7 +109,7 @@ CREATE TABLE `MovieComments` (
   `movieId` int(11) NOT NULL,
   `date` datetime NOT NULL,
   `content` varchar(500) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -122,7 +122,7 @@ CREATE TABLE `MovieRates` (
   `userID` int(11) NOT NULL,
   `value` int(11) NOT NULL,
   `movieID` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -137,7 +137,7 @@ CREATE TABLE `Movies` (
   `date` date NOT NULL,
   `rate` double NOT NULL DEFAULT 3,
   `synopsis` text DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `Movies`
@@ -159,7 +159,7 @@ CREATE TABLE `Users` (
   `id` int(11) NOT NULL,
   `username` text NOT NULL,
   `password` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Indexes for dumped tables
@@ -223,31 +223,31 @@ ALTER TABLE `Users`
 -- AUTO_INCREMENT for table `CharacterComments`
 --
 ALTER TABLE `CharacterComments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=0;
 
 --
 -- AUTO_INCREMENT for table `CharacterRates`
 --
 ALTER TABLE `CharacterRates`
-  MODIFY `characterRateID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `characterRateID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=0;
 
 --
 -- AUTO_INCREMENT for table `MovieComments`
 --
 ALTER TABLE `MovieComments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=0;
 
 --
 -- AUTO_INCREMENT for table `MovieRates`
 --
 ALTER TABLE `MovieRates`
-  MODIFY `movieRateID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `movieRateID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=0;
 
 --
 -- AUTO_INCREMENT for table `Users`
 --
 ALTER TABLE `Users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=0;
 
 --
 -- Constraints for dumped tables

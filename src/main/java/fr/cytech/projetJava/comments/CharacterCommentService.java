@@ -29,6 +29,10 @@ public class CharacterCommentService {
     }
 
     //READ
+    public CharacterComment getById(int id) {
+        return characterCommentRepository.findById(id);
+    }
+
     public List<CharacterComment> getAllCharacterComments() {
         return characterCommentRepository.findAll();
     }

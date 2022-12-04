@@ -53,4 +53,11 @@ public class MovieController {
         return page;
     }
 
+    @GetMapping("deleteMovieComment")
+    public String deleteMovieComment(@RequestParam("movieCommentId") int movieCommentId,@RequestParam("movieId") int movieId) {
+        movieCommentService.deleteMovieComment(movieCommentService.getById(movieCommentId));
+        return "redirect:/movie?movieId="+movieId;
+    }
+    
+
 }

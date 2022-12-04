@@ -29,6 +29,10 @@ public class MovieCommentService {
     }
 
     //READ
+    public MovieComment getById(int id) {
+        return movieCommentRepository.findById(id);
+    }
+
     public List<MovieComment> getAllMovieComments() {
         return movieCommentRepository.findAll();
     }

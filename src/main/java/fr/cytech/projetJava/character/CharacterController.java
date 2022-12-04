@@ -53,5 +53,11 @@ public class CharacterController {
         return page;
     }
 
+    @GetMapping("deleteCharacterComment")
+    public String deleteCharacterComment(@RequestParam("characterCommentId") int characterCommentId,@RequestParam("charId") int charId) {
+        characterCommentService.deleteCharacterComment(characterCommentService.getById(characterCommentId));
+        return "redirect:/character?charId="+charId;
+    }
+
 
 }

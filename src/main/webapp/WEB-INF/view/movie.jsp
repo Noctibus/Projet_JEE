@@ -16,6 +16,13 @@
 				<div class="desc">Réalisateur : ${movies[param.nb].getDirector()}</div>
 				<div class="desc">Synopsis : ${movies[param.nb].getSynopsis()}</div>
 				<div class="desc">Note : ${movies[param.nb].getRate()} &#9733</div>
+				<div class="desc">
+					<span class="star" id="star1">&#9733</span>
+					<span class="star" id="star2">&#9733</span>
+					<span class="star" id="star3">&#9733</span>
+					<span class="star" id="star4">&#9733</span>
+					<span class="star" id="star5">&#9733</span>
+			   </div>
         </div>
 
 		<div class="comments">

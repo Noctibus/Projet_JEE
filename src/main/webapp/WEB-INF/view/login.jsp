@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <%@ page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8" %>
 <html>
-	<%@ include file="headerStars.jsp" %>
+	<%@ include file="headerBG.jsp" %>
 	<main class="main" id="loginMain">
 	<%@ include file="menu.jsp" %>	
 	<a class="space" id="register" href="register">Nouveau sur la page ? Inscrivez-Vous.</a>

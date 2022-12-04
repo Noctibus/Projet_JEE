@@ -11,15 +11,26 @@ body{
 	background-position:center center;
 	color: white;
 	margin: 0;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black
+}
+
+h1{
+	display: inline;
+}
+
+.avengersFont{
+	font-family: Avengers;
+	letter-spacing: 2px;
 }
 
 .stars{
-	background-image: url("stars.png");
+	background-image: url("tech.png");
+	background-size: 40%;
 }
 
 @font-face{
-		font-family: Avengers;
-		src: url("avengers.ttf");
+	font-family: Avengers;
+	src: url("avengers.ttf");
 }
 
 #page {
@@ -41,6 +52,10 @@ a:hover {
 
 /* entête */
 
+#welcome{
+	padding-top: 10px;
+}
+
 #logo{
 	width: 400px;
 	height: 150px;
@@ -51,6 +66,7 @@ a:hover {
 }
 
 #menu{
+	font-family: Avengers;
     margin-bottom: 100px;
 }
 
@@ -58,12 +74,12 @@ a:hover {
 
 main{
 	font-weight: bold;
-	height: 640px;
+	height: 786px;
 	font-size: 18px;
 }
 
 #mainIndex{
-	height: 585px;
+	height: 731px;
 }
 
 .bigMain{
@@ -71,7 +87,7 @@ main{
 }
 
 #pages{
-	margin-top: 50px;
+	margin-top: 132px;
 }
 
 #buttons {
@@ -103,7 +119,7 @@ main{
 }
 
 #register{
-    color: blueviolet;
+    color: rgb(230, 114, 114);
 }
 
 #register:hover{
@@ -124,14 +140,35 @@ main{
 	border: 1px;
 	border-style: solid;
 	border-color: black;
-	background-color: aliceblue;
+	background-color: white;
 	margin-left: 100px;
 	margin-right: 100px;
+	overflow-y:scroll;
+	scrollbar-width: thin;
 }
 
-#commentSpace{
-	margin-left: 100px;
-	margin-right: 100px;
+.post{
+	margin-top: 20px;
+	margin-bottom: 20px;
+	min-height:fit-content;
+	border: 1px;
+	border-style: solid;
+	border-color: black;
+	background-color:aliceblue;
+	margin-left: 20px;
+	margin-right: 20px;
+	color: rgb(0, 0, 0);
+	text-shadow: none;
+	text-align: left;
+	font-size: small;
+}
+
+.date{
+	color:rgb(119, 125, 153);
+}
+
+textarea{
+	resize: none;
 }
 
 .box{
@@ -141,8 +178,54 @@ main{
 	border-style: solid;
 	border-color: black;
 	margin: 50px;
+	text-align: left;
+	align-items: left;
 }
 
+.moviePoster{
+	float: left;
+	margin: 20px;
+	padding-top: 122px;
+}
+.poster{
+	width: 300px; 
+	height: 400px; 
+	margin-top: -90px;
+}
+
+.desc{
+	text-align: left;
+	margin-bottom: 20px;
+}
+
+.star:hover{
+	color: red;
+}
+
+.descBox{
+	padding-top: 50px;
+}
+
+#herosList{
+	margin-top: -50px;
+}
+
+.heros{
+	font-size: 25px;
+}
+
+.characterPicture{
+	height: 400px;
+	margin-top: -145px;
+}
+
+#loginBox{
+	margin-top: 100px;
+}
+
+#registerBox{
+	margin-top: 250px;
+}
 
 /* pied de page */
 

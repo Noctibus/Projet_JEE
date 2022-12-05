@@ -54,7 +54,7 @@ input{
 	background-color: aliceblue;
 	border: solid black 1px;
 	color: black;
-	padding: 12px 32px;
+	padding: 8px 32px;
 	text-align: center;
 	text-decoration: none;
 	display: inline-block;
@@ -232,11 +232,11 @@ textarea{
 }
 
 #loginBox{
-	margin-top: 100px;
+	margin-top: 85px;
 }
 
 #registerBox{
-	margin-top: 250px;
+	margin-top: 220px;
 }
 
 #logout{
@@ -246,7 +246,6 @@ textarea{
 .suppr{
 	color: black;
 	display: inline;
-	margin-top: 2px;
 }
 
 /* pied de page */

@@ -9,11 +9,11 @@
 		<form id="formLogin" action="/checkUser" method="post">
 			<div class="space">
 				<label for="username">Identifiant:</label><br>
-				<input type="text" id="username" name="username"><br>
+				<input type="text" id="username" name="username" required><br>
 			</div>
 			<div class="space">
 				<label for="password">Mot de passe:</label><br>
-				<input type="password" id="password" name="password"><br><br>
+				<input type="password" id="password" name="password" required><br><br>
 			</div>
 			<input type="submit" value="Connexion">
 		</form>

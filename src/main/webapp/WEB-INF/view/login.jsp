@@ -17,7 +17,6 @@
 			</div>
 			<input type="submit" value="Connexion">
 		</form>
-		<!--<a href="logout"><button>Logout</button></a>-->
 	</div>
 	</main>
 	<%@ include file="footer.jsp" %>

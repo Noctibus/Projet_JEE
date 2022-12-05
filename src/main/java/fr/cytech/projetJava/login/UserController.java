@@ -62,8 +62,12 @@ public class UserController {
 		return page;
 	}
 	
+	@GetMapping("/logged")
+	public String logged(HttpSession session) {
+		return "logged";
+	}
 	@GetMapping("/logout")
-	public String logout(HttpSession session) {
+	public String logout(Model model, HttpSession session) {
 		session.invalidate();
 		return "redirect:index";
 	}

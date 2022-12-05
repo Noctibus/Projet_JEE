@@ -34,9 +34,9 @@ public class UserController {
 
 	@GetMapping("/login")
 	public String login(Model model, HttpSession session) {
-		if (user == null) {
-			user = new User();
-		}
+		// if (user == null) {
+		// 	user = new User();
+		// }
 		return "login";
 	}
 	
@@ -46,7 +46,7 @@ public class UserController {
 	}
 
 	@PostMapping("/registerNewUser")
-	public String registerNewUser(Model model,@RequestParam("username") String username,@RequestParam("password1") String password1,@RequestParam("password2") String password2) throws NoSuchAlgorithmException {
+	public String registerNewUser(HttpSession session, Model model,@RequestParam("username") String username,@RequestParam("password1") String password1,@RequestParam("password2") String password2) throws NoSuchAlgorithmException {
 
 		String pswd1 = userService.hashPassword(password1);
 		String pswd2 = userService.hashPassword(password2);
@@ -56,6 +56,7 @@ public class UserController {
         if(alreadyExists==null) {
 			if (pswd1.equals(pswd2)) {
 				userService.createUser(username, pswd1);
+				session.setAttribute("user", user);
 				page = "redirect:index";
 			}
 		}
@@ -64,11 +65,19 @@ public class UserController {
 	
 	@GetMapping("/logged")
 	public String logged(HttpSession session) {
-		return "logged";
+		if (userService.isConnected(session)) {
+			return "logged";
+		}
+		return "redirect:login";
 	}
 	@GetMapping("/logout")
-	public String logout(Model model, HttpSession session) {
+	public String logout(HttpSession session) {
 		session.invalidate();
 		return "redirect:index";
+	}
+
+	@GetMapping("/error")
+	public String error() {
+		return "error";
 	}
 }

@@ -3,7 +3,10 @@
 <html>
 	<%@ include file="headerBG.jsp" %>
 	<%@ include file="menu.jsp" %>	
-
-		<a href="logout"><button>Logout</button></a>
-
+	<main>
+		<div id="logout">
+			<a href="logout"><button>Déconnexion</button></a>
+		</div>
+	</main>
+	<%@ include file="footer.jsp" %>
 </html>

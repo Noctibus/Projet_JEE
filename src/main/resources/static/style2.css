@@ -143,12 +143,13 @@ main{
 	background-color: white;
 	margin-left: 100px;
 	margin-right: 100px;
-	overflow: scroll;
+	overflow-y:scroll;
 	scrollbar-width: thin;
 }
 
 .post{
 	margin-top: 20px;
+	margin-bottom: 20px;
 	min-height:fit-content;
 	border: 1px;
 	border-style: solid;
@@ -197,6 +198,10 @@ textarea{
 	margin-bottom: 20px;
 }
 
+.star:hover{
+	color: red;
+}
+
 .descBox{
 	padding-top: 50px;
 }
@@ -216,6 +221,14 @@ textarea{
 
 #loginBox{
 	margin-top: 100px;
+}
+
+#registerBox{
+	margin-top: 250px;
+}
+
+#logout{
+	padding-top: 330px;
 }
 
 /* pied de page */

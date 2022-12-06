@@ -1,11 +1,13 @@
 <%@ page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8" %>
+<%@ taglib uri='http://java.sun.com/jsp/jstl/core' prefix='c'%>
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-	<head>
-		<meta charset="UTF-8">
-		<title>Great</title>
-	</head>
-	<body>
-		Logged in !!
-	</body>
+<html>
+	<%@ include file="headerBG.jsp" %>
+	<%@ include file="menu.jsp" %>	
+	<main>
+		<div id="logout">
+			<a href="logout"><button>Déconnexion</button></a>
+		</div>
+	</main>
+	<%@ include file="footer.jsp" %>
 </html>

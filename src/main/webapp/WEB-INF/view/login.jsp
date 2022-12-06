@@ -8,16 +8,19 @@
 	<div id="loginBox">
 		<form id="formLogin" action="/checkUser" method="post">
 			<div class="space">
-				<label for="username">Identifiant:</label><br>
-				<input type="text" id="username" name="username"><br>
+				<div>
+					<label for="username">Identifiant:</label>
+				</div>
+				<input type="text" id="username" name="username" required>
 			</div>
 			<div class="space">
-				<label for="password">Mot de passe:</label><br>
-				<input type="password" id="password" name="password"><br><br>
+				<div>
+					<label for="password">Mot de passe:</label>
+				</div>
+				<input type="password" id="password" name="password" required minlength="6">
 			</div>
 			<input type="submit" value="Connexion">
 		</form>
-		<!--<a href="logout"><button>Logout</button></a>-->
 	</div>
 	</main>
 	<%@ include file="footer.jsp" %>

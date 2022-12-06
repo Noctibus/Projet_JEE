@@ -7,6 +7,7 @@
 	<section id="intro" >   
 		<h1>Error 404, page not found</h1>
 	</section>
+	<img src="gantlet.png"><br>
     <a href="index">Go back to the home page</a>
 </main>
 <%@ include file="footer.jsp" %>

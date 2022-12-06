@@ -6,9 +6,9 @@
 </head>
 <body>
 <div id="page">
-	 <header>
-	 	<div>
-	 	 <img id="logo" src="titre.png" />
-	 	</div>
-	 </header>
+	<header>
+		<div>
+			<a href="/index"><img id="logo" src="titre.png"/></a>
+		</div>
+	</header>
 	 

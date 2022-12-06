@@ -19,11 +19,11 @@
 			<div class="desc">Origines : ${character.getOrigins()}</div>
 			<div class="desc">Note : ${character.getRate()} &#9733</div>
 			<div class="desc">
-				<span class="star" id="star1">&#9733</span>
-				<span class="star" id="star2">&#9733</span>
-				<span class="star" id="star3">&#9733</span>
-				<span class="star" id="star4">&#9733</span>
-				<span class="star" id="star5">&#9733</span>
+				<a href="/putCharacterRate?value=1&charId=${param.charId}" class="star" id="star1">&#9733</a>
+				<a href="/putCharacterRate?value=2&charId=${param.charId}" class="star" id="star1">&#9733</a>
+				<a href="/putCharacterRate?value=3&charId=${param.charId}" class="star" id="star1">&#9733</a>
+				<a href="/putCharacterRate?value=4&charId=${param.charId}" class="star" id="star1">&#9733</a>
+				<a href="/putCharacterRate?value=5&charId=${param.charId}" class="star" id="star1">&#9733</a>
 		   </div>
 		</div>
 		<div class="comments">

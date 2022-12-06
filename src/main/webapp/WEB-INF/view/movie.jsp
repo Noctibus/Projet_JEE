@@ -11,11 +11,11 @@
 				<img class="poster" src='avengers${param.movieId}.jpg'/>
 			</div>
 			<div class="descBox"></div>
-			<div class="desc">Titre : ${movies[param.movieId].getTitle()}</div>
-			<div class="desc">Date de sortie : ${movies[param.movieId].getDate()}</div>
-			<div class="desc">Réalisateur : ${movies[param.movieId].getDirector()}</div>
-			<div class="desc">Synopsis : ${movies[param.movieId].getSynopsis()}</div>
-			<div class="desc">Note : ${movies[param.movieId].getRate()} &#9733</div>
+			<div class="desc">Titre : ${movie.getTitle()}</div>
+			<div class="desc">Date de sortie : ${movie.getDate()}</div>
+			<div class="desc">Réalisateur : ${movie.getDirector()}</div>
+			<div class="desc">Synopsis : ${movie.getSynopsis()}</div>
+			<div class="desc">Note : ${movie.getRate()} &#9733</div>
 			<div class="desc">
 				<span class="star" id="star1">&#9733</span>
 				<span class="star" id="star2">&#9733</span>

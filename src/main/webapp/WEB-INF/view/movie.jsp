@@ -17,11 +17,11 @@
 			<div class="desc">Synopsis : ${movie.getSynopsis()}</div>
 			<div class="desc">Note : ${movie.getRate()} &#9733</div>
 			<div class="desc">
-				<span class="star" id="star1">&#9733</span>
-				<span class="star" id="star2">&#9733</span>
-				<span class="star" id="star3">&#9733</span>
-				<span class="star" id="star4">&#9733</span>
-				<span class="star" id="star5">&#9733</span>
+				<a href="/putMovieRate?value=1&movieId=${param.movieId}" class="star" id="star1">&#9733</a>
+				<a href="/putMovieRate?value=2&movieId=${param.movieId}" class="star" id="star1">&#9733</a>
+				<a href="/putMovieRate?value=3&movieId=${param.movieId}" class="star" id="star1">&#9733</a>
+				<a href="/putMovieRate?value=4&movieId=${param.movieId}" class="star" id="star1">&#9733</a>
+				<a href="/putMovieRate?value=5&movieId=${param.movieId}" class="star" id="star1">&#9733</a>
 			</div>
         </div>
 		<div class="comments">

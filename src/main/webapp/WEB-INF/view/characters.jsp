@@ -6,15 +6,15 @@
     <main> 	
 		<%@ include file="menu.jsp" %>
         <div id="herosList">
-        <c:forEach items="${characters}" var="character">
-            <c:if test="${character.getHerosName()!=null}">
-                <div class="heros"><a href="character?charId=${character.getId()}"> ${character.getHerosName()}</a></div> 
-            </c:if>
-            <c:if test="${character.getHerosName()==null}">
-                <div class="heros"><a href="character?charId=${character.getId()}"> ${character.getIdentity()}</a></div> 
-            </c:if>
-        </c:forEach>
-    </div>
+            <c:forEach items="${characters}" var="character">
+                <c:if test="${character.getHerosName()!=null}">
+                    <div class="heros"><a href="character?charId=${character.getId()}"> ${character.getHerosName()}</a></div> 
+                </c:if>
+                <c:if test="${character.getHerosName()==null}">
+                    <div class="heros"><a href="character?charId=${character.getId()}"> ${character.getIdentity()}</a></div> 
+                </c:if>
+            </c:forEach>
+        </div>
     </main>
 	<%@ include file="footer.jsp" %>
 </html>

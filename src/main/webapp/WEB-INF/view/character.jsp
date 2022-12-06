@@ -34,10 +34,12 @@
 						<div class="post">
 							<span>${comment.user.username} </span>
 							<span class="date">${comment.date}</span>
-							<c:if test="${sessionScope.user.id==comment.user.id}">
-								<button><a href="/deleteCharacterComment?charId=${param.charId}&characterCommentId=${comment.id}" class="suppr">X</a></button>
-							</c:if>
 							<p>${comment.content}</p>
+							<c:if test="${sessionScope.user.id==comment.user.id}">
+								<div class="suppBox">
+									<button><a href="/deleteCharacterComment?charId=${param.charId}&characterCommentId=${comment.id}" class="suppr">Supprimer</a></button>
+								</div>
+							</c:if>
 						</div>
 					</c:if>
 				</c:forEach>

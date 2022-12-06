@@ -245,7 +245,7 @@ textarea{
 
 .suppr{
 	color: black;
-	display: inline;
+	display:inline-block;
 }
 
 /* pied de page */

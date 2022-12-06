@@ -48,6 +48,17 @@ a{
 }
 a:hover {
     color: rgb(238, 34, 34);
+}
+
+input{
+	background-color: aliceblue;
+	border: solid black 1px;
+	color: black;
+	padding: 8px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
   }
 
 /* entête */
@@ -165,6 +176,7 @@ main{
 
 .date{
 	color:rgb(119, 125, 153);
+	margin-right: 1284px;
 }
 
 textarea{
@@ -220,15 +232,24 @@ textarea{
 }
 
 #loginBox{
-	margin-top: 100px;
+	margin-top: 85px;
 }
 
 #registerBox{
-	margin-top: 250px;
+	margin-top: 220px;
 }
 
 #logout{
-	padding-top: 100px;
+	padding-top: 330px;
+}
+
+.suppr{
+	color: black;
+}
+
+.suppBox{
+	margin: 5px;
+	text-align: right;
 }
 
 /* pied de page */

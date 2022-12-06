@@ -42,7 +42,7 @@ public class CharacterController {
 	public String character(Model model,@RequestParam("charId") int charId) {
         Character character = this.characterService.getById(charId);
         model.addAttribute("character",character);
-        model.addAttribute("comments",this.characterCommentService.getAllCharacterComments());
+        model.addAttribute("comments",this.characterCommentService.getCharacterCommentsByCharacter(character));
 		return "character";
 	}
 

@@ -30,18 +30,16 @@
 			<h2 class="avengersFont">Espace Commentaire</h2>
 			<div class="publiedComments">
 				<c:forEach items="${comments}" var="comment">
-					<c:if test="${comment.character.id==param.charId}">	
-						<div class="post">
-							<span>${comment.user.username} </span>
-							<span class="date">${comment.date}</span>
-							<p>${comment.content}</p>
-							<c:if test="${sessionScope.user.id==comment.user.id}">
-								<div class="suppBox">
-									<button><a href="/deleteCharacterComment?charId=${param.charId}&characterCommentId=${comment.id}" class="suppr">Supprimer</a></button>
-								</div>
-							</c:if>
-						</div>
-					</c:if>
+					<div class="post">
+						<span>${comment.user.username} </span>
+						<span class="date">${comment.date}</span>
+						<p>${comment.content}</p>
+						<c:if test="${sessionScope.user.id==comment.user.id}">
+							<div class="suppBox">
+								<button><a href="/deleteCharacterComment?charId=${param.charId}&characterCommentId=${comment.id}" class="suppr">Supprimer</a></button>
+							</div>
+						</c:if>
+					</div>
 				</c:forEach>
 			</div>
 			<form class="commentform" method="post" action="saveCharacterComment?charId=${param.charId}">

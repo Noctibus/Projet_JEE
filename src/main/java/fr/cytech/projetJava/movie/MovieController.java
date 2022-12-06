@@ -41,7 +41,7 @@ public class MovieController {
     public String showPostersMovie(Model model,@RequestParam("movieId") int movieId) {
         Movie movie = this.movieService.getById(movieId);
         model.addAttribute("movie", movie);
-        model.addAttribute("comments",this.movieCommentService.getAllMovieComments());
+        model.addAttribute("comments",this.movieCommentService.getMovieCommentsByMovie(movie));
         return "movie";
     }
 

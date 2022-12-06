@@ -4,7 +4,7 @@
 	<link rel="icon" href="ironman.png">
 	<link rel="stylesheet" type="text/css" href="style.css" />
 </head>
-<body class="stars">
+<body class="bg">
 <div id="page">
 	<header>
 	 	<div>

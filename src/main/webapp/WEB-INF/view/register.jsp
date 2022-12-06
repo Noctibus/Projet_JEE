@@ -22,7 +22,7 @@
                     <label for="password">Confirmez le mot de passe :</label><br>
                     <input type="password" name="password2" required minlength="6"><br><br>
                 </div>
-                <input type="submit" value="Submit">
+                <input type="submit" value="S'inscrire">
             </form>
         </div>
 	</main>

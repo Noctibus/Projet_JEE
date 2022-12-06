@@ -61,7 +61,7 @@ public class UserController {
 				page = "redirect:index";
 			}
 		} else {
-			session.setAttribute("error", "Username already exists. Choose an other one.");
+			session.setAttribute("error", "Cet identifiant est déjà pris, veuillez en choisir un autre.");
 		}
 		return page;
 	}

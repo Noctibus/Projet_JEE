@@ -11,20 +11,20 @@
             </c:if>
             <form action="/registerNewUser" method="post">
                 <div class="space">
-                    <label for="username">Username :</label><br>
+                    <label for="username">Identifiant :</label><br>
                     <input type="text" id="username" name="username" required><br>
                 </div>
                 <div class="space">
-                    <label for="password">Password :</label><br>
+                    <label for="password">Mot de passe :</label><br>
                     <input type="password" name="password1" required minlength="6"><br>
                 </div>
                 <div class="space">
-                    <label for="password">Confirm Password :</label><br>
+                    <label for="password">Confirmez le mot de passe :</label><br>
                     <input type="password" name="password2" required minlength="6"><br><br>
                 </div>
                 <input type="submit" value="Submit">
             </form>
-    </div>
+        </div>
 	</main>
     <%@ include file="footer.jsp" %>
 </html>

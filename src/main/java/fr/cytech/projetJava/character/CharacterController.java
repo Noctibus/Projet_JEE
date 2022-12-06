@@ -8,12 +8,15 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import fr.cytech.projetJava.comments.CharacterCommentService;
 import fr.cytech.projetJava.login.User;
+import fr.cytech.projetJava.rate.CharacterRates;
+import fr.cytech.projetJava.rate.CharacterRatesService;
 
 @Controller
 public class CharacterController {
@@ -24,6 +27,9 @@ public class CharacterController {
 
     @Autowired
     private CharacterCommentService characterCommentService;
+
+    @Autowired
+    private CharacterRatesService characterRatesService;
     
 
     @GetMapping("/characters")
@@ -59,5 +65,20 @@ public class CharacterController {
         return "redirect:/character?charId="+charId;
     }
 
+    @GetMapping("putCharacterRate")
+    public String addCharacterRate(@RequestParam("value") int value, @RequestParam("charId") int charId, HttpSession session) {
+        User connectedUser=(User)session.getAttribute("user");
+        String page="redirect:/character?charId="+charId;
+        Character character = characterService.getById(charId);
+        CharacterRates characterRate = characterRatesService.getCharacterRateByCharacterAndUser(character, connectedUser);
+        if(connectedUser==null) {
+            page="redirect:/login";
+        } else if(characterRate!=null && value==characterRate.getValue()) {
+            characterRatesService.deleteCharacterRate(characterRatesService.getCharacterRateByCharacterAndUser(character, connectedUser));
+        } else {
+            characterRatesService.addCharacterRate(connectedUser, character, value);
+        }
+        return page;
+    }
 
 }

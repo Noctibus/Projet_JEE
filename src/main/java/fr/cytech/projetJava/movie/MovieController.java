@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import fr.cytech.projetJava.comments.MovieCommentService;
 import fr.cytech.projetJava.login.User;
+import fr.cytech.projetJava.rate.MovieRates;
 import fr.cytech.projetJava.rate.MovieRatesService;
 
 @Controller
@@ -66,10 +67,14 @@ public class MovieController {
     public String addMovieRate(@RequestParam("value") int value, @RequestParam("movieId") int movieId, HttpSession session) {
         User connectedUser=(User)session.getAttribute("user");
         String page="redirect:/movie?movieId="+movieId;
+        Movie movie = movieService.getById(movieId);
+        MovieRates movieRate = movieRatesService.getMovieRateByMovieAndUser(movie, connectedUser);
         if(connectedUser==null) {
             page="redirect:/login";
+        } else if(movieRate!=null && value==movieRate.getValue()) {
+            movieRatesService.deleteMovieRate(movieRatesService.getMovieRateByMovieAndUser(movie, connectedUser));
         } else {
-            movieRatesService.addMovieRate(connectedUser, movieService.getById(movieId), value);
+            movieRatesService.addMovieRate(connectedUser, movie, value);
         }
         return page;
     }

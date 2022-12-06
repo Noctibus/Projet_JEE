@@ -53,7 +53,7 @@ public class MovieRatesService {
     }
 
     // Read
-    public MovieRates getMovieRateByCharacterAndUser(Movie movie, User user){
+    public MovieRates getMovieRateByMovieAndUser(Movie movie, User user){
         return movieRatesRepository.findByMovieAndUser(movie, user);
     }
 

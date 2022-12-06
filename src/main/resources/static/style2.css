@@ -262,3 +262,8 @@ footer{
 #marvel{
 	height: 70px;
 }
+
+.error {
+	width: 15%;
+	height: auto;
+}

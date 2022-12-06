@@ -34,9 +34,9 @@ public class CharacterController {
 	}
 
 	@GetMapping("/character")
-	public String character(Model model) {
-        List<Character> characters = this.characterService.getAllCharacters();
-        model.addAttribute("characters", characters);
+	public String character(Model model,@RequestParam("charId") int charId) {
+        Character character = this.characterService.getById(charId);
+        model.addAttribute("character",character);
         model.addAttribute("comments",this.characterCommentService.getAllCharacterComments());
 		return "character";
 	}

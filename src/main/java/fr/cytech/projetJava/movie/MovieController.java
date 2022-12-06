@@ -34,9 +34,9 @@ public class MovieController {
     }
 
     @GetMapping("/movie")
-    public String showPostersMovie(Model model) {
-        List<Movie> movies = this.movieService.getAllMovies();
-        model.addAttribute("movies", movies);
+    public String showPostersMovie(Model model,@RequestParam("movieId") int movieId) {
+        Movie movie = this.movieService.getById(movieId);
+        model.addAttribute("movie", movie);
         model.addAttribute("comments",this.movieCommentService.getAllMovieComments());
         return "movie";
     }

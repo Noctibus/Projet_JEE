@@ -59,6 +59,8 @@ public class UserController {
 				session.setAttribute("user", user);
 				page = "redirect:index";
 			}
+		} else {
+			session.setAttribute("error", "Username already exists. Choose an other one.");
 		}
 		return page;
 	}

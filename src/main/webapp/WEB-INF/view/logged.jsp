@@ -3,8 +3,8 @@
 <!DOCTYPE html>
 <html>
 	<%@ include file="headerBG.jsp" %>
-	<%@ include file="menu.jsp" %>	
 	<main>
+		<%@ include file="menu.jsp" %>	
 		<div id="logout">
 			<a href="logout"><button>Déconnexion</button></a>
 		</div>

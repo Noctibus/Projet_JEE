@@ -10,10 +10,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import fr.cytech.projetJava.comments.MovieCommentService;
 import fr.cytech.projetJava.login.User;
+import fr.cytech.projetJava.rate.MovieRatesService;
 
 @Controller
 public class MovieController {
@@ -25,6 +27,8 @@ public class MovieController {
     @Autowired
     private MovieCommentService movieCommentService;
 
+    @Autowired
+    private MovieRatesService movieRatesService;
 
     @GetMapping("/movies")
     public String showPostersMovies(Model model) {
@@ -58,6 +62,17 @@ public class MovieController {
         movieCommentService.deleteMovieComment(movieCommentService.getById(movieCommentId));
         return "redirect:/movie?movieId="+movieId;
     }
-    
+
+    @GetMapping("putMovieRate")
+    public String addMovieRate(@RequestParam("value") int value, @RequestParam("movieId") int movieId, HttpSession session) {
+        User connectedUser=(User)session.getAttribute("user");
+        String page="redirect:/movie?movieId="+movieId;
+        if(connectedUser==null) {
+            page="redirect:/login";
+        } else {
+            movieRatesService.addMovieRate(connectedUser, movieService.getById(movieId), value);
+        }
+        return page;
+    }
 
 }

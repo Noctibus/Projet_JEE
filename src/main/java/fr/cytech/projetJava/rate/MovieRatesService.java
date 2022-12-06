@@ -60,5 +60,8 @@ public class MovieRatesService {
     // Delete
     public void deleteMovieRate(MovieRates movieRate){
         movieRatesRepository.delete(movieRate);
+         // on récupère le personnage noté et on met à jour sa note moyenne
+         Movie movie = movieRate.getMovie();
+         setMovieRateAvg(movie);
     }
 }

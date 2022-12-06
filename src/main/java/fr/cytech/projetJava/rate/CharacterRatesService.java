@@ -61,5 +61,9 @@ public class CharacterRatesService {
     // Delete
     public void deleteCharacterRate(CharacterRates characterRate){
         characterRatesRepository.delete(characterRate);
+        // on récupère le personnage noté et on met à jour sa note moyenne
+        Character character = characterRate.getCharacter();
+        setCharacterRateAvg(character);
+
     }
 }

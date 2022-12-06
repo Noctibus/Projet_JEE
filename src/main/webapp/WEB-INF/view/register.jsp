@@ -16,11 +16,11 @@
                 </div>
                 <div class="space">
                     <label for="password">Password :</label><br>
-                    <input type="" name="password1" required><br>
+                    <input type="password" name="password1" required minlength="6"><br>
                 </div>
                 <div class="space">
                     <label for="password">Confirm Password :</label><br>
-                    <input type="" name="password2" required><br><br>
+                    <input type="password" name="password2" required minlength="6"><br><br>
                 </div>
                 <input type="submit" value="Submit">
             </form>

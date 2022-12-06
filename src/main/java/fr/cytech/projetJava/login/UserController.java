@@ -56,6 +56,7 @@ public class UserController {
         if(alreadyExists==null) {
 			if (pswd1.equals(pswd2)) {
 				userService.createUser(username, pswd1);
+				user = userService.getByUsername(username);
 				session.setAttribute("user", user);
 				page = "redirect:index";
 			}

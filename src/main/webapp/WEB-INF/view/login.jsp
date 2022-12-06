@@ -11,13 +11,13 @@
 				<div>
 					<label for="username">Identifiant:</label>
 				</div>
-				<input type="text" id="username" name="username">
+				<input type="text" id="username" name="username" required>
 			</div>
 			<div class="space">
 				<div>
 					<label for="password">Mot de passe:</label>
 				</div>
-				<input type="password" id="password" name="password">
+				<input type="password" id="password" name="password" required minlength="6">
 			</div>
 			<input type="submit" value="Connexion">
 		</form>

@@ -7,6 +7,7 @@
 		<%@ include file="menu.jsp" %>	
 		<div id="logout">
 			<a href="logout"><button>Déconnexion</button></a>
+			<a href="removeUser"><button>Supprimer l'utilisateur</button></a>
 		</div>
 	</main>
 	<%@ include file="footer.jsp" %>

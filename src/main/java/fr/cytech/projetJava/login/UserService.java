@@ -42,4 +42,8 @@ public class UserService {
 		hashedPassword = new String(messageDigest.digest());
         return hashedPassword;
     }
+
+    public void removeUser(User user) {
+        userRepository.delete(user);
+    }
 }

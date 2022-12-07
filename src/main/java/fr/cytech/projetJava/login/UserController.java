@@ -59,6 +59,8 @@ public class UserController {
 				user = userService.getByUsername(username);
 				session.setAttribute("user", user);
 				page = "redirect:index";
+			} else {
+				session.setAttribute("error", "Les mots de passe ne correspondent pas.");
 			}
 		} else {
 			session.setAttribute("error", "Cet identifiant est déjà pris, veuillez en choisir un autre.");
@@ -76,6 +78,15 @@ public class UserController {
 	@GetMapping("/logout")
 	public String logout(HttpSession session) {
 		session.invalidate();
+		return "redirect:index";
+	}
+
+	@GetMapping("/removeUser")
+	public String removeUser(HttpSession session) {
+		if (userService.isConnected(session)) {
+			userService.removeUser((User)session.getAttribute("user"));
+			session.invalidate();
+		}
 		return "redirect:index";
 	}
 

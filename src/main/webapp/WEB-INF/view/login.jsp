@@ -8,6 +8,10 @@
 	<div id="loginBox">
 		<form id="formLogin" action="/checkUser" method="post">
 			<div class="space">
+			<c:if test="${not empty error}">
+                <div class="error">${error}</div>
+                <c:remove var="error" />
+            </c:if>
 				<div>
 					<label for="username">Identifiant :</label>
 				</div>

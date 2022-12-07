@@ -27,7 +27,8 @@ public class UserController {
 			if (usr.getPassword().equals(userService.hashPassword(password))) {
 				page = "redirect:index";
 				session.setAttribute("user", usr);
-			}
+			} else {
+				session.setAttribute("error", "Mot de passe incorrect.");}
 		}
 		return page;
 	}

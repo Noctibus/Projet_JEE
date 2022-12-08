@@ -5,6 +5,14 @@ On a jusqu'au 4 décembre alors maniez-vous le train !
 
 Good Luck everyone
 
+
 ### TODO
 
-Revoir arbo des .java : séparer les couches (Controller, Service, Repository et Model)
+Utilisateurs Admin : Possibilité de modérer tous les commentaires, ajouter/editer films/personnages
+Page contact ?
+Modification page utilisateur/perso/film (voir slides)
+
+
+### Deadline
+
+23 Décembre 2022 23:59

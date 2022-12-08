@@ -8,9 +8,9 @@ Good Luck everyone
 
 ### TODO
 
-Utilisateurs Admin : Possibilité de modérer tous les commentaires, ajouter/editer films/personnages 
-Page contact ? 
-Modification page utilisateur/perso/film (voir slides) 
+Utilisateurs Admin : Possibilité de modérer tous les commentaires, ajouter/editer films/personnages  
+Page contact ?  
+Modification page utilisateur/perso/film (voir slides)  
 
 
 ### Deadline

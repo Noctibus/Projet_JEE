@@ -15,6 +15,10 @@ public class FrontController {
 	public String indexBis() {
 		return "index";
 	}
-	
 
+	@GetMapping("/contact")
+	public String contact() {
+		return "contact";
+	}
+	
 }

@@ -69,9 +69,10 @@
 					<c:set var="subject" value="" scope="page" />
 					
 					<c:forEach items="${movieComments}" var="comment">
-							<c:if test="${subject!=comment.movie.title}">
+							<c:if test="${subject==comment.movie.title}">
 								<div class="commentItem">
 							</c:if>
+		
 							<c:if test="${subject!=comment.movie.title}">
 								<div class="userItem">
 								<c:set var="subject" value="${comment.movie.title}" scope="page" />
@@ -88,8 +89,12 @@
 						</div>
 					</c:forEach>
 					<c:forEach items="${characterComments}" var="comment">
-						<div class="commentItem">
+							<c:if test="${comment.character.herosName==null||subject==comment.character.herosName}">
+								<div class="commentItem">	
+							</c:if>	
+
 							<c:if test="${comment.character.herosName!=null&&subject!=comment.character.herosName}">
+								<div class="userItem">
 								<c:set var="subject" value="${comment.character.herosName}" scope="page" />
 								<p><a href="/character?charId=${comment.character.id}">${subject} :</a></p>
 							</c:if>

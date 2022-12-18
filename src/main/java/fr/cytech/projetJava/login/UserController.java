@@ -12,12 +12,29 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import fr.cytech.projetJava.comments.CharacterCommentService;
+import fr.cytech.projetJava.comments.MovieCommentService;
+import fr.cytech.projetJava.rate.MovieRatesService;
+import fr.cytech.projetJava.rate.CharacterRatesService;
+
 @Controller
 public class UserController {
 	
 	@Autowired
 	UserService userService;
-	public User user;
+
+	@Autowired
+	MovieCommentService movieCommentService;
+
+	@Autowired
+	CharacterCommentService characterCommentService;
+
+	@Autowired
+	MovieRatesService movieRatesService;
+
+	@Autowired
+	CharacterRatesService characterRatesService;
+
 
 	@PostMapping("/checkUser")
 	public String checkUser(HttpSession session, @RequestParam("username") String username, @RequestParam("password") String password) throws NoSuchAlgorithmException {
@@ -54,8 +71,7 @@ public class UserController {
         if(alreadyExists==null) {
 			if (pswd1.equals(pswd2)) {
 				userService.createUser(username, pswd1);
-				user = userService.getByUsername(username);
-				session.setAttribute("user", user);
+				session.setAttribute("user",userService.getByUsername(username));
 				page = "redirect:index";
 			} else {
 				session.setAttribute("error", "Les mots de passe ne correspondent pas.");
@@ -69,14 +85,24 @@ public class UserController {
 	@GetMapping("/userPage")
 	public String userPage(HttpSession session) {
 		if (userService.isConnected(session)) {
-			return ((User)session.getAttribute("user")).isAdministrator() ? "redirect:adminPage" : "userPage";
+			return ((User)session.getAttribute("user")).isAdministrator() ? "redirect:adminUserPage" : "redirect:commonUserPage";
 		}
 		return "redirect:login";
 	}
+	
+	@GetMapping("/commonUserPage")
+	public String commonUserPage(Model model,HttpSession session) {
+		session.setAttribute("user",userService.getByUsername("RMORALES"));
+		model.addAttribute("movieComments",this.movieCommentService.getMovieCommentsByUserOrderByMovie((User)session.getAttribute("user")));
+		model.addAttribute("characterComments",this.characterCommentService.getCharacterCommentsByUserOrderByCharacter((User)session.getAttribute("user")));
+		model.addAttribute("movieRates",this.movieRatesService.getMovieRatesByUserOrderByMovie((User)session.getAttribute("user")));
+		model.addAttribute("characterRates",this.characterRatesService.getCharacterRatesByUserOrderByCharacter((User)session.getAttribute("user")));
+		return "commonUserPage";
+	}
 
-	@GetMapping("/adminPage")
-	public String adminPage() {
-		return "adminPage";
+	@GetMapping("/adminUserPage")
+	public String adminUserPage() {
+		return "adminUserPage";
 	}
 
 	@GetMapping("/logout")

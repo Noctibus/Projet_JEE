@@ -24,7 +24,6 @@ public class Character {
     private String identity;
 
     @Column(name = "herosName")
-    @NotNull
     private String herosName;
 
     @Column(name = "actor")

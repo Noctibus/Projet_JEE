@@ -13,11 +13,12 @@ public interface CharacterCommentRepository extends JpaRepository<CharacterComme
 
     public CharacterComment findById(int ID);
     public List<CharacterComment> findAll();
+    public List<CharacterComment> findByUserOrderByCharacter(User user);
     public List<CharacterComment> findByCharacter(Character character);
     public List<CharacterComment> findByCharacterOrderByDateDesc(Character character);
     public List<CharacterComment> findByCharacterOrderByDateAsc(Character character);
     public List<CharacterComment> findByUser(User user);
-    public List<CharacterComment> findByCharacterOrderByDateDesc(User user);
-    public List<CharacterComment> findByCharacterOrderByDateAsc(User user);
+    public List<CharacterComment> findByUserOrderByDateDesc(User user);
+    public List<CharacterComment> findByUserOrderByDateAsc(User user);
     
 }

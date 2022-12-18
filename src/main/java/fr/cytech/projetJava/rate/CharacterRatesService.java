@@ -1,5 +1,6 @@
 package fr.cytech.projetJava.rate;
 
+import java.util.List;
 import java.util.Objects;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,8 +21,8 @@ public class CharacterRatesService {
 
     // Calculates average of a character
     public void setCharacterRateAvg(Character character){
-        CharacterRates[] tab = characterRatesRepository.findByCharacter(character);
-        int n = tab.length;
+        List<CharacterRates> tab = characterRatesRepository.findByCharacter(character);
+        int n = tab.size();
         double characterAvg = 0;
         // si il n'y a pas de notes on retourne 3 (la moyenne entre 1 et 5)
         if(n == 0){
@@ -56,6 +57,10 @@ public class CharacterRatesService {
     // Read
     public CharacterRates getCharacterRateByCharacterAndUser(Character character, User user){
         return characterRatesRepository.findByCharacterAndUser(character, user);
+    }
+
+    public List<CharacterRates> getCharacterRatesByUserOrderByCharacter(User user) {
+        return characterRatesRepository.findByUserOrderByCharacter(user);
     }
 
     // Delete

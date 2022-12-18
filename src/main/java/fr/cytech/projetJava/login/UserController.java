@@ -92,7 +92,6 @@ public class UserController {
 	
 	@GetMapping("/commonUserPage")
 	public String commonUserPage(Model model,HttpSession session) {
-		session.setAttribute("user",userService.getByUsername("RMORALES"));
 		model.addAttribute("movieComments",this.movieCommentService.getMovieCommentsByUserOrderByMovie((User)session.getAttribute("user")));
 		model.addAttribute("characterComments",this.characterCommentService.getCharacterCommentsByUserOrderByCharacter((User)session.getAttribute("user")));
 		model.addAttribute("movieRates",this.movieRatesService.getMovieRatesByUserOrderByMovie((User)session.getAttribute("user")));

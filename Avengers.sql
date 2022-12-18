@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: mariadb:3306
--- Generation Time: Dec 04, 2022 at 12:40 PM
+-- Generation Time: Dec 18, 2022 at 08:02 PM
 -- Server version: 10.6.11-MariaDB-1:10.6.11+maria~ubu2004
 -- PHP Version: 8.0.25
 
@@ -24,6 +24,7 @@ USE `Avengers`;
 
 -- --------------------------------------------------------
 
+
 --
 -- Database: `Avengers`
 --
@@ -36,8 +37,8 @@ USE `Avengers`;
 
 CREATE TABLE `CharacterComments` (
   `id` int(11) NOT NULL,
-  `userId` int(11) NOT NULL,
   `characterId` int(11) NOT NULL,
+  `userUsername` varchar(20) NOT NULL,
   `date` datetime NOT NULL,
   `content` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -50,9 +51,9 @@ CREATE TABLE `CharacterComments` (
 
 CREATE TABLE `CharacterRates` (
   `characterRateID` int(11) NOT NULL,
-  `userID` int(11) NOT NULL,
   `value` int(11) NOT NULL,
-  `characterID` int(11) NOT NULL
+  `characterID` int(11) NOT NULL,
+  `userUsername` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -112,8 +113,8 @@ INSERT INTO `Characters` (`id`, `identity`, `herosName`, `actor`, `origins`, `av
 
 CREATE TABLE `MovieComments` (
   `id` int(11) NOT NULL,
-  `userId` int(11) NOT NULL,
   `movieId` int(11) NOT NULL,
+  `userUsername` varchar(20) NOT NULL,
   `date` datetime NOT NULL,
   `content` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -126,9 +127,9 @@ CREATE TABLE `MovieComments` (
 
 CREATE TABLE `MovieRates` (
   `movieRateID` int(11) NOT NULL,
-  `userID` int(11) NOT NULL,
   `value` int(11) NOT NULL,
-  `movieID` int(11) NOT NULL
+  `movieID` int(11) NOT NULL,
+  `userUsername` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -152,9 +153,9 @@ CREATE TABLE `Movies` (
 
 INSERT INTO `Movies` (`id`, `title`, `director`, `date`, `rate`, `synopsis`) VALUES
 (1, 'Avengers', 'Joss Whedon', '2012-04-20', 3, 'Lorsque Nick Fury, le directeur du S.H.I.E.L.D., l\'organisation qui préserve la paix au plan mondial, cherche à former une équipe de choc pour empêcher la destruction du monde, Iron Man, Hulk, Thor, Captain America, Hawkeye et Black Widow répondent présents.\r\nLes Avengers ont beau constituer la plus fantastique des équipes, il leur reste encore à apprendre à travailler ensemble, et non les uns contre les autres, d\'autant que le redoutable Loki a réussi à accéder au Cube Cosmique et à son pouvoir illimité... '),
-(2, 'Avengers : L’Ère d’Ultron ', 'Joss Whedon', '2015-04-22', 3.5, 'Alors que Tony Stark tente de relancer un programme de maintien de la paix jusque-là suspendu, les choses tournent mal et les super-héros Iron Man, Captain America, Thor, Hulk, Black Widow et Hawkeye vont devoir à nouveau unir leurs forces pour combattre le plus puissant de leurs adversaires : le terrible Ultron, un être technologique terrifiant qui s’est juré d’éradiquer l’espèce humaine.\r\nAfin d’empêcher celui-ci d’accomplir ses sombres desseins, des alliances inattendues se scellent, les entraînant dans une incroyable aventure et une haletante course contre le temps… '),
-(3, 'Avengers : Infinity War', 'Joe Russo, Anthony Russo', '2018-04-25', 5, 'Les Avengers et leurs alliés devront être prêts à tout sacrifier pour neutraliser le redoutable Thanos avant que son attaque éclair ne conduise à la destruction complète de l’univers. '),
-(4, 'Avengers: Endgame', 'Joe Russo, Anthony Russo', '2019-04-24', 4, 'Thanos ayant anéanti la moitié de l’univers, les Avengers restants resserrent les rangs dans ce vingt-deuxième film des Studios Marvel, grande conclusion d’un des chapitres de l’Univers Cinématographique Marvel.');
+(2, 'Avengers : L’Ère d’Ultron ', 'Joss Whedon', '2015-04-22', 3, 'Alors que Tony Stark tente de relancer un programme de maintien de la paix jusque-là suspendu, les choses tournent mal et les super-héros Iron Man, Captain America, Thor, Hulk, Black Widow et Hawkeye vont devoir à nouveau unir leurs forces pour combattre le plus puissant de leurs adversaires : le terrible Ultron, un être technologique terrifiant qui s’est juré d’éradiquer l’espèce humaine.\r\nAfin d’empêcher celui-ci d’accomplir ses sombres desseins, des alliances inattendues se scellent, les entraînant dans une incroyable aventure et une haletante course contre le temps… '),
+(3, 'Avengers : Infinity War', 'Joe Russo, Anthony Russo', '2018-04-25', 3, 'Les Avengers et leurs alliés devront être prêts à tout sacrifier pour neutraliser le redoutable Thanos avant que son attaque éclair ne conduise à la destruction complète de l’univers. '),
+(4, 'Avengers: Endgame', 'Joe Russo, Anthony Russo', '2019-04-24', 3, 'Thanos ayant anéanti la moitié de l’univers, les Avengers restants resserrent les rangs dans ce vingt-deuxième film des Studios Marvel, grande conclusion d’un des chapitres de l’Univers Cinématographique Marvel.');
 
 -- --------------------------------------------------------
 
@@ -163,9 +164,29 @@ INSERT INTO `Movies` (`id`, `title`, `director`, `date`, `rate`, `synopsis`) VAL
 --
 
 CREATE TABLE `Users` (
-  `id` int(11) NOT NULL,
-  `username` text NOT NULL,
-  `password` text NOT NULL
+  `username` varchar(20) NOT NULL,
+  `password` text NOT NULL,
+  `administrator` tinyint(1) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `Users`
+--
+
+INSERT INTO `Users` (`username`, `password`, `administrator`) VALUES
+('admin', '����n��:b����?]Z�����:�l�', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `UsersInformations`
+--
+
+CREATE TABLE `UsersInformations` (
+  `userUsername` varchar(20) NOT NULL,
+  `emailAddress` varchar(50) NOT NULL,
+  `gender` char(1) NOT NULL,
+  `age` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -178,15 +199,15 @@ CREATE TABLE `Users` (
 ALTER TABLE `CharacterComments`
   ADD PRIMARY KEY (`id`),
   ADD KEY `fk_CharacterComments_characterId` (`characterId`),
-  ADD KEY `fk_CharacterComments_userId` (`userId`);
+  ADD KEY `fk_CharacterComments_userUsername` (`userUsername`);
 
 --
 -- Indexes for table `CharacterRates`
 --
 ALTER TABLE `CharacterRates`
   ADD PRIMARY KEY (`characterRateID`),
-  ADD KEY `fk_CharacterRates_userId` (`userID`),
-  ADD KEY `fk_CharacterRates_characterId` (`characterID`);
+  ADD KEY `fk_CharacterRates_characterId` (`characterID`),
+  ADD KEY `fk_CharacterRates_userUsername` (`userUsername`);
 
 --
 -- Indexes for table `Characters`
@@ -200,15 +221,15 @@ ALTER TABLE `Characters`
 ALTER TABLE `MovieComments`
   ADD PRIMARY KEY (`id`),
   ADD KEY `fk_MovieComments_movieId` (`movieId`),
-  ADD KEY `fk_MovieComments_userId` (`userId`);
+  ADD KEY `fk_MovieComments_userUsername` (`userUsername`);
 
 --
 -- Indexes for table `MovieRates`
 --
 ALTER TABLE `MovieRates`
   ADD PRIMARY KEY (`movieRateID`),
-  ADD KEY `fk_MovieRates_userId` (`userID`),
-  ADD KEY `fk_MovieRates_movieId` (`movieID`);
+  ADD KEY `fk_MovieRates_movieId` (`movieID`),
+  ADD KEY `fk_MovieRates_userUsername` (`userUsername`);
 
 --
 -- Indexes for table `Movies`
@@ -220,7 +241,13 @@ ALTER TABLE `Movies`
 -- Indexes for table `Users`
 --
 ALTER TABLE `Users`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`username`);
+
+--
+-- Indexes for table `UsersInformations`
+--
+ALTER TABLE `UsersInformations`
+  ADD PRIMARY KEY (`userUsername`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -251,12 +278,6 @@ ALTER TABLE `MovieRates`
   MODIFY `movieRateID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=0;
 
 --
--- AUTO_INCREMENT for table `Users`
---
-ALTER TABLE `Users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=0;
-
---
 -- Constraints for dumped tables
 --
 
@@ -265,28 +286,34 @@ ALTER TABLE `Users`
 --
 ALTER TABLE `CharacterComments`
   ADD CONSTRAINT `fk_CharacterComments_characterId` FOREIGN KEY (`characterId`) REFERENCES `Characters` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `fk_CharacterComments_userId` FOREIGN KEY (`userId`) REFERENCES `Users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `fk_CharacterComments_userUsername` FOREIGN KEY (`userUsername`) REFERENCES `Users` (`username`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `CharacterRates`
 --
 ALTER TABLE `CharacterRates`
   ADD CONSTRAINT `fk_CharacterRates_characterId` FOREIGN KEY (`characterID`) REFERENCES `Characters` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `fk_CharacterRates_userId` FOREIGN KEY (`userID`) REFERENCES `Users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `fk_CharacterRates_userUsername` FOREIGN KEY (`userUsername`) REFERENCES `Users` (`username`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `MovieComments`
 --
 ALTER TABLE `MovieComments`
   ADD CONSTRAINT `fk_MovieComments_movieId` FOREIGN KEY (`movieId`) REFERENCES `Movies` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `fk_MovieComments_userId` FOREIGN KEY (`userId`) REFERENCES `Users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `fk_MovieComments_userUsername` FOREIGN KEY (`userUsername`) REFERENCES `Users` (`username`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `MovieRates`
 --
 ALTER TABLE `MovieRates`
   ADD CONSTRAINT `fk_MovieRates_movieId` FOREIGN KEY (`movieID`) REFERENCES `Movies` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `fk_MovieRates_userId` FOREIGN KEY (`userID`) REFERENCES `Users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `fk_MovieRates_userUsername` FOREIGN KEY (`userUsername`) REFERENCES `Users` (`username`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `UsersInformations`
+--
+ALTER TABLE `UsersInformations`
+  ADD CONSTRAINT `fk_UsersInformations_userUsername` FOREIGN KEY (`userUsername`) REFERENCES `Users` (`username`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

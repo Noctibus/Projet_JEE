@@ -11,7 +11,7 @@
         </a>
     </c:if>
     <c:if test="${sessionScope.user != null}">
-        <a href="logged">
+        <a href="userPage">
             <c:out value="${sessionScope.user.username}"/>
         </a>
     </c:if>

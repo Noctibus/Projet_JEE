@@ -34,7 +34,7 @@
 						<span>${comment.user.username} </span>
 						<span class="date">${comment.date}</span>
 						<p>${comment.content}</p>
-						<c:if test="${sessionScope.user.id==comment.user.id}">
+						<c:if test="${sessionScope.user.username==comment.user.username||sessionScope.user.administrator}">
 							<div class="suppBox">
 								<button><a href="/deleteCharacterComment?charId=${param.charId}&characterCommentId=${comment.id}" class="suppr">Supprimer</a></button>
 							</div>

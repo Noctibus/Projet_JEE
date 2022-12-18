@@ -252,6 +252,18 @@ textarea{
 	text-align: right;
 }
 
+#param{
+	height: 500px;
+	background-color: rgb(35, 40, 66);
+	border: 1px;
+	border-style: solid;
+	border-color: black;
+	margin: 50px;
+	text-align: left;
+	align-items: left;
+}
+
+
 /* pied de page */
 
 footer{

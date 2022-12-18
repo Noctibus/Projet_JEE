@@ -61,6 +61,17 @@ input{
 	font-size: 16px;
   }
 
+  button{
+    background-color: aliceblue;
+	border: solid black 1px;
+	color: black;
+	padding: 8px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+  }
+
 /* entête */
 
 #welcome{
@@ -239,10 +250,6 @@ textarea{
 	margin-top: 220px;
 }
 
-#logout{
-	padding-top: 330px;
-}
-
 .suppr{
 	color: black;
 }
@@ -252,8 +259,8 @@ textarea{
 	text-align: right;
 }
 
-#param{
-	height: 500px;
+.userBox{
+    padding-left: 20px;
 	background-color: rgb(35, 40, 66);
 	border: 1px;
 	border-style: solid;
@@ -263,6 +270,48 @@ textarea{
 	align-items: left;
 }
 
+#paramBox{
+    height: 160px;
+}
+
+.param{
+    padding-left: 10px;
+    text-align: left;
+}
+
+#rateBox{
+  height: 500px;
+}
+
+.insideBox{
+    text-align: left;
+    height: 400px;
+	background-color: white;
+	margin-left: 10px;
+	margin-right: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+	overflow-y:scroll;
+	scrollbar-width: thin;
+    padding-top: 10px;
+}
+
+.userItem{
+    margin-bottom: 10px;
+    padding: 2px;
+	background-color: rgb(64, 74, 121);
+}
+
+.commentItem{
+    margin-bottom: 10px;
+    padding: 2px;
+	background-color: rgb(64, 74, 121);
+}
+
+
+#commentUserBox{
+    height: 500px;
+}
 
 /* pied de page */
 

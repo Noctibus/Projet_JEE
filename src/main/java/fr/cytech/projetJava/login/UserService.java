@@ -24,6 +24,7 @@ public class UserService {
         userRepository.save(user);
     }
 
+    //READ
     public User getByUsername(String username) {
         return userRepository.findByUsername(username);
     }
@@ -32,11 +33,18 @@ public class UserService {
         return userRepository.findAll();
     }
 
+    //UPDATE
+    public void changePassword(User user,String newPassword) {
+        user.setPassword(newPassword);
+        userRepository.save(user);
+    }
+
     //DELETE
     public void deleteUser(User user) {
         userRepository.delete(user);
     }
 
+    //OTHER
     public boolean isConnected(HttpSession session) {
 		User user = (User)session.getAttribute("user");
 		return(user != null);

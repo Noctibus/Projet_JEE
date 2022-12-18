@@ -7,7 +7,9 @@
 		<%@ include file="menu.jsp" %>	
 		<div id="logout">
 			<a href="logout"><button>Déconnexion</button></a>
+			<p>Paramètres du compte :</p>
 			<a href="deleteUser"><button>Supprimer l'utilisateur</button></a>
+			<a href="changePassword"><button>Changer de mot de passe</button></a>
 			<div>
 				<p>NOTES :</p>
 				<c:set var="subject" value="" scope="page" />

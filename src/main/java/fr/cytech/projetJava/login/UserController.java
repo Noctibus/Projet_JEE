@@ -119,6 +119,27 @@ public class UserController {
 		return "redirect:index";
 	}
 
+	@GetMapping("/changePassword")
+	public String changePassword() {
+		return "changePassword";
+	}
+
+	@PostMapping("/changePassword")
+	public String changePassword(HttpSession session,@RequestParam("currentPassword") String currentPassword,@RequestParam("newPassword1") String newPassword1,@RequestParam("newPassword2") String newPassword2) throws NoSuchAlgorithmException {
+		String newPassword1Hashed=userService.hashPassword(newPassword1),newPassword2Hashed=userService.hashPassword(newPassword2),currentPasswordHashed=userService.hashPassword(currentPassword),page="changePassword";
+        if(currentPasswordHashed.equals(((User)session.getAttribute("user")).getPassword())) {
+			if (newPassword1Hashed.equals(newPassword2Hashed)) {
+				userService.changePassword((User)session.getAttribute("user"),newPassword1Hashed);
+				page="redirect:userPage";
+			} else {
+				session.setAttribute("error", "Les mots de passe ne correspondent pas.");
+			}
+		} else {
+			session.setAttribute("error", "Mot de passe actuel incorrect.");
+		}
+		return page;
+	}
+
 	@GetMapping("/error")
 	public String error() {
 		return "error";

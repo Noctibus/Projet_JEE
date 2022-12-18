@@ -25,7 +25,7 @@ public class MovieRates {
     @JoinColumn(name = "movieID") @NotNull @ManyToOne
 	private Movie movie;
 
-    @JoinColumn(name = "userID") @NotNull @ManyToOne
+    @JoinColumn(name = "userUsername") @NotNull @ManyToOne
 	private User user;
 
     @Column(name = "value") @NotNull

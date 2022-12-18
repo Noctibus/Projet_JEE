@@ -34,15 +34,12 @@ public class UserController {
 	}
 
 	@GetMapping("/login")
-	public String login(Model model, HttpSession session) {
-		// if (user == null) {
-		// 	user = new User();
-		// }
+	public String login() {
 		return "login";
 	}
 	
 	@GetMapping("/register")
-	public String register(Model model, HttpSession session) {
+	public String register() {
 		return "register";
 	}
 
@@ -69,23 +66,29 @@ public class UserController {
 		return page;
 	}
 	
-	@GetMapping("/logged")
-	public String logged(HttpSession session) {
+	@GetMapping("/userPage")
+	public String userPage(HttpSession session) {
 		if (userService.isConnected(session)) {
-			return "logged";
+			return ((User)session.getAttribute("user")).isAdministrator() ? "redirect:adminPage" : "userPage";
 		}
 		return "redirect:login";
 	}
+
+	@GetMapping("/adminPage")
+	public String adminPage() {
+		return "adminPage";
+	}
+
 	@GetMapping("/logout")
 	public String logout(HttpSession session) {
 		session.invalidate();
 		return "redirect:index";
 	}
 
-	@GetMapping("/removeUser")
-	public String removeUser(HttpSession session) {
+	@GetMapping("/deleteUser")
+	public String deleteUser(HttpSession session) {
 		if (userService.isConnected(session)) {
-			userService.removeUser((User)session.getAttribute("user"));
+			userService.deleteUser((User)session.getAttribute("user"));
 			session.invalidate();
 		}
 		return "redirect:index";

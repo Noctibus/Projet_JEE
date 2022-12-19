@@ -5,13 +5,15 @@
 	<%@ include file="header.jsp" %>
     <main class="main"> 	
 		<%@ include file="menu.jsp" %>
-
+		<div class="scrollMovie">
 	  	<section id="templine">
 			<c:forEach items="${movies}" var="movie">
 				<a href="movie?movieId=${movie.getId()}" class="space" id="poster">
-					<img style='width: 300px; height: 400px; margin-top: -90px;' src='avengers${movie.getId()}.jpg'/>
+					<img class="testimg" style='width: 300px; height: 400px;' src='avengers${movie.getId()}.jpg'/>
 				</a>
         	</c:forEach>
+			
+		</div>
 		</section>
     </main>
 	<%@ include file="footer.jsp" %>

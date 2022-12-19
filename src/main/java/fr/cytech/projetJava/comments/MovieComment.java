@@ -27,7 +27,7 @@ public class MovieComment {
     private int id;
     
     @ManyToOne
-    @JoinColumn(name="userId")
+    @JoinColumn(name="userUsername")
     private User user;
 
     @ManyToOne
@@ -85,7 +85,7 @@ public class MovieComment {
 
     @Override
     public String toString() {
-        return "MovieComment [id=" + id + ", user=" + user.getId() + ", movieID=" + movie.getId() + ", date=" + date+ ", content=" + content + "]";
+        return "MovieComment [id=" + id + ", user=" + user.getUsername() + ", movieID=" + movie.getId() + ", date=" + date+ ", content=" + content + "]";
     }
     
 

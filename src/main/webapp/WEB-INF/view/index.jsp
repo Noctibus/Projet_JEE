@@ -20,7 +20,7 @@
 						Connexion
 					</a>
 				</c:if>
-				<a href="logged">
+				<a href="userPage">
 					<c:out value="${sessionScope.user.username}"/>
 				</a>
 

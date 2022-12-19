@@ -2,8 +2,6 @@ package fr.cytech.projetJava.login;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
@@ -13,11 +11,8 @@ import javax.validation.constraints.NotNull;
 @Table(name = "Users")
 public class User {
 
-
-	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id")
-	private int id;
 	
+	@Id
 	@NotNull
 	@Column(name = "username")
 	private String username;
@@ -26,13 +21,10 @@ public class User {
 	@Column(name = "password")
 	private String password;
 
-	public int getId() {
-		return this.id;
-	}
+	@NotNull
+	@Column(name = "administrator")
+	private boolean administrator=false;
 
-	public void setId(int id) {
-		this.id = id;
-	}
 
 	public String getUsername() {
 		return this.username;
@@ -50,9 +42,13 @@ public class User {
 		this.password = password;
 	}
 
+	public boolean isAdministrator() {
+		return this.administrator;
+	}
+
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", username=" + username + ", password=" + password + "]";
+		return "User [username=" + username + ", password=" + password + ", isAdministrator=" + administrator + "]";
 	}
 	
 	

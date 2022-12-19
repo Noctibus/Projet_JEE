@@ -37,6 +37,10 @@ public class CharacterCommentService {
         return characterCommentRepository.findAll();
     }
 
+    public List<CharacterComment> getCharacterCommentsByUserOrderByCharacter(User user) {
+        return characterCommentRepository.findByUserOrderByCharacter(user);
+    }
+
     public List<CharacterComment> getCharacterCommentsByCharacter(Character character) {
         return characterCommentRepository.findByCharacter(character);
     }
@@ -54,11 +58,11 @@ public class CharacterCommentService {
     }
 
     public List<CharacterComment> getCharacterCommentsByUserNewestFirst(User user) {
-        return characterCommentRepository.findByCharacterOrderByDateDesc(user);
+        return characterCommentRepository.findByUserOrderByDateDesc(user);
     }
 
     public List<CharacterComment> getCharacterCommentsByUserOldestFirst(User user) {
-        return characterCommentRepository.findByCharacterOrderByDateAsc(user);
+        return characterCommentRepository.findByUserOrderByDateAsc(user);
     }
 
     //UPDATE

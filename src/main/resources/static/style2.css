@@ -61,6 +61,17 @@ input{
 	font-size: 16px;
   }
 
+  button{
+    background-color: aliceblue;
+	border: solid black 1px;
+	color: black;
+	padding: 8px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+  }
+
 /* entête */
 
 #welcome{
@@ -97,6 +108,11 @@ main{
 	margin-bottom: 800px;
 }
 
+.mainUser{
+
+	margin-bottom: 900px;
+}
+
 #pages{
 	margin-top: 132px;
 }
@@ -114,12 +130,26 @@ main{
 	margin-top: 55px;
 }
 
-#templine{
-	background-color: aliceblue;
-	height: 200px;
-	margin-top: 180px;
-	margin-bottom: 180px;
+.scrollMovie{
+    text-align: center;
+    overflow-x: hidden;
+    height: 415px;
+    overflow-y: hidden;
+    margin-top: 150px;
 }
+
+.scrollMovie:hover{
+    overflow-x: visible;
+}
+
+#templine{
+    min-width: max-content;
+	background-color: aliceblue;
+	height: 400px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
 
 #formLogin{
     padding-top: 30px;
@@ -239,10 +269,6 @@ textarea{
 	margin-top: 220px;
 }
 
-#logout{
-	padding-top: 330px;
-}
-
 .suppr{
 	color: black;
 }
@@ -252,8 +278,8 @@ textarea{
 	text-align: right;
 }
 
-#param{
-	height: 500px;
+.userBox{
+    padding-left: 20px;
 	background-color: rgb(35, 40, 66);
 	border: 1px;
 	border-style: solid;
@@ -263,6 +289,72 @@ textarea{
 	align-items: left;
 }
 
+#paramBox{
+    height: 160px;
+}
+
+.param{
+    padding-left: 10px;
+    text-align: left;
+}
+
+#rateBox{
+  height: 500px;
+}
+
+.insideBox{
+    text-align: left;
+    height: 400px;
+	background-color: white;
+	margin-left: 10px;
+	margin-right: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+	overflow-y:scroll;
+	scrollbar-width: thin;
+    padding-top: 10px;
+}
+
+.userItem{
+    margin-bottom: 10px;
+    padding: 2px;
+	background-color: rgb(64, 74, 121);
+}
+
+.commentItem{
+    margin-top: -10px;
+    margin-bottom: 10px;
+    padding: 2px;
+	background-color: rgb(64, 74, 121);
+}
+
+#commentUserBox{
+    height: 500px;
+}
+
+.formItem{
+    text-align: left;
+    margin-left: 510px;
+}
+
+#formTitle{
+    text-align: left;
+    margin-left: 510px;
+}
+
+.buttonInfoUser{
+    text-align: left;
+    color: black;
+}
+
+.divInfo{
+    margin-top: 20px;
+    text-align: left;
+}
+
+#userInfo{
+    height: 220px;
+}
 
 /* pied de page */
 

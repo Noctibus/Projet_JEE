@@ -23,13 +23,13 @@ public class CharacterRates {
     @JoinColumn(name = "characterID") @NotNull @ManyToOne
 	private Character character;
 
-    @JoinColumn(name = "userID") @NotNull @ManyToOne
+    @JoinColumn(name = "userUsername") @NotNull @ManyToOne
 	private User user;
 
     @Column(name = "value") @NotNull
 	private int value;
 
-    public User getUserID() {
+    public User getUser() {
         return this.user;
     }
 

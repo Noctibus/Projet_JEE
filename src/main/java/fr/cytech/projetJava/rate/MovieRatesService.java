@@ -1,4 +1,5 @@
 package fr.cytech.projetJava.rate;
+import java.util.List;
 import java.util.Objects;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,8 +20,8 @@ public class MovieRatesService {
 
     // Calculates rate average of a movie
     public void setMovieRateAvg(Movie movie){
-        MovieRates tab [] = movieRatesRepository.findByMovie(movie);
-        int n = tab.length;
+        List<MovieRates> tab = movieRatesRepository.findByMovie(movie);
+        int n = tab.size();
         double movieAvg = 0;
         // si il n'y a pas de notes on retourne 3 (la moyenne entre 1 et 5)
         if(n == 0){
@@ -55,6 +56,10 @@ public class MovieRatesService {
     // Read
     public MovieRates getMovieRateByMovieAndUser(Movie movie, User user){
         return movieRatesRepository.findByMovieAndUser(movie, user);
+    }
+
+    public List<MovieRates> getMovieRatesByUserOrderByMovie(User user) {
+        return movieRatesRepository.findByUserOrderByMovie(user);
     }
 
     // Delete

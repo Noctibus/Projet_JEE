@@ -13,6 +13,7 @@ public interface MovieCommentRepository extends JpaRepository<MovieComment,Integ
 
     public MovieComment findById(int ID);
     public List<MovieComment> findAll();
+    public List<MovieComment> findByUserOrderByMovie(User user);
     public List<MovieComment> findByMovie(Movie movie);
     public List<MovieComment> findByMovieOrderByDateDesc(Movie movie);
     public List<MovieComment> findByMovieOrderByDateAsc(Movie movie);

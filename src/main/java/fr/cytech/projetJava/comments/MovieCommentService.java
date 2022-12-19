@@ -37,6 +37,10 @@ public class MovieCommentService {
         return movieCommentRepository.findAll();
     }
 
+    public List<MovieComment> getMovieCommentsByUserOrderByMovie(User user) {
+        return movieCommentRepository.findByUserOrderByMovie(user);
+    }
+
     public List<MovieComment> getMovieCommentsByMovie(Movie movie) {
         return movieCommentRepository.findByMovie(movie);
     }

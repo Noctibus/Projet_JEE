@@ -8,7 +8,7 @@
 
 	  	<div class="box">
 			<div class="moviePoster">
-				<img class="poster" src='avengers${param.movieId}.jpg'/>
+				<img class="poster" src='${movie.pictureAddress}'/>
 			</div>
 			<div class="descBox"></div>
 			<div class="desc">Titre : ${movie.getTitle()}</div>

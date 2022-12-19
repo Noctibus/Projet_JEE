@@ -4,8 +4,9 @@
 <html>
 	<%@ include file="headerBG.jsp" %>
 	<main>
-		<%@ include file="menu.jsp" %>	
-		<p>AdminPage</p>
+		<%@ include file="menu.jsp" %>
+		<p><a href="/addMovie">Ajouter un film</a></p>
+		<p><a href="/addCharacter">Ajouter un personnage</a></p>
 	</main>
 	<%@ include file="footer.jsp" %>
 </html>

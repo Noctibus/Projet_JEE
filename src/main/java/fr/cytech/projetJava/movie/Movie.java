@@ -23,6 +23,7 @@ import fr.cytech.projetJava.character.Character;
 @Table(name="Movies")
 
 public class Movie {
+    
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id") 
     private int id;

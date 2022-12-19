@@ -15,13 +15,13 @@ public class MovieService {
 
 
     //CREATE
-    public void addMovie(String title,double rate,Date date,String director,String synopsis,String pictureAddress) {
+    public void addMovie(String title,Date releaseDate,String director,String synopsis,String pictureAddress) {
         Movie newMovie=new Movie();
         newMovie.setTitle(title);
-        newMovie.setRate(rate);
-        newMovie.setDate(date);
+        newMovie.setDate(releaseDate);
         newMovie.setDirector(director);
         newMovie.setSynopsis(synopsis);
+        newMovie.setRate(3);
         newMovie.setPictureAddress(pictureAddress);
         movieRepository.save(newMovie);
     }

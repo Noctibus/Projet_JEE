@@ -9,7 +9,7 @@
 	  	<section id="templine">
 			<c:forEach items="${movies}" var="movie">
 				<a href="movie?movieId=${movie.getId()}" class="space" id="poster">
-					<img class="testimg" style='width: 300px; height: 400px;' src='avengers${movie.getId()}.jpg'/>
+					<img class="testimg" style='width: 300px; height: 400px;' src='${movie.pictureAddress}'/>
 				</a>
         	</c:forEach>
 			

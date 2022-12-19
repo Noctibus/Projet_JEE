@@ -9,7 +9,7 @@
 		<div class="box">
 			<div class="descBox"></div>
 			<div class="moviePoster">
-				<img class="characterPicture" src='character${param.charId}.png'/>
+				<img class="characterPicture" src='${character.pictureAddress}'/>
 			</div>
 			<c:if test="${character.getHerosName()!= null}">
 				<div class="desc">Nom de Héros : ${character.getHerosName()}</div>

@@ -13,9 +13,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import fr.cytech.projetJava.comments.CharacterCommentService;
-import fr.cytech.projetJava.login.User;
 import fr.cytech.projetJava.rate.CharacterRates;
 import fr.cytech.projetJava.rate.CharacterRatesService;
+import fr.cytech.projetJava.user.User;
 
 @Controller
 public class CharacterController {

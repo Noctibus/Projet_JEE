@@ -5,9 +5,9 @@ import java.util.Objects;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import fr.cytech.projetJava.login.User;
 import fr.cytech.projetJava.movie.Movie;
 import fr.cytech.projetJava.movie.MovieService;
+import fr.cytech.projetJava.user.User;
 
 @Service
 public class MovieRatesService {

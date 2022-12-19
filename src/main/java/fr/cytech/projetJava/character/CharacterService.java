@@ -13,7 +13,18 @@ public class CharacterService {
     CharacterRepository characterRepository;
 
 
-    //NO NEED TO CREATE
+    //CREATE
+    public void addCharacter(String identity,String actor,String origins,boolean status,double rate,String pictureAddress,String... herosName) {
+        Character newCharacter=new Character();
+        newCharacter.setIdentity(identity);
+        newCharacter.setActor(actor);
+        newCharacter.setOrigins(origins);
+        newCharacter.setAlive(status);
+        newCharacter.setRate(rate);
+        newCharacter.setPictureAddress(pictureAddress);
+        newCharacter.setHerosName(herosName.length>0 ? herosName[0] : null);
+        characterRepository.save(newCharacter);
+    }
 
     //READ
     public Character getById(int i) {
@@ -30,7 +41,10 @@ public class CharacterService {
         characterRepository.save(character);
     }
 
-    //NO NEED TO DELETE
+    //DELETE
+    public void deleteCharacter(Character character) {
+        characterRepository.delete(character);
+    }
 
 
 }

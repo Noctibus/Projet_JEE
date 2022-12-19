@@ -13,9 +13,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import fr.cytech.projetJava.comments.MovieCommentService;
-import fr.cytech.projetJava.login.User;
 import fr.cytech.projetJava.rate.MovieRates;
 import fr.cytech.projetJava.rate.MovieRatesService;
+import fr.cytech.projetJava.user.User;
 
 @Controller
 public class MovieController {

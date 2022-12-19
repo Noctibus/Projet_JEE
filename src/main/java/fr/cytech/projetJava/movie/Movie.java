@@ -1,6 +1,6 @@
 package fr.cytech.projetJava.movie;
 
-import java.sql.Date;
+import java.util.Date;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,26 +27,34 @@ public class Movie {
     @Column(name = "id") 
     private int id;
     
-    @Column(name = "title") @NotNull
-	private String name;
+    @Column(name = "title")
+    @NotNull
+	private String title;
 
-    @Column(name = "rate") @NotNull
+    @Column(name = "rate")
+    @NotNull
 	private double rate;
 
-    @Column(name = "date") @NotNull
+    @Column(name = "date")
+    @NotNull
 	private Date date;
 
-    @Column(name = "director") @NotNull
+    @Column(name = "director")
+    @NotNull
 	private String director;
 
-    @Column(name = "synopsis") @NotNull
+    @Column(name = "synopsis")
+    @NotNull
 	private String synopsis;
+
+    @Column(name="pictureAddress")
+    @NotNull
+    private String pictureAddress;
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable( name = "CharactersMoviesAssociation",
                 joinColumns = @JoinColumn( name = "movieID" ),
-                inverseJoinColumns = @JoinColumn( name = "characterID" ) )
-                
+                inverseJoinColumns = @JoinColumn( name = "characterID" ) )   
     private List<Character> characters = new ArrayList<>();
 
     public void setCharaters(List<Character> characters) {
@@ -62,7 +70,7 @@ public class Movie {
     }
 
     public String getTitle() {
-        return this.name;
+        return this.title;
     }
 
     public double getRate() {
@@ -85,8 +93,8 @@ public class Movie {
         this.id = id;
     }
 
-    public void setTitle(String name) {
-        this.name = name;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public void setRate( double rate) {
@@ -104,5 +112,14 @@ public class Movie {
     public void setSynopsis(String synopsis) {
         this.synopsis = synopsis;
     }
+
+    public void setPictureAddress(String pictureAddress) {
+        this.pictureAddress=pictureAddress;
+    }
+
+    public String getPictureAddress() {
+        return this.pictureAddress;
+    }
+
     
 }

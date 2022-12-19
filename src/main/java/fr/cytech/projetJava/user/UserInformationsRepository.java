@@ -1,4 +1,4 @@
-package fr.cytech.projetJava.login;
+package fr.cytech.projetJava.user;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

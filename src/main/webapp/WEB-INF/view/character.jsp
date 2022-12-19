@@ -25,7 +25,7 @@
 				<a href="/putCharacterRate?value=4&charId=${param.charId}" class="star" id="star1">&#9733</a>
 				<a href="/putCharacterRate?value=5&charId=${param.charId}" class="star" id="star1">&#9733</a>
 		   </div>
-		   <button id="buttonCacher" onclick= "cacherStatut()">statut</button> 
+		   <button id="buttonCacher" onclick= "cacherStatut()">Statut</button> 
 			<div id="cacher">
 				<p><c:choose><c:when test="${character.isAlive()}">Ce personnage est toujours vivant !!</c:when><c:otherwise>Hélas, ce personnage est mort...</c:otherwise></c:choose></p>
 			</div>

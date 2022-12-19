@@ -12,7 +12,7 @@
 					<a href="movie?movieId=${movie.id}" class="space" id="poster">${movie.title}</a>
 				</td>
 				<td>
-					<button><a href="/deleteMovier?movieId=${movie.id}">Supprimer</a></button>
+					<button><a href="/deleteMovie?movieId=${movie.id}">Supprimer</a></button>
 				</td>
 			</tr>
 		</c:forEach>

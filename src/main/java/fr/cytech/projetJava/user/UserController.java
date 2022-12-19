@@ -129,11 +129,6 @@ public class UserController {
 		return "commonUserPage";
 	}
 
-	@GetMapping("/adminUserPage")
-	public String adminUserPage() {
-		return "adminUserPage";
-	}
-
 	@GetMapping("/logout")
 	public String logout(HttpSession session) {
 		session.invalidate();

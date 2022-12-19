@@ -12,7 +12,6 @@
 					<img class="testimg" style='width: 300px; height: 400px;' src='${movie.pictureAddress}'/>
 				</a>
         	</c:forEach>
-			
 		</div>
 		</section>
     </main>

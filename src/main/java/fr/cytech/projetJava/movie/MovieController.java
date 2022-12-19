@@ -30,6 +30,7 @@ public class MovieController {
     @Autowired
     private MovieRatesService movieRatesService;
 
+    
     @GetMapping("/movies")
     public String showPostersMovies(Model model) {
         List<Movie> movies = this.movieService.getAllMovies();

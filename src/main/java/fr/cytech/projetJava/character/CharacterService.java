@@ -14,13 +14,13 @@ public class CharacterService {
 
 
     //CREATE
-    public void addCharacter(String identity,String actor,String origins,boolean status,double rate,String pictureAddress,String... herosName) {
+    public void addCharacter(String identity,String actor,String origins,boolean status,String pictureAddress,String... herosName) {
         Character newCharacter=new Character();
         newCharacter.setIdentity(identity);
         newCharacter.setActor(actor);
         newCharacter.setOrigins(origins);
         newCharacter.setAlive(status);
-        newCharacter.setRate(rate);
+        newCharacter.setRate(3);
         newCharacter.setPictureAddress(pictureAddress);
         newCharacter.setHerosName(herosName.length>0 ? herosName[0] : null);
         characterRepository.save(newCharacter);

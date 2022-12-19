@@ -6,26 +6,34 @@
 	<main>
 		<%@ include file="menu.jsp" %>	
 		<div id="registerBox">
-			<p>Vos informations personnelles :</p>
-            <form action="/personalInformations" method="post">
+			<p>Ajout d'un personnage :</p>
+            <form action="/addCharacter" method="post">
                 <div class="space">
-                    <label for="emailAddress">Adresse e-mail :</label>
-                    <input type="email" name="emailAddress" value="${sessionScope.userInformations.emailAddress}" required>
+                    <label for="identity">Identité :</label>
+                    <input type="text" name="identity" required/>
                 </div>
                 <div class="space">
-                    <label for="age">Age :</label>
-                    <input type="number" name="age" value="${sessionScope.userInformations.age}" required>
+                    <label for="herosName">Nom de héros (facultatif) :</label>
+                    <input type="text" name="herosName"/>
                 </div>
                 <div class="space">
-                    Genre:
-                    <input type="radio" id="male" value="Homme" name="gender"/>
-                    <label for="male">Homme</label>
-                    <input type="radio" id="female" value="Femme" name="gender"/>
-                    <label for="female">Femme</label>
-                    <input type="radio" id="other" value="Autre" name="gender"/>
-                    <label for="other">Autre</label>
+                    <label for="actor">Acteur :</label>
+                    <input type="text" name="actor" required/>
                 </div>
-                <input type="submit" value="Confirmer">
+                <div class="space">
+                    <label for="origins">Origines :</label>
+                    <textarea name="origins" placeholder="Originaire d'une petite planète du fin fond de la galaxie..." required></textarea>
+                </div>
+                <div class="space">
+                    Statut :
+                    <input type="checkbox" name="status" checked/>
+                    <label for="status">Vivant</label>
+                </div>
+                <div class="space">
+                    <label for="pictureAddress">Adresse de l'image du personnage :</label>
+                    <input type="text" name="pictureAddress" required/>
+                </div>
+                <input type="submit" value="Ajouter">
             </form>
         </div>
 	</main>

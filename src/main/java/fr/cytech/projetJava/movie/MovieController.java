@@ -58,15 +58,15 @@ public class MovieController {
     }
 
     @GetMapping("deleteMovieComment")
-    public String deleteMovieComment(@RequestParam("movieCommentId") int movieCommentId,@RequestParam("movieId") int movieId) {
+    public String deleteMovieComment(@RequestParam("movieCommentId") int movieCommentId,@RequestParam("movieId") int movieId,@RequestParam(name="requestOrigin",defaultValue="movie") String requestOrigin) {
         movieCommentService.deleteMovieComment(movieCommentService.getById(movieCommentId));
-        return "redirect:/movie?movieId="+movieId;
+        return requestOrigin.equals("movie") ? "redirect:/"+requestOrigin+"?movieId="+movieId : "redirect:/"+requestOrigin;
     }
 
     @GetMapping("putMovieRate")
-    public String addMovieRate(@RequestParam("value") int value, @RequestParam("movieId") int movieId, HttpSession session) {
+    public String addMovieRate(@RequestParam("value") int value,@RequestParam("movieId") int movieId,@RequestParam(name="requestOrigin",defaultValue="movie") String requestOrigin,HttpSession session) {
         User connectedUser=(User)session.getAttribute("user");
-        String page="redirect:/movie?movieId="+movieId;
+        String page=(requestOrigin.equals("movie") ? "redirect:/"+requestOrigin+"?movieId="+movieId : "redirect:/"+requestOrigin);
         Movie movie = movieService.getById(movieId);
         MovieRates movieRate = movieRatesService.getMovieRateByMovieAndUser(movie, connectedUser);
         if(connectedUser==null) {

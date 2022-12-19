@@ -7,10 +7,6 @@
 		<%@ include file="menu.jsp" %>	
 		<div id="registerBox">
 			<p>Modifiez vos informations personnelles :</p>
-            <c:if test="${not empty error}">
-                <div class="error">${error}</div>
-                <c:remove var="error" />
-            </c:if>
             <form action="/personalInformations" method="post">
                 <div class="space">
                     <label for="emailAddress">Adresse e-mail :</label><br>

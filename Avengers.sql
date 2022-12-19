@@ -199,14 +199,6 @@ CREATE TABLE `MovieComments` (
   `content` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `MovieComments`
---
-
-INSERT INTO `MovieComments` (`id`, `userId`, `movieId`, `date`, `content`) VALUES
-(1, 1, 1, '2022-12-07 08:01:07', 'Super film !'),
-(2, 2, 4, '2022-12-07 08:03:53', 'Le dernier film est moins bien que les autres, c\'est dommage je l\'ai noté 2/5.');
-
 -- --------------------------------------------------------
 
 --

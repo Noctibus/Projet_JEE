@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: mariadb:3306
--- Generation Time: Dec 18, 2022 at 08:02 PM
+-- Generation Time: Dec 19, 2022 at 11:05 AM
 -- Server version: 10.6.11-MariaDB-1:10.6.11+maria~ubu2004
 -- PHP Version: 8.0.25
 
@@ -17,13 +17,11 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
 
-
 DROP DATABASE IF EXISTS `Avengers`;
 CREATE DATABASE `Avengers`;
 USE `Avengers`;
 
 -- --------------------------------------------------------
-
 
 --
 -- Database: `Avengers`
@@ -177,9 +175,9 @@ CREATE TABLE `Users` (
 
 CREATE TABLE `UsersInformations` (
   `userUsername` varchar(20) NOT NULL,
-  `emailAddress` varchar(50) NOT NULL,
-  `gender` char(1) NOT NULL,
-  `age` int(11) NOT NULL
+  `emailAddress` varchar(50) DEFAULT NULL,
+  `gender` char(1) DEFAULT NULL,
+  `age` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -250,25 +248,25 @@ ALTER TABLE `UsersInformations`
 -- AUTO_INCREMENT for table `CharacterComments`
 --
 ALTER TABLE `CharacterComments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=0;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `CharacterRates`
 --
 ALTER TABLE `CharacterRates`
-  MODIFY `characterRateID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=0;
+  MODIFY `characterRateID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `MovieComments`
 --
 ALTER TABLE `MovieComments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=0;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `MovieRates`
 --
 ALTER TABLE `MovieRates`
-  MODIFY `movieRateID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=0;
+  MODIFY `movieRateID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for dumped tables

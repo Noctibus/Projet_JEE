@@ -3,22 +3,24 @@
 <!DOCTYPE html>
 <html>
 	<%@ include file="header.jsp" %>
-	<main class="bigMain">
+	<main class="mainUser">
 		<%@ include file="menu.jsp" %>	
 		<div>
 
-			<div class="userBox">
+			<div class="userBox" id="userInfo">
 				<h2>Informations personnelles :</h2>
 				<div class="param">
-					<p>Adresse e-mail : ${sessionScope.userInformations.emailAddress}</p>
+					Adresse e-mail : ${sessionScope.userInformations.emailAddress}
 				</div>
 				<div class="param">
-					<p>Age : ${sessionScope.userInformations.age}</p>
+					Age : ${sessionScope.userInformations.age}
 				</div>
 				<div class="param">
-					<p>Genre : ${sessionScope.userInformations.gender}</p>
+					Genre : ${sessionScope.userInformations.gender}
 				</div>
-				<button><a href="/personalInformations">Modifier</a></button>
+				<div class="divInfo">
+					<button><a class="buttonInfoUser" href="/personalInformations">Modifier</a></button>
+				</div>
 			</div>
 
 			<div class="userBox" id="paramBox">

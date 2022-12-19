@@ -108,6 +108,11 @@ main{
 	margin-bottom: 800px;
 }
 
+.mainUser{
+
+	margin-bottom: 900px;
+}
+
 #pages{
 	margin-top: 132px;
 }
@@ -335,6 +340,20 @@ textarea{
 #formTitle{
     text-align: left;
     margin-left: 510px;
+}
+
+.buttonInfoUser{
+    text-align: left;
+    color: black;
+}
+
+.divInfo{
+    margin-top: 20px;
+    text-align: left;
+}
+
+#userInfo{
+    height: 220px;
 }
 
 /* pied de page */

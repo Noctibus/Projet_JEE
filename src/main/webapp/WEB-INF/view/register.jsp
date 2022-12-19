@@ -11,16 +11,16 @@
             </c:if>
             <form action="/registerNewUser" method="post">
                 <div class="space">
-                    <label for="username">Identifiant :</label><br>
-                    <input type="text" id="username" name="username" required><br>
+                    <label for="username">Identifiant :</label>
+                    <input type="text" id="username" name="username" required>
                 </div>
                 <div class="space">
-                    <label for="password">Mot de passe :</label><br>
-                    <input type="password" name="password1" required minlength="6"><br>
+                    <label for="password">Mot de passe :</label>
+                    <input type="password" name="password1" required minlength="6">
                 </div>
                 <div class="space">
-                    <label for="password">Confirmez le mot de passe :</label><br>
-                    <input type="password" name="password2" required minlength="6"><br><br>
+                    <label for="password">Confirmez le mot de passe :</label>
+                    <input type="password" name="password2" required minlength="6">
                 </div>
                 <input type="submit" value="S'inscrire">
             </form>

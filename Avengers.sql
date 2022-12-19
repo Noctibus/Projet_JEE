@@ -176,7 +176,7 @@ CREATE TABLE `Users` (
 CREATE TABLE `UsersInformations` (
   `userUsername` varchar(20) NOT NULL,
   `emailAddress` varchar(50) DEFAULT NULL,
-  `gender` char(1) DEFAULT NULL,
+  `gender` varchar(20) DEFAULT NULL,
   `age` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 

@@ -42,17 +42,6 @@ CREATE TABLE `CharacterComments` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `CharacterComments`
---
-
-INSERT INTO `CharacterComments` (`id`, `userId`, `characterId`, `date`, `content`) VALUES
-(1, 1, 1, '2022-12-07 08:02:37', 'Iron man est surcôté, il est bien mais il ne mérite pas le succès qu\'il a...'),
-(2, 2, 1, '2022-12-07 08:04:42', 'Tu n\'es pas sérieux, Iron man est le meilleur personnage de l\'univers Marvel, il mérite 5 étoiles !!'),
-(3, 2, 2, '2022-12-07 08:05:30', 'Un des meilleurs personnages de l\'univers, généralement noté bien en dessous de ce qu\'il vaut à mon avis...');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `CharacterRates`
 --
 

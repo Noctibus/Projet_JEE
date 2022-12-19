@@ -20,12 +20,15 @@ public class UserService {
 
     
     //CREATE
-    public void createUser(String username, String password) {
+    public void createUser(String username,String password,String emailAddress,int age,String gender) {
         User user = new User();
         user.setUsername(username);
         user.setPassword(password);
         UserInformations userInformations=new UserInformations();
         userInformations.setUser(user);
+        userInformations.setEmailAddress(emailAddress);;
+        userInformations.setAge(age);;
+        userInformations.setGender(gender);;
         userInformationsService.createUserInformations(userInformations);
     }
 

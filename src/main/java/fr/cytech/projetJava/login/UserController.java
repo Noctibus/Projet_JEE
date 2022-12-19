@@ -95,16 +95,20 @@ public class UserController {
 
 	@PostMapping("/personalInformations")
 	public String editPersonalInformations(HttpSession session,@RequestParam(name="emailAddress") String emailAddress,@RequestParam(name="age") int age,@RequestParam(name="gender",defaultValue="Non renseigné") String gender) {
-		if(session.getAttribute("userTmp")!=null) {
-			userService.createUser(((User)session.getAttribute("userTmp")).getUsername(),((User)session.getAttribute("userTmp")).getPassword());
-			session.setAttribute("user",session.getAttribute("userTmp"));
+		User userTmp=(User)session.getAttribute("userTmp");
+		if(userTmp!=null) {
+			userService.createUser(userTmp.getUsername(),userTmp.getPassword(),emailAddress,age,gender);
+			userTmp=userService.getByUsername(userTmp.getUsername());
+			session.setAttribute("user",userTmp);
+			session.setAttribute("userInformations",userInformationsService.getUserInformations(userTmp));
 			session.removeAttribute("userTmp");
+		} else {
+			User connectedUser=(User)session.getAttribute("user");
+			userInformationsService.changeEmailAddress(connectedUser, emailAddress);
+			userInformationsService.changeAge(connectedUser, age);
+			userInformationsService.changeGender(connectedUser, gender);
+			session.setAttribute("userInformations",userInformationsService.getUserInformations(connectedUser));
 		}
-		User connectedUser=(User)session.getAttribute("user");
-		userInformationsService.changeEmailAddress(connectedUser, emailAddress);
-		userInformationsService.changeAge(connectedUser, age);
-		userInformationsService.changeGender(connectedUser, gender);
-		session.setAttribute("userInformations",userInformationsService.getUserInformations(connectedUser));
 		return "redirect:userPage";
 	}
 	

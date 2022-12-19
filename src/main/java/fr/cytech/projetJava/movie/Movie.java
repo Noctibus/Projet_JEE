@@ -1,13 +1,22 @@
 package fr.cytech.projetJava.movie;
 
 import java.sql.Date;
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinTable;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
+
+import fr.cytech.projetJava.character.Character;
 
 
 @Entity
@@ -32,6 +41,21 @@ public class Movie {
 
     @Column(name = "synopsis") @NotNull
 	private String synopsis;
+
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable( name = "CharactersMoviesAssociation",
+                joinColumns = @JoinColumn( name = "movieID" ),
+                inverseJoinColumns = @JoinColumn( name = "characterID" ) )
+                
+    private List<Character> characters = new ArrayList<>();
+
+    public void setCharaters(List<Character> characters) {
+        this.characters = characters;
+    }
+
+    public List<Character> getCharacters() {
+        return characters;
+    }
 
     public int getId() {
         return this.id;
@@ -80,6 +104,5 @@ public class Movie {
     public void setSynopsis(String synopsis) {
         this.synopsis = synopsis;
     }
-
     
 }

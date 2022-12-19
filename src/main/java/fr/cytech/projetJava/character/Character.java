@@ -1,12 +1,21 @@
 package fr.cytech.projetJava.character;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinTable;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
+
+import fr.cytech.projetJava.movie.Movie;
 
 
 @Entity
@@ -35,22 +44,6 @@ public class Character {
     @NotNull
     private String origins;
 
-    @Column(name = "avengers1")
-    @NotNull
-    private boolean isInAvengers1;
-
-    @Column(name = "avengers2")
-    @NotNull
-    private boolean isInAvengers2;
-
-    @Column(name = "avengers3")
-    @NotNull
-    private boolean isInAvengers3;
-
-    @Column(name = "avengers4")
-    @NotNull
-    private boolean isInAvengers4;
-
     @Column(name = "status")
     @NotNull
     private boolean isAlive;
@@ -59,6 +52,19 @@ public class Character {
     @NotNull
 	private double rate;
 
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable( name = "CharactersMoviesAssociation",
+                joinColumns = @JoinColumn( name = "characterID" ),
+                inverseJoinColumns = @JoinColumn( name = "movieID" ))
+    private List<Movie> movies = new ArrayList<>();
+
+    public List<Movie> getMovies() {
+        return movies;
+    }
+
+    public void setMovies(List<Movie> movies) {
+        this.movies = movies;
+    }
 
     public int getId() {
         return this.id;
@@ -100,38 +106,6 @@ public class Character {
         this.origins = origins;
     }
 
-    public boolean isInAvengers1() {
-        return this.isInAvengers1;
-    }
-
-    public void setInAvengers1(boolean isInAvengers1) {
-        this.isInAvengers1 = isInAvengers1;
-    }
-
-    public boolean isInAvengers2() {
-        return this.isInAvengers2;
-    }
-
-    public void setInAvengers2(boolean isInAvengers2) {
-        this.isInAvengers2 = isInAvengers2;
-    }
-
-    public boolean isInAvengers3() {
-        return this.isInAvengers3;
-    }
-
-    public void setInAvengers3(boolean isInAvengers3) {
-        this.isInAvengers3 = isInAvengers3;
-    }
-
-    public boolean isInAvengers4() {
-        return this.isInAvengers4;
-    }
-
-    public void setInAvengers4(boolean isInAvengers4) {
-        this.isInAvengers4 = isInAvengers4;
-    }
-
     public boolean isAlive() {
         return this.isAlive;
     }
@@ -150,7 +124,7 @@ public class Character {
 
     @Override
     public String toString() {
-        return "Character [id=" + id + ", identity=" + identity + ", herosName=" + herosName + ", actor=" + actor + ", origins=" + origins + ", isInAvengers1=" + isInAvengers1 + ", isInAvengers2=" + isInAvengers2 + ", isInAvengers3=" + isInAvengers3 + ", isInAvengers4=" + isInAvengers4 + ", isAlive=" + isAlive + ", rate=" + rate + "]";
+        return "Character [id=" + id + ", identity=" + identity + ", herosName=" + herosName + ", actor=" + actor + ", origins=" + origins + ", isAlive=" + isAlive + ", rate=" + rate + "]";
     }
     
 

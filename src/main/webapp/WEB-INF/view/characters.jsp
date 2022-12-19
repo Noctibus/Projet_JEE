@@ -7,12 +7,14 @@
 		<%@ include file="menu.jsp" %>
         <div id="herosList">
             <c:forEach items="${characters}" var="character">
-                <c:if test="${character.getHerosName()!=null}">
-                    <div class="heros"><a href="character?charId=${character.getId()}"> ${character.getHerosName()}</a></div> 
-                </c:if>
-                <c:if test="${character.getHerosName()==null}">
-                    <div class="heros"><a href="character?charId=${character.getId()}"> ${character.getIdentity()}</a></div> 
-                </c:if>
+                <c:choose>
+                    <c:when test="${character.getHerosName()!=null}">
+                        <div class="heros"><a href="character?charId=${character.getId()}"> ${character.getHerosName()}</a></div> 
+                    </c:when>
+                    <c:otherwise>
+                        <div class="heros"><a href="character?charId=${character.getId()}"> ${character.getIdentity()}</a></div> 
+                    </c:otherwise>
+                </c:choose>
             </c:forEach>
         </div>
     </main>

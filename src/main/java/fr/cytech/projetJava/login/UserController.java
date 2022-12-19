@@ -49,7 +49,7 @@ public class UserController {
 				session.setAttribute("user",user);
 				session.setAttribute("userInformations",userInformationsService.getUserInformations(user));
 			} else {
-				session.setAttribute("error", "Mot de passe incorrect.");}
+				session.setAttribute("error", "Identifiant et/ou mot de passe incorrect(s).");}
 		}
 		return page;
 	}

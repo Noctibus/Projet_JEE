@@ -2,10 +2,10 @@
 <%@ page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8" %>
 <html>
 	<%@ include file="header.jsp" %>
-	<main class="bigMain">
+	<main>
 	<%@ include file="menu.jsp" %>	
         
-        <h2 class="avengersFont">Formulaire de Contact</h2>
+        <h2 class="avengersFont" id="formTitle">Formulaire de Contact</h2>
 
 		<form method="post" action="/index.jsp" spellcheck="false">
             <p class="formItem">
@@ -45,8 +45,8 @@
             </p>
     
             <p class="formItem">
-                <div>Message:</div>
-                <textarea class="commentaire" id="commentaire" name="commentaire" rows="20" cols="100"placeholder="ATTENTION : Pas d'informations personnelles"></textarea>
+                <div class="formItem">Message:</div>
+                <textarea class="commentaire" id="commentaire" name="commentaire" rows="15" cols="100"placeholder="ATTENTION : Pas d'informations personnelles"></textarea>
                 <span class="erreur" id="erreurcommentaire"></span>
             </p>
                 

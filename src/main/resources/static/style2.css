@@ -125,12 +125,26 @@ main{
 	margin-top: 55px;
 }
 
-#templine{
-	background-color: aliceblue;
-	height: 200px;
-	margin-top: 180px;
-	margin-bottom: 180px;
+.scrollMovie{
+    text-align: center;
+    overflow-x: hidden;
+    height: 415px;
+    overflow-y: hidden;
+    margin-top: 150px;
 }
+
+.scrollMovie:hover{
+    overflow-x: visible;
+}
+
+#templine{
+    min-width: max-content;
+	background-color: aliceblue;
+	height: 400px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
 
 #formLogin{
     padding-top: 30px;
@@ -315,7 +329,12 @@ textarea{
 
 .formItem{
     text-align: left;
-    margin-left: 520px;
+    margin-left: 510px;
+}
+
+#formTitle{
+    text-align: left;
+    margin-left: 510px;
 }
 
 /* pied de page */

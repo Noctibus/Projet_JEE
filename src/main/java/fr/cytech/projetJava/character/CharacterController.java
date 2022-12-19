@@ -41,9 +41,13 @@ public class CharacterController {
 	@GetMapping("/character")
 	public String character(Model model,@RequestParam("charId") int charId) {
         Character character = this.characterService.getById(charId);
+        String page = "character";
+        if (character==null){
+            page = "/error";
+        }
         model.addAttribute("character",character);
         model.addAttribute("comments",this.characterCommentService.getCharacterCommentsByCharacter(character));
-		return "character";
+		return page;
 	}
 
     @PostMapping("/saveCharacterComment")

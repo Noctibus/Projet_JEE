@@ -41,9 +41,13 @@ public class MovieController {
     @GetMapping("/movie")
     public String showPostersMovie(Model model,@RequestParam("movieId") int movieId) {
         Movie movie = this.movieService.getById(movieId);
+        String page = "movie";
+        if (movie==null){
+            page = "/error";
+        }
         model.addAttribute("movie", movie);
         model.addAttribute("comments",this.movieCommentService.getMovieCommentsByMovie(movie));
-        return "movie";
+        return page;
     }
 
     @PostMapping("/saveMovieComment")

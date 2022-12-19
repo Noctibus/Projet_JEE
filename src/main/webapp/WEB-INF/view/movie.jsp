@@ -15,6 +15,24 @@
 			<div class="desc">Date de sortie : ${movie.getDate()}</div>
 			<div class="desc">Réalisateur : ${movie.getDirector()}</div>
 			<div class="desc">Synopsis : ${movie.getSynopsis()}</div>
+			<div class="desc">Personnages du film :
+				<c:forEach items="${movie.getCharacters()}" var="character">
+					<c:choose>
+						<c:when test="${character.getHerosName()== null}">
+							<c:choose>
+								<c:when test="${character.id==movie.getCharacters()[movie.getCharacters().size()-1].id}"><a href="character?charId=${character.getId()}"> ${character.getIdentity()}.</a></c:when>    
+								<c:otherwise><a href="character?charId=${character.getId()}"> ${character.getIdentity()}, </a></c:otherwise>
+							</c:choose>
+						</c:when>
+						<c:otherwise>
+							<c:choose>
+								<c:when test="${character.id==movie.getCharacters()[movie.getCharacters().size()-1].id}"><a href="character?charId=${character.getId()}"> ${character.getHerosName()}.</a></c:when>    
+								<c:otherwise><a href="character?charId=${character.getId()}"> ${character.getHerosName()}, </a></c:otherwise>
+							</c:choose>
+						</c:otherwise>
+					</c:choose>	
+				</c:forEach>
+			</div>
 			<div class="desc">Note : ${movie.getRate()} &#9733</div>
 			<div class="desc">
 				<a href="/putMovieRate?value=1&movieId=${param.movieId}" class="star" id="star1">&#9733</a>

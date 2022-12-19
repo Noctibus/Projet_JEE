@@ -7,16 +7,30 @@
 		<%@ include file="menu.jsp" %>	
 		<div>
 
+			<div class="userBox">
+				<h2>Informations personnelles :</h2>
+				<div class="param">
+					<p>Adresse e-mail : ${sessionScope.userInformations.emailAddress}</p>
+				</div>
+				<div class="param">
+					<p>Age : ${sessionScope.userInformations.age}</p>
+				</div>
+				<div class="param">
+					<p>Genre : ${sessionScope.userInformations.gender}</p>
+				</div>
+				<button><a href="/personalInformations">Modifier</a></button>
+			</div>
+
 			<div class="userBox" id="paramBox">
 				<h2>Paramètres du compte :</h2>
 				<div class="param">
-					<a href="logout">Déconnexion</a>
+					<a href="/logout">Déconnexion</a>
 				</div>
 				<div class="param">
-					<a href="deleteUser">Supprimer l'utilisateur</a>
+					<a href="/deleteUser">Supprimer l'utilisateur</a>
 				</div>
 				<div class="param">
-					<a href="changePassword">Changer de mot de passe</a>
+					<a href="/changePassword">Changer de mot de passe</a>
 				</div>
 			</div>
 			
@@ -65,9 +79,8 @@
 
 			<div class="userBox" id="commentUserBox">
 				<p>COMMENTAIRES :</p>
-					<div class="insideBox">
+				<div class="insideBox">
 					<c:set var="subject" value="" scope="page" />
-					
 					<c:forEach items="${movieComments}" var="comment">
 							<c:if test="${subject==comment.movie.title}">
 								<div class="commentItem">

@@ -24,6 +24,9 @@ public class UserController {
 	UserService userService;
 
 	@Autowired
+	UserInformationsService userInformationsService;
+
+	@Autowired
 	MovieCommentService movieCommentService;
 
 	@Autowired
@@ -39,11 +42,12 @@ public class UserController {
 	@PostMapping("/checkUser")
 	public String checkUser(HttpSession session, @RequestParam("username") String username, @RequestParam("password") String password) throws NoSuchAlgorithmException {
 		String page = "redirect:login";
-		User usr = userService.getByUsername(username);
-		if (!Objects.isNull(usr)) {
-			if (usr.getPassword().equals(userService.hashPassword(password))) {
+		User user = userService.getByUsername(username);
+		if (!Objects.isNull(user)) {
+			if (user.getPassword().equals(userService.hashPassword(password))) {
 				page = "redirect:index";
-				session.setAttribute("user", usr);
+				session.setAttribute("user",user);
+				session.setAttribute("userInformations",userInformationsService.getUserInformations(user));
 			} else {
 				session.setAttribute("error", "Mot de passe incorrect.");}
 		}
@@ -70,9 +74,11 @@ public class UserController {
 		User alreadyExists = userService.getByUsername(username);
         if(alreadyExists==null) {
 			if (pswd1.equals(pswd2)) {
-				userService.createUser(username, pswd1);
-				session.setAttribute("user",userService.getByUsername(username));
-				page = "redirect:index";
+				User newUser=new User();
+				newUser.setUsername(username);
+				newUser.setPassword(pswd2);
+				session.setAttribute("userTmp",newUser);
+				page = "redirect:personalInformations";
 			} else {
 				session.setAttribute("error", "Les mots de passe ne correspondent pas.");
 			}
@@ -80,6 +86,26 @@ public class UserController {
 			session.setAttribute("error", "Cet identifiant est déjà pris, veuillez en choisir un autre.");
 		}
 		return page;
+	}
+
+	@GetMapping("/personalInformations")
+	public String personalInformations() {
+		return "personalInformations";
+	}
+
+	@PostMapping("/personalInformations")
+	public String editPersonalInformations(HttpSession session,@RequestParam(name="emailAddress") String emailAddress,@RequestParam(name="age") int age,@RequestParam(name="gender",defaultValue="Non renseigné") String gender) {
+		if(session.getAttribute("userTmp")!=null) {
+			userService.createUser(((User)session.getAttribute("userTmp")).getUsername(),((User)session.getAttribute("userTmp")).getPassword());
+			session.setAttribute("user",session.getAttribute("userTmp"));
+			session.removeAttribute("userTmp");
+		}
+		User connectedUser=(User)session.getAttribute("user");
+		userInformationsService.changeEmailAddress(connectedUser, emailAddress);
+		userInformationsService.changeAge(connectedUser, age);
+		userInformationsService.changeGender(connectedUser, gender);
+		session.setAttribute("userInformations",userInformationsService.getUserInformations(connectedUser));
+		return "redirect:userPage";
 	}
 	
 	@GetMapping("/userPage")
@@ -139,6 +165,8 @@ public class UserController {
 		}
 		return page;
 	}
+
+
 
 	@GetMapping("/error")
 	public String error() {

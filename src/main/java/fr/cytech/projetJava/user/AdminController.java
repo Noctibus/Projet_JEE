@@ -42,7 +42,7 @@ public class AdminController {
     }
 
     @PostMapping(value="/addCharacter")
-    public String addCharacter(HttpSession session,@RequestParam("identity") String identity,@RequestParam(name="herosName",required = false) String herosName,@RequestParam("actor") String actor,@RequestParam("origins") String origins,@RequestParam("status") boolean status,@RequestParam("pictureAddress") String pictureAddress) {
+    public String addCharacter(HttpSession session,@RequestParam("identity") String identity,@RequestParam(name="herosName",required = false) String herosName,@RequestParam("actor") String actor,@RequestParam("origins") String origins,@RequestParam(name="status",required=false) boolean status,@RequestParam("pictureAddress") String pictureAddress) {
         if(((User)session.getAttribute("user"))!=null&&((User)session.getAttribute("user")).isAdministrator()) {
             if(herosName.isBlank())
                 characterService.addCharacter(identity, actor, origins, status, pictureAddress);

@@ -169,13 +169,6 @@ CREATE TABLE `Users` (
   `administrator` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `Users`
---
-
-INSERT INTO `Users` (`username`, `password`, `administrator`) VALUES
-('admin', '����n��:b����?]Z�����:�l�', 1);
-
 -- --------------------------------------------------------
 
 --

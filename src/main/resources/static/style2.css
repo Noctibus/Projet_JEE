@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 
-/* boby */
+/* body */
 
 body{
 	height: 100%;
@@ -237,6 +237,12 @@ textarea{
 
 .desc{
 	text-align: left;
+	margin-bottom: 20px;
+}
+
+#cacher {
+    visibility: hidden;
+    text-align: left;
 	margin-bottom: 20px;
 }
 

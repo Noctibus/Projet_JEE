@@ -1,4 +1,4 @@
-package fr.cytech.projetJava.login;
+package fr.cytech.projetJava.user;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

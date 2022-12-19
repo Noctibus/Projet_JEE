@@ -51,6 +51,10 @@ public class Character {
     @NotNull
 	private double rate;
 
+    @Column(name="pictureAddress")
+    @NotNull
+    private String pictureAddress;
+
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable( name = "CharactersMoviesAssociation",
                 joinColumns = @JoinColumn( name = "characterID" ),
@@ -113,7 +117,7 @@ public class Character {
         this.isAlive = isAlive;
     }
 
-    public void setRate( double rate) {
+    public void setRate(double rate) {
         this.rate = rate;
     }
 
@@ -121,9 +125,17 @@ public class Character {
         return this.rate;
     }
 
+    public void setPictureAddress(String pictureAddress) {
+        this.pictureAddress=pictureAddress;
+    }
+
+    public String getPictureAddress() {
+        return this.pictureAddress;
+    }
+
     @Override
     public String toString() {
-        return "Character [id=" + id + ", identity=" + identity + ", herosName=" + herosName + ", actor=" + actor + ", origins=" + origins + ", isAlive=" + isAlive + ", rate=" + rate + "]";
+        return "Character [id=" + id + ", identity=" + identity + ", herosName=" + herosName + ", actor=" + actor + ", origins=" + origins + ", isAlive=" + isAlive + ", rate=" + rate + ", pictureAddress=" + pictureAddress + ", movies=" + movies + "]";
     }
     
 

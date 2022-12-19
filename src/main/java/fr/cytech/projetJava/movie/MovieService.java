@@ -1,5 +1,6 @@
 package fr.cytech.projetJava.movie;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +14,17 @@ public class MovieService {
     MovieRepository movieRepository;
 
 
-    //NO NEED TO CREATE
+    //CREATE
+    public void addMovie(String title,double rate,Date date,String director,String synopsis,String pictureAddress) {
+        Movie newMovie=new Movie();
+        newMovie.setTitle(title);
+        newMovie.setRate(rate);
+        newMovie.setDate(date);
+        newMovie.setDirector(director);
+        newMovie.setSynopsis(synopsis);
+        newMovie.setPictureAddress(pictureAddress);
+        movieRepository.save(newMovie);
+    }
 
     //READ
     public Movie getById(int id) {
@@ -30,7 +41,10 @@ public class MovieService {
         movieRepository.save(movie);
     }
 
-    //NO NEED TO DELETE
+    //DELETE
+    public void deleteMovie(Movie movie) {
+        movieRepository.delete(movie);
+    }
 
     
 }

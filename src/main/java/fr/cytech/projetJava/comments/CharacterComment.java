@@ -12,8 +12,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
-import fr.cytech.projetJava.login.User;
 import fr.cytech.projetJava.character.Character;
+import fr.cytech.projetJava.user.User;
 
 
 @Entity

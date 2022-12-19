@@ -1,4 +1,4 @@
-package fr.cytech.projetJava.login;
+package fr.cytech.projetJava.user;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

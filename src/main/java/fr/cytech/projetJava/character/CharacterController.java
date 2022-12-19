@@ -59,15 +59,15 @@ public class CharacterController {
     }
 
     @GetMapping("deleteCharacterComment")
-    public String deleteCharacterComment(@RequestParam("characterCommentId") int characterCommentId,@RequestParam("charId") int charId) {
+    public String deleteCharacterComment(@RequestParam("characterCommentId") int characterCommentId,@RequestParam("charId") int charId,@RequestParam(name="requestOrigin",defaultValue="character") String requestOrigin) {
         characterCommentService.deleteCharacterComment(characterCommentService.getById(characterCommentId));
-        return "redirect:/character?charId="+charId;
+        return requestOrigin.equals("character") ? "redirect:/"+requestOrigin+"?charId="+charId : "redirect:/"+requestOrigin;
     }
 
     @GetMapping("putCharacterRate")
-    public String addCharacterRate(@RequestParam("value") int value, @RequestParam("charId") int charId, HttpSession session) {
+    public String addCharacterRate(@RequestParam("value") int value, @RequestParam("charId") int charId,@RequestParam(name="requestOrigin",defaultValue="character") String requestOrigin,HttpSession session) {
         User connectedUser=(User)session.getAttribute("user");
-        String page="redirect:/character?charId="+charId;
+        String page=(requestOrigin.equals("character") ? "redirect:/"+requestOrigin+"?charId="+charId : "redirect:/"+requestOrigin);
         Character character = characterService.getById(charId);
         CharacterRates characterRate = characterRatesService.getCharacterRateByCharacterAndUser(character, connectedUser);
         if(connectedUser==null) {

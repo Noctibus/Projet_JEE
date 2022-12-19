@@ -48,10 +48,10 @@
 								<p><a href="/movie?movieId=${rate.movie.id}">${subject}</a></p>
 							</c:if>
 							<c:forEach var="i" begin="1" end="${rate.value}" step="1">
-								<a href="/putMovieRate?value=${i}&movieId=${rate.movie.id}" class="star" id="star1" style="color:red">&#9733</a>
+								<a href="/putMovieRate?value=${i}&movieId=${rate.movie.id}&requestOrigin=commonUserPage" class="star" id="star1" style="color:red">&#9733</a>
 							</c:forEach>
 							<c:forEach var="i" begin="1" end="${5-rate.value}" step="1">
-								<a href="/putMovieRate?value=${rate.value+i}&movieId=${rate.movie.id}" class="star" id="star1">&#9733</a>
+								<a href="/putMovieRate?value=${rate.value+i}&movieId=${rate.movie.id}&requestOrigin=commonUserPage" class="star" id="star1">&#9733</a>
 							</c:forEach>
 						</div>
 
@@ -68,10 +68,10 @@
 								<p><a href="/character?charId=${rate.character.id}">${subject}</a></p>
 							</c:if>
 							<c:forEach var="i" begin="1" end="${rate.value}" step="1">
-								<a href="/putCharacterRate?value=${i}&charId=${rate.character.id}" class="star" id="star1" style="color:red">&#9733</a>
+								<a href="/putCharacterRate?value=${i}&charId=${rate.character.id}&requestOrigin=commonUserPage" class="star" id="star1" style="color:red">&#9733</a>
 							</c:forEach>
 							<c:forEach var="i" begin="1" end="${5-rate.value}" step="1">
-								<a href="/putCharacterRate?value=${rate.value+i}&charId=${rate.character.id}" class="star" id="star1">&#9733</a>
+								<a href="/putCharacterRate?value=${rate.value+i}&charId=${rate.character.id}&requestOrigin=commonUserPage" class="star" id="star1">&#9733</a>
 							</c:forEach>
 						</div>
 
@@ -98,7 +98,7 @@
 								<span class="date">${comment.date}</span>
 								<p>${comment.content}</p>
 								<div class="suppBox">
-									<button><a href="/deleteMovieComment?movieId=${comment.movie.id}&movieCommentId=${comment.id}" class="suppr">Supprimer</a></button>
+									<button><a href="/deleteMovieComment?movieId=${comment.movie.id}&movieCommentId=${comment.id}&requestOrigin=commonUserPage" class="suppr">Supprimer</a></button>
 								</div>
 							</div>
 						</div>
@@ -122,7 +122,7 @@
 								<span class="date">${comment.date}</span>
 								<p>${comment.content}</p>
 								<div class="suppBox">
-									<button><a href="/deleteCharacterComment?charId=${comment.character.id}&characterCommentId=${comment.id}" class="suppr">Supprimer</a></button>
+									<button><a href="/deleteCharacterComment?charId=${comment.character.id}&characterCommentId=${comment.id}&requestOrigin=commonUserPage" class="suppr">Supprimer</a></button>
 								</div>
 							</div>
 						</div>

@@ -5,7 +5,7 @@
 	<%@ include file="headerBG.jsp" %>
 	<main>
 		<%@ include file="menu.jsp" %>	
-		<div id="registerBox">
+		<div class="addBox">
 			<p>Ajout d'un personnage :</p>
             <form action="/addCharacter" method="post">
                 <div class="space">
@@ -22,7 +22,7 @@
                 </div>
                 <div class="space">
                     <label for="origins">Origines :</label>
-                    <textarea name="origins" placeholder="Originaire d'une petite planète du fin fond de la galaxie..." required></textarea>
+                    <textarea name="origins" rows="6" cols="80" placeholder="Originaire d'une petite planète du fin fond de la galaxie..." required></textarea>
                 </div>
                 <div class="space">
                     Statut :

@@ -8,7 +8,7 @@
 		<div>
 
 			<div class="userBox" id="userInfo">
-				<h2>Informations personnelles :</h2>
+				<h2 class="avengersFont">Informations personnelles</h2>
 				<div class="param">
 					Adresse e-mail : ${sessionScope.userInformations.emailAddress}
 				</div>
@@ -24,7 +24,7 @@
 			</div>
 
 			<div class="userBox" id="paramBox">
-				<h2>Paramètres du compte :</h2>
+				<h2 class="avengersFont">Parametres du compte</h2>
 				<div class="param">
 					<a href="/logout">Déconnexion</a>
 				</div>
@@ -37,7 +37,7 @@
 			</div>
 			
 			<div class="userBox" id="rateBox">
-				<p>NOTES :</p>
+				<h2 class="avengersFont">NOTES</h2>
 				<div class="insideBox">
 					<c:set var="subject" value="" scope="page" />
 					<c:forEach items="${movieRates}" var="rate">
@@ -80,7 +80,7 @@
 			</div>
 
 			<div class="userBox" id="commentUserBox">
-				<p>COMMENTAIRES :</p>
+				<h2 class="avengersFont">COMMENTAIRES</h2>
 				<div class="insideBox">
 					<c:set var="subject" value="" scope="page" />
 					<c:forEach items="${movieComments}" var="comment">

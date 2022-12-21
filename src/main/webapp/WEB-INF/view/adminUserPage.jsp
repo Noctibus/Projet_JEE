@@ -3,8 +3,22 @@
 <!DOCTYPE html>
 <html>
 	<%@ include file="header.jsp" %>
-	<main class="bigMain">
+	<main class="adminMain">
 		<%@ include file="menu.jsp" %>
+
+		<div class="userBox" id="paramBox">
+			<h2 class="avengersFont">Parametres du compte</h2>
+			<div class="param">
+				<a href="/logout">Déconnexion</a>
+			</div>
+			<div class="param">
+				<a href="/deleteUser">Supprimer l'utilisateur</a>
+			</div>
+			<div class="param">
+				<a href="/changePassword">Changer de mot de passe</a>
+			</div>
+		</div>
+
 		<div class="userBox" id="adminMovieBox">
 			<table class="itemsOnLine">
 				<th class="avengersFont">Films</th>
@@ -19,7 +33,7 @@
 			</table>
 			<button><a class="managmentButton" href="/addMovie">Ajouter un film</a></button>
 		</div>
-		
+
 		<div class="userBox" id="adminCharacBox">
 			<table class="itemsOnLine" id="tableCharac">
 				<th class="avengersFont">Personnages</th>
@@ -29,10 +43,10 @@
 							<td>
 							<c:choose>
 								<c:when test="${character.herosName!=null}">
-									<a class="managmentItem" href="character?charId=${character.id}">${character.herosName}</a>
+									<a href="character?charId=${character.id}">${character.herosName}</a>
 								</c:when>
 								<c:otherwise>
-									<a class="managmentItem" href="character?charId=${character.id}">${character.identity}</a>
+									<a href="character?charId=${character.id}">${character.identity}</a>
 								</c:otherwise>
 							</c:choose>
 							</td>

@@ -5,7 +5,7 @@
 	<%@ include file="headerBG.jsp" %>
 	<main>
 		<%@ include file="menu.jsp" %>	
-		<div id="registerBox">
+		<div class="addBox">
 			<p>Ajout d'un film :</p>
             <form action="/addMovie" method="post">
                 <div class="space">
@@ -22,7 +22,7 @@
                 </div>
                 <div class="space">
                     <label for="synopsis">Synopsis :</label>
-                    <textarea name="synopsis" placeholder="New York, États-Unis, 2023, les Avengers se rassemblent..." required></textarea>
+                    <textarea name="synopsis" rows="6" cols="80" placeholder="New York, États-Unis, 2023, les Avengers se rassemblent..." required></textarea>
                 </div>
                 <div class="space">
                     <label for="pictureAddress">Adresse de l'affiche du film :</label>

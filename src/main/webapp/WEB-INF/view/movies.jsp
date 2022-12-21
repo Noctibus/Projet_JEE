@@ -5,8 +5,8 @@
 	<%@ include file="header.jsp" %>
     <main class="main"> 	
 		<%@ include file="menu.jsp" %>
-		<div class="scrollMovie">
-	  	<section id="templine">
+		<div class="scroll">
+	  	<section id="line">
 			<c:forEach items="${movies}" var="movie">
 				<a href="movie?movieId=${movie.getId()}" class="space">
 					<img class="testimg" style='width: 300px; height: 400px;' src='${movie.pictureAddress}'/>

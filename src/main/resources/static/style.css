@@ -82,11 +82,11 @@ input{
 }
 ::-webkit-scrollbar-track {
   border-radius: 10px;
-  background: rgba(0,0,0,0.1);
+  background: rgba(51, 54, 87, 0.1);
 }
 ::-webkit-scrollbar-thumb{
   border-radius: 10px;
-  background: rgba(0,0,0,0.2);
+  background: aliceblue;
 }
 ::-webkit-scrollbar-thumb:hover{
 	background: rgba(0,0,0,0.4);
@@ -113,6 +113,11 @@ input{
 #menu{
 	font-family: Avengers;
     margin-bottom: 100px;
+}
+
+.img{
+	width: 300px; 
+	height: 400px;
 }
 
 /* partie principale */
@@ -153,19 +158,19 @@ main{
 	margin-top: 55px;
 }
 
-.scrollMovie{
+.scroll{
     text-align: center;
     overflow-x: hidden;
-    height: 415px;
+    height: 405px;
     overflow-y: hidden;
     margin-top: 150px;
 }
 
-.scrollMovie:hover{
+.scroll:hover{
     overflow-x: visible;
 }
 
-#templine{
+#line{
     min-width: max-content;
 	background-color: rgb(35, 40, 66);
 	height: 400px;
@@ -211,6 +216,7 @@ main{
 }
 
 .post{
+	padding: 5px;
 	margin-top: 20px;
 	margin-bottom: 20px;
 	min-height:fit-content;
@@ -287,6 +293,11 @@ textarea{
 .characterPicture{
 	height: 400px;
 	margin-top: -145px;
+}
+
+.charactersPicture{
+	height: 320px;
+	margin-top: 20px;
 }
 
 #loginBox{

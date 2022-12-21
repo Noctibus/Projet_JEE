@@ -5,18 +5,18 @@
 	<%@ include file="headerBG.jsp" %>
     <main> 	
 		<%@ include file="menu.jsp" %>
-        <div id="herosList">
-            <c:forEach items="${characters}" var="character">
-                <c:choose>
-                    <c:when test="${character.getHerosName()!=null}">
-                        <div class="heros"><a href="character?charId=${character.getId()}"> ${character.getHerosName()}</a></div> 
-                    </c:when>
-                    <c:otherwise>
-                        <div class="heros"><a href="character?charId=${character.getId()}"> ${character.getIdentity()}</a></div> 
-                    </c:otherwise>
-                </c:choose>
-            </c:forEach>
-        </div>
+        <!--<div id="herosList">-->
+            <div class="scroll">
+                <section id="line">
+                    <c:forEach items="${characters}" var="character">
+                        <a class="space" href="character?charId=${character.getId()}">
+                            <img class="charactersPicture" src='${character.pictureAddress}'/> 
+                        </a>
+                    </c:forEach>
+                </div>
+            </section>
     </main>
 	<%@ include file="footer.jsp" %>
 </html>
+
+

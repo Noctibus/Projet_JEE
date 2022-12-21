@@ -43,13 +43,12 @@ public class UserController {
 	public String checkUser(HttpSession session, @RequestParam("username") String username, @RequestParam("password") String password) throws NoSuchAlgorithmException {
 		String page = "redirect:login";
 		User user = userService.getByUsername(username);
-		if (!Objects.isNull(user)) {
-			if (user.getPassword().equals(userService.hashPassword(password))) {
-				page = "redirect:index";
-				session.setAttribute("user",user);
-				session.setAttribute("userInformations",userInformationsService.getUserInformations(user));
-			} else {
-				session.setAttribute("error", "Identifiant et/ou mot de passe incorrect(s).");}
+		if ((!Objects.isNull(user))&&(user.getPassword().equals(userService.hashPassword(password)))) {
+			page = "redirect:index";
+			session.setAttribute("user",user);
+			session.setAttribute("userInformations",userInformationsService.getUserInformations(user));
+		} else {
+			session.setAttribute("error", "Identifiant et/ou mot de passe incorrect(s).");
 		}
 		return page;
 	}

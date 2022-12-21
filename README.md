@@ -9,6 +9,8 @@ Good Luck everyone
 ### TODO
  
 Page contact
+Édition du README du rendu
+Compression du site en jar + test de connexion à la bdd
 
 
 ### Deadline

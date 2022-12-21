@@ -74,7 +74,26 @@ input{
 
   th{
 	font-size: 26px;
-  }
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background: rgba(0,0,0,0.1);
+}
+::-webkit-scrollbar-thumb{
+  border-radius: 10px;
+  background: rgba(0,0,0,0.2);
+}
+::-webkit-scrollbar-thumb:hover{
+	background: rgba(0,0,0,0.4);
+}
+::-webkit-scrollbar-thumb:active{
+	background: rgba(0,0,0,.9);
+}
 
 /* entête */
 
@@ -189,7 +208,6 @@ main{
 	margin-left: 100px;
 	margin-right: 100px;
 	overflow-y:scroll;
-	scrollbar-width: thin;
 }
 
 .post{
@@ -373,6 +391,8 @@ textarea{
 
 #adminMovieBox{
 	height: 290px;
+	padding-bottom: 20px;
+	overflow-y: scroll;
 }
 
 .managmentButton{
@@ -395,7 +415,9 @@ textarea{
 
 
 #adminCharacBox{
+	padding-bottom: 20px;
 	height: 1020px;
+	overflow-y: scroll;
 }
 
 #tableCharac{

@@ -51,6 +51,9 @@ a:hover {
 }
 
 input{
+	-moz-border-radius : 6px;
+  	-webkit-border-radius : 6px;
+  	border-radius : 6px;
 	background-color: aliceblue;
 	border: solid black 1px;
 	color: black;
@@ -62,6 +65,9 @@ input{
   }
 
   button{
+	-moz-border-radius : 6px;
+  	-webkit-border-radius : 6px;
+  	border-radius : 6px;
     background-color: aliceblue;
 	border: solid black 1px;
 	color: black;

@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 
-/* body */
+/*** Body ***/
 
 body{
 	height: 100%;
@@ -18,10 +18,13 @@ h1{
 	display: inline;
 }
 
+/*Police Avengers*/
+
 .avengersFont{
 	font-family: Avengers;
 	letter-spacing: 2px;
 }
+/*Image de fond*/
 
 .bg{
 	background-image: url("tech.png");
@@ -76,6 +79,13 @@ input{
 	font-size: 26px;
 }
 
+.img{
+	width: 300px; 
+	height: 400px;
+}
+
+/*Scrollbar*/
+
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
@@ -95,7 +105,7 @@ input{
 	background: rgba(0,0,0,.9);
 }
 
-/* entête */
+/*** Entête ***/
 
 #welcome{
 	padding-top: 10px;
@@ -106,6 +116,8 @@ input{
 	height: 150px;
 }
 
+/*** Menu ***/
+
 #menu a{
 	margin: 100px;
 }
@@ -115,12 +127,9 @@ input{
     margin-bottom: 100px;
 }
 
-.img{
-	width: 300px; 
-	height: 400px;
-}
+/*** partie principale ***/
 
-/* partie principale */
+/* dispositions */
 
 main{
 	font-weight: bold;
@@ -141,6 +150,12 @@ main{
 	margin-bottom: 900px;
 }
 
+.adminMain{
+	margin-bottom: 1000px;
+}
+
+/* Index */
+
 #pages{
 	margin-top: 132px;
 }
@@ -157,6 +172,8 @@ main{
 #intro{
 	margin-top: 55px;
 }
+
+/* Films et personnages */
 
 .scroll{
     text-align: center;
@@ -178,6 +195,7 @@ main{
     padding-right: 30px;
 }
 
+/* Connexion & inscription */
 
 #formLogin{
     padding-top: 30px;
@@ -194,6 +212,16 @@ main{
 #register:hover{
     color: rgb(238, 34, 34);
 }
+
+#loginBox{
+	margin-top: 85px;
+}
+
+#registerBox{
+	margin-top: 220px;
+}
+
+/* Commentaires */
 
 .comments{
 	height: 700px;
@@ -252,6 +280,8 @@ textarea{
 	align-items: left;
 }
 
+/* Film & personnage */
+
 .moviePoster{
 	float: left;
 	margin: 20px;
@@ -261,6 +291,14 @@ textarea{
 	width: 300px; 
 	height: 400px; 
 	margin-top: -90px;
+}
+
+.star:hover{
+	color: red;
+}
+
+.descBox{
+	padding-top: 50px;
 }
 
 .desc{
@@ -274,22 +312,6 @@ textarea{
 	margin-bottom: 20px;
 }
 
-.star:hover{
-	color: red;
-}
-
-.descBox{
-	padding-top: 50px;
-}
-
-#herosList{
-	margin-top: -50px;
-}
-
-.heros{
-	font-size: 25px;
-}
-
 .characterPicture{
 	height: 400px;
 	margin-top: -145px;
@@ -300,13 +322,7 @@ textarea{
 	margin-top: 20px;
 }
 
-#loginBox{
-	margin-top: 85px;
-}
-
-#registerBox{
-	margin-top: 220px;
-}
+/* Utilisateur & administrateur */
 
 .suppr{
 	color: black;
@@ -435,15 +451,11 @@ textarea{
 	margin-top: -95px;
 }
 
-.adminMain{
-	margin-bottom: 1000px;
-}
-
 .addBox{
 	margin-top: 120px;
 }
 
-/* pied de page */
+/*** pied de page ***/
 
 footer{
 	font-family: Comic;

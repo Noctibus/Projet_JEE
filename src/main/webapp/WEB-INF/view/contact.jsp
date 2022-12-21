@@ -5,7 +5,7 @@
 	<main>
 	<%@ include file="menu.jsp" %>	
         
-        <h2 class="avengersFont" id="formTitle">Formulaire de Contact</h2>
+        <h2 class="avengersFont" id="formTitle">Formulaire de contact</h2>
 
 		<form method="post" action="/index.jsp" spellcheck="false">
             <p class="formItem">

@@ -11,22 +11,23 @@
 			<div class="moviePoster">
 				<img class="characterPicture" src='${character.pictureAddress}'/>
 			</div>
-			<c:if test="${character.getHerosName()!= null}">
-				<div class="desc">Nom de Héros : ${character.getHerosName()}</div>
+			<c:if test="${character.herosName!= null}">
+				<div class="desc">Nom de Héros : ${character.herosName}</div>
 			</c:if>
-			<div class="desc">Identité : ${character.getIdentity()}</div>
-			<div class="desc">Acteur : ${character.getActor()}</div>
-			<div class="desc">Origines : ${character.getOrigins()}</div>
-			<div class="desc">Note : ${character.getRate()} &#9733</div>
+			<div class="desc">Identité : ${character.identity}</div>
+			<div class="desc">Acteur : ${character.actor}</div>
+			<div class="desc">Origines : ${character.origins}</div>
+			<div class="desc">Note : ${character.rate} &#9733</div>
 			<div class="desc">
-				<a href="/putCharacterRate?value=1&charId=${param.charId}" class="star" id="star1">&#9733</a>
-				<a href="/putCharacterRate?value=2&charId=${param.charId}" class="star" id="star1">&#9733</a>
-				<a href="/putCharacterRate?value=3&charId=${param.charId}" class="star" id="star1">&#9733</a>
-				<a href="/putCharacterRate?value=4&charId=${param.charId}" class="star" id="star1">&#9733</a>
-				<a href="/putCharacterRate?value=5&charId=${param.charId}" class="star" id="star1">&#9733</a>
-		   </div>
-		   <span>Le personnage à-t-il survécu ?</span>
-		   <button id="buttonCacher" onclick= "cacherStatut()">Spoiler</button> 
+				<c:forEach var="i" begin="1" end="${rate}" step="1">
+					<a href="/putCharacterRate?value=${i}&charId=${character.id}" class="star" id="star1" style="color:red">&#9733</a>
+				</c:forEach>
+				<c:forEach var="i" begin="1" end="${5-rate}" step="1">
+					<a href="/putCharacterRate?value=${rate+i}&charId=${character.id}" class="star" id="star1">&#9733</a>
+				</c:forEach>
+			</div>
+			<span>Le personnage à-t-il survécu ?</span>
+			<button id="buttonCacher" onclick= "cacherStatut()">Spoiler</button> 
 			<div id="cacher">
 				<p><c:choose><c:when test="${character.isAlive()}">Ce personnage est toujours vivant !!</c:when><c:otherwise>Hélas, ce personnage est mort...</c:otherwise></c:choose></p>
 			</div>

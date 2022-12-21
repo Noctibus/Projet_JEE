@@ -35,11 +35,12 @@
 			</div>
 			<div class="desc">Note : ${movie.getRate()} &#9733</div>
 			<div class="desc">
-				<a href="/putMovieRate?value=1&movieId=${param.movieId}" class="star" id="star1">&#9733</a>
-				<a href="/putMovieRate?value=2&movieId=${param.movieId}" class="star" id="star1">&#9733</a>
-				<a href="/putMovieRate?value=3&movieId=${param.movieId}" class="star" id="star1">&#9733</a>
-				<a href="/putMovieRate?value=4&movieId=${param.movieId}" class="star" id="star1">&#9733</a>
-				<a href="/putMovieRate?value=5&movieId=${param.movieId}" class="star" id="star1">&#9733</a>
+				<c:forEach var="i" begin="1" end="${rate}" step="1">
+					<a href="/putMovieRate?value=${i}&movieId=${movie.id}" class="star" id="star1" style="color:red">&#9733</a>
+				</c:forEach>
+				<c:forEach var="i" begin="1" end="${5-rate}" step="1">
+					<a href="/putMovieRate?value=${rate+i}&movieId=${movie.id}" class="star" id="star1">&#9733</a>
+				</c:forEach>
 			</div>
         </div>
 		<div class="comments">

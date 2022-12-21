@@ -39,14 +39,21 @@ public class MovieController {
     }
 
     @GetMapping("/movie")
-    public String showPostersMovie(Model model,@RequestParam("movieId") int movieId) {
+    public String showPostersMovie(Model model,HttpSession session,@RequestParam("movieId") int movieId) {
+        User connectedUser=(User)session.getAttribute("user");
         Movie movie = this.movieService.getById(movieId);
+        MovieRates movieRate=movieRatesService.getMovieRateByMovieAndUser(movie,connectedUser);
         String page = "movie";
         if (movie==null){
             page = "/error";
         }
         model.addAttribute("movie", movie);
         model.addAttribute("comments",this.movieCommentService.getMovieCommentsByMovie(movie));
+        if(connectedUser!=null&&movieRate!=null) {
+            model.addAttribute("rate",movieRate.getValue());
+        } else {
+            model.addAttribute("rate",0);
+        }
         return page;
     }
 

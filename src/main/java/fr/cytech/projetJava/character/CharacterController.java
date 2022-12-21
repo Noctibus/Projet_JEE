@@ -39,14 +39,21 @@ public class CharacterController {
 	}
 
 	@GetMapping("/character")
-	public String character(Model model,@RequestParam("charId") int charId) {
+	public String character(Model model,HttpSession session,@RequestParam("charId") int charId) {
+        User connectedUser=(User)session.getAttribute("user");
         Character character = this.characterService.getById(charId);
+        CharacterRates characterRate=characterRatesService.getCharacterRateByCharacterAndUser(character, connectedUser);
         String page = "character";
         if (character==null){
             page = "/error";
         }
         model.addAttribute("character",character);
         model.addAttribute("comments",this.characterCommentService.getCharacterCommentsByCharacter(character));
+        if(connectedUser!=null&&characterRate!=null) {
+            model.addAttribute("rate",characterRate.getValue());
+        } else {
+            model.addAttribute("rate",0);
+        }
 		return page;
 	}
 

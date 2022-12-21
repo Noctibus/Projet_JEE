@@ -15,7 +15,7 @@
 			<div class="desc">Date de sortie : ${movie.getDate()}</div>
 			<div class="desc">Réalisateur : ${movie.getDirector()}</div>
 			<div class="desc">Synopsis : ${movie.getSynopsis()}</div>
-			<div class="desc">Personnages du film :
+			<div class="desc">Personnages :
 				<c:forEach items="${movie.getCharacters()}" var="character">
 					<c:choose>
 						<c:when test="${character.getHerosName()== null}">

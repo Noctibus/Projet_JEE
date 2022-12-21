@@ -86,7 +86,7 @@ input{
 }
 ::-webkit-scrollbar-thumb{
   border-radius: 10px;
-  background: aliceblue;
+  background: rgb(123, 158, 189);
 }
 ::-webkit-scrollbar-thumb:hover{
 	background: rgba(0,0,0,0.4);

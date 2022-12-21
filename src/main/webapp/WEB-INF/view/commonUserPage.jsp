@@ -104,7 +104,7 @@
 						</div>
 					</c:forEach>
 					<c:forEach items="${characterComments}" var="comment">
-							<c:if test="${comment.character.herosName==null||subject==comment.character.herosName}">
+							<c:if test="${subject==comment.character.herosName}">
 								<div class="commentItem">	
 							</c:if>	
 
@@ -114,6 +114,7 @@
 								<p><a href="/character?charId=${comment.character.id}">${subject} :</a></p>
 							</c:if>
 							<c:if test="${comment.character.herosName==null&&subject!=comment.character.identity}">
+								<div class="userItem">
 								<c:set var="subject" value="${comment.character.identity}" scope="page" />
 								<p><a href="/character?charId=${comment.character.id}">${subject} :</a></p>
 							</c:if>

@@ -1,7 +1,7 @@
 # Projet_JEE
 ### TODO
 
-Édition de ce fichier : étapes de lancement du site depuis environnement neutre 
+Édition de ce fichier : étapes de lancement du site depuis environnement neutre  
 Test de connexion à la bdd
 
 

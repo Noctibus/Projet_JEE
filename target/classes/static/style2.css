@@ -511,13 +511,6 @@ footer{
   letter-spacing: 1px;
 }
 .wrapper {
-  /* position: relative;
-  display: inline-block;
-  border: none;
-  font-size: 14px;
-  margin: 50px auto;
-  left: 50%;
-  transform: translateX(-50%); */
   text-align: left;
   margin-bottom: 20px;
 }

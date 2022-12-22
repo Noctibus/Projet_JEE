@@ -2,6 +2,7 @@ package fr.cytech.projetJava;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class FrontController {
@@ -13,7 +14,12 @@ public class FrontController {
 
 	@GetMapping("/index")
 	public String indexBis() {
-		return "index";
+		return "redirect:";
+	}
+
+	@PostMapping("/index")
+	public String indexTer() {
+		return "redirect:index";
 	}
 
 	@GetMapping("/contact")

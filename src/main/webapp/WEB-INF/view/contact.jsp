@@ -7,46 +7,40 @@
         
         <h2 class="avengersFont" id="formTitle">Formulaire de contact</h2>
 
-		<form method="post" action="/index.jsp" spellcheck="false">
+		<form method="post" action="/index" spellcheck="false">
             <p class="formItem">
-                Nom: <input type="text" id="nom" name="nom"/>
+                Nom: <input type="text" id="nom" name="nom" required/>
                 <span class="erreur" id="erreurnom"></span>
             </p>
     
             <p class="formItem">
-                Prénom: <input type="text" id="prenom" name="prenom"/>
+                Prénom: <input type="text" id="prenom" name="prenom" required/>
                 <span class="erreur" id="erreurprenom"></span>
             </p>
                     
             <p class="formItem">
                 Genre:
-                <input type="radio" id="genre" value="Homme" name="genre" />
-                    Homme
-                </input>
-                <input type="radio" id="genre" value="Femme" name="genre">
-                    Femme
-                </input>
-                <input type="radio" id="genre" value="Autre" name="genre">
-                    Autre
-                </input>	
+                    <label for="homme"></label><input type="radio" name="genre" id="genre" value="Homme" required/>Homme
+                    <label for="femme"></label><input type="radio" name="genre" id="genre" value="Femme"/>Femme
+                    <label for="autre"></label><input type="radio" name="genre" id="genre" value="Autre"/>Bébé
                 <span class="erreur" id="erreurgenre"></span>
             </p>
     
             <p class="formItem">
                 Adresse e-mail:
-                <input id="email" type="text"  name="email"/>
+                <input id="email" type="email"  name="email" required/>
                 <span class="erreur" id="erreuremail"></span>
             </p>
     
             <p class="formItem">
                 Date de naissance:
-                <input type="date" id="datenaissance" name="datenaissance" />
+                <input type="date" id="datenaissance" name="datenaissance" required/>
                 <span class="erreur" id="erreurdatenaissance"></span>
             </p>
     
             <p class="formItem">
                 <div class="formItem">Message:</div>
-                <textarea class="commentaire" id="commentaire" name="commentaire" rows="15" cols="100"placeholder="ATTENTION : Pas d'informations personnelles"></textarea>
+                <textarea class="commentaire" id="commentaire" name="commentaire" rows="15" cols="100"placeholder="ATTENTION : Pas d'informations personnelles" required></textarea>
                 <span class="erreur" id="erreurcommentaire"></span>
             </p>
                 

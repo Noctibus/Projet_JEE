@@ -5,7 +5,6 @@
 	<%@ include file="header.jsp" %>
     <main class="bigMain"> 	
 		<%@ include file="menu.jsp" %>
-
 	  	<div class="box">
 			<div class="moviePoster">
 				<img class="poster" src='${movie.pictureAddress}'/>
@@ -36,10 +35,10 @@
 			<div class="desc">Note : ${movie.getRate()} &#9733</div>
 			<div class="desc">
 				<c:forEach var="i" begin="1" end="${rate}" step="1">
-					<a href="/putMovieRate?value=${i}&movieId=${movie.id}" class="star" id="star1" style="color:red">&#9733</a>
+					<a href="/putMovieRate?value=${i}&movieId=${movie.id}" class="star" id="star${i}" style="color:red" onmouseover="mouseOver(id)" onmouseout="mouseOut()">&#9733</a>
 				</c:forEach>
 				<c:forEach var="i" begin="1" end="${5-rate}" step="1">
-					<a href="/putMovieRate?value=${rate+i}&movieId=${movie.id}" class="star" id="star1">&#9733</a>
+					<a href="/putMovieRate?value=${rate+i}&movieId=${movie.id}" class="star" id="star${rate+i}" onmouseover="mouseOver(id)" onmouseout="mouseOut()">&#9733</a>
 				</c:forEach>
 			</div>
         </div>

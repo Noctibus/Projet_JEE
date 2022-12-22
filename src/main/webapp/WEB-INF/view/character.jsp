@@ -20,10 +20,10 @@
 			<div class="desc">Note : ${character.rate} &#9733</div>
 			<div class="desc">
 				<c:forEach var="i" begin="1" end="${rate}" step="1">
-					<a href="/putCharacterRate?value=${i}&charId=${character.id}" class="star" id="star1" style="color:red">&#9733</a>
+					<a href="/putCharacterRate?value=${i}&charId=${character.id}" class="star" id="star${i}" style="color:red" onmouseover="mouseOver(id)" onmouseout="mouseOut()">&#9733</a>
 				</c:forEach>
 				<c:forEach var="i" begin="1" end="${5-rate}" step="1">
-					<a href="/putCharacterRate?value=${rate+i}&charId=${character.id}" class="star" id="star1">&#9733</a>
+					<a href="/putCharacterRate?value=${rate+i}&charId=${character.id}" class="star" id="star${rate+i}" onmouseover="mouseOver(id)" onmouseout="mouseOut()">&#9733</a>
 				</c:forEach>
 			</div>
 			<span>Le personnage à-t-il survécu ?</span>

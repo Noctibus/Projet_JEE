@@ -18,7 +18,7 @@ import fr.cytech.projetJava.user.User;
 public class CharacterRates {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "characterRateID")
-    private int characterRateID;
+    private int id;
 
     @JoinColumn(name = "characterID") @NotNull @ManyToOne
 	private Character character;
@@ -28,6 +28,14 @@ public class CharacterRates {
 
     @Column(name = "value") @NotNull
 	private int value;
+
+    public int getId() {
+        return this.id;
+    }
+
+    public void setId(int id) {
+        this.id=id;
+    }
 
     public User getUser() {
         return this.user;

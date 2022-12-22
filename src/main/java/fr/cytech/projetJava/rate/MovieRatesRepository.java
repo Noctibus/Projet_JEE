@@ -10,7 +10,7 @@ import fr.cytech.projetJava.user.User;
 
 @Repository
 public interface MovieRatesRepository extends JpaRepository<MovieRates, Integer> {
-    public MovieRates findByMovieRateID(int movieRateID);
+    public MovieRates findById(int id);
     public MovieRates findByMovieAndUser(Movie movie, User user);
     public List<MovieRates> findByMovie(Movie movie);
     public List<MovieRates> findByUserOrderByMovie(User user); 

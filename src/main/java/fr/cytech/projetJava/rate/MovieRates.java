@@ -20,7 +20,7 @@ import fr.cytech.projetJava.user.User;
 public class MovieRates {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "movieRateID") 
-    private int movieRateID;
+    private int id;
     
     @JoinColumn(name = "movieID") @NotNull @ManyToOne
 	private Movie movie;
@@ -31,12 +31,12 @@ public class MovieRates {
     @Column(name = "value") @NotNull
 	private int value;
 
-    public int getMovieRateID() {
-        return this.movieRateID;
+    public int getId() {
+        return this.id;
     }
 
-    public void setMovieRateID(int movieRateID) {
-        this.movieRateID = movieRateID;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public User getUser() {

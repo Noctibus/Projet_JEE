@@ -28,7 +28,7 @@ Lancer le projet depuis la racine du projet (dans le dossier Projet_JEE) avec la
 - Ouvrir le site dans un explorateur internet :
 	- localhost:8080
 
-Remarques :
+- Remarques :
 	- compte administrateur: 
 		- nom d'utilisateur = admin
 	 	- mot de passe = 123456

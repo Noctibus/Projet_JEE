@@ -1,5 +1,5 @@
 
-Installer mariaDB et maven si'il ne le sont pas
+Installer mariaDB et maven s'ils ne le sont pas déjà
 
 Ouvrir un terminal dans le dossier où se trouve le fichier avengers.jar
 
@@ -34,4 +34,4 @@ Lancer le projet depuis la racine du projet (dans le dossier Projet_JEE) avec la
 		- nom d'utilisateur = admin
 	 	- mot de passe = 123456
 	- ajout d'un nouveau film/personnage:
-		ajouter l'image du film/personnage à la main dans Projet_JEE/src/main/resources/static (le liens web ne fonctionnant pas, l'image doit être enregistrée dans la bdd pour l'utiliser)
+		ajouter l'image du film/personnage à la main dans Projet_JEE/src/main/resources/static (le nom de l'image doit être ajouté à la bdd depuis la page d'ajout de film/personnage pour faire le lien)

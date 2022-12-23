@@ -13,7 +13,8 @@ Se déplacer à la racine du projet :
 
 Importer le fichier Avengers.sql dans mariaDB se trouvant dans le dossier Projet_JEE
 
-Changer les identifiants mariaDB, si besoin, dans le fichier Projet_JEE/src/main/resources/application.properties. Par défaut :
+Changer les identifiants mariaDB, si besoin, dans le fichier Projet_JEE/src/main/resources/application.properties.
+- Par défaut :
 	- username = root
 	- password = cytech
 
